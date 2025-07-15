@@ -31,7 +31,7 @@ html, body {
 }
 
 .hero h1 span {
-    color:  #1bd497;
+    color:  #00ff00;
 }
 
 .hero p {
@@ -59,11 +59,11 @@ html, body {
     text-transform: uppercase;
     font-weight: 600;
     margin-bottom: 2rem;
-    color: #1bd497;
+    color: #00ff00;
 }
 
 .green {
-    color: #1bd497;
+    color: #00ff00;
 }
 
 /* wrap your existing .loader in a full-screen overlay */
@@ -97,7 +97,7 @@ html, body {
 
 .loading svg polyline#front {
     fill: none;
-    stroke: #1bd497;
+    stroke: #00ff00;
     stroke-dasharray: 48, 144;
     stroke-dashoffset: 192;
     animation: dash_682 1.4s linear infinite;
@@ -205,10 +205,10 @@ html, body {
 
 .navbar .menu-items {
     padding-top: 120px;
-    background-color: #1bd497;
+    background-color: #00ff00;
     z-index: 1;
-    height: 500px;
-    width: 400px;
+    height: 100vh;
+    width: 150% !important;
     transform: translate(-150%);
     display: flex;
     flex-direction: column;
