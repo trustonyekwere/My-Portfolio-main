@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tee | Artist</title>
-    <link rel="shortcut icon" href="img/my logo-favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="img/my logo-no_bg.png" type="image/x-icon">
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
@@ -20,15 +20,37 @@
     <div id="preloader">
         <div class="loader">
             <div class="loading">
-                <lord-icon
-                    src="https://cdn.lordicon.com/tewlfgbl.json"
-                    trigger="loop"
-                    state="loop-dispersion"
-                    colors="primary:#00ff00"
-                    style="width:80px;height:80px">
-                </lord-icon>
+                <!-- From Uiverse.io by xXJollyHAKERXx --> 
+                <div class="spinner">
+                    <div class="spinner1"></div>
+                </div>
             </div>
         </div>
+    </div>
+
+    <div class="cursor-dot"></div>
+
+    <div class="background">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
     </div>
 
     <header>
@@ -69,7 +91,7 @@
                     </div>
                     <div class="col-lg-6 text-lg-start" data-aos="fade-right">
                         <p class="text-muted">Welcome to my world</p>
-                        <h1>Hi, I'm <span class="green" >Tee</span><br><span class="text-dark">a Professional Dev.</span></h1>
+                        <h1>Hi, I'm <span class="green" >Tee</span><br><span class="text-dark">a Professional Software Developer.</span></h1>
                         <p>I design and build cool stuff.</p>
                         <div class="social-icons my-3">
                             <a href="http://x.com/fujistudioz" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
@@ -78,7 +100,7 @@
                                     trigger="hover"
                                     stroke="bold"
                                     state="hover-draw"
-                                    colors="primary:#00ff00,secondary:#00ff00"
+                                    colors="primary:#fff,secondary:#fff"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -87,7 +109,7 @@
                                     src="https://cdn.lordicon.com/jjxzcivr.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#00ff00,secondary:#00ff00"
+                                    colors="primary:#fff,secondary:#fff"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -96,7 +118,7 @@
                                     src="https://cdn.lordicon.com/dsdlqjde.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#00ff00,secondary:#00ff00"
+                                    colors="primary:#fff,secondary:#fff"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -105,7 +127,7 @@
                                     src="https://cdn.lordicon.com/roscsuft.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#00ff00,secondary:#00ff00"
+                                    colors="primary:#fff,secondary:#fff"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -118,9 +140,9 @@
 
 
         <!-- Who am I section -->
-        <section>
+        <section class="section">
             <div class="container">
-                <h2 class="section-title text-start">Who Am I</h2>
+                <h2 class="section-title text-center" data-aos="fade-left" data-aos-delay="100">Who Am I</h2>
                 <div class="row">
                     <div class="col-lg-6" data-aos="fade-right" data-aos-delay="100">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quo error sequi aliquam repudiandae dolorum optio accusamus, enim odit repellendus consequatur tenetur consectetur maiores, ipsam nemo neque excepturi porro qui veritatis vero blanditiis aspernatur consequuntur. Aliquid impedit est blanditiis quos natus sed commodi, corporis maiores cumque ullam sapiente mollitia in quasi dicta iste, possimus, deleniti ad? Recusandae distinctio error minima.
@@ -129,102 +151,182 @@
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quo error sequi aliquam repudiandae dolorum optio accusamus, enim odit repellendus consequatur tenetur consectetur maiores, ipsam nemo neque excepturi porro qui veritatis vero blanditiis aspernatur consequuntur. Aliquid impedit est blanditiis quos natus sed commodi, corporis maiores cumque ullam sapiente mollitia in quasi dicta iste, possimus, deleniti ad? Recusandae distinctio error minima.
                     </div>
                 </div><br><br><br>
-                <hr>
+                <section class="bg-primary">
+                    <div class="row text-center pt-4" data-aos="fade-right" data-aos-delay="100">
+                        <div class="col-md-3">
+                            <h1 class="fw-bold big-txt"><span class="counter" data-target="3">0</span>+</h1>
+                            <p class="text-white">Years of experience</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h1 class="fw-bold big-txt"><span class="counter" data-target="45">0</span>+</h1>
+                            <p class="text-white">Projects completed</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h1 class="fw-bold big-txt"><span class="counter" data-target="99">0</span>%</h1>
+                            <p class="feature-desc text-white">Satisfaction rate from clients</p>
+                        </div>
+                        <div class="col-md-3">
+                            <h1 class="fw-bold big-txt"><span class="counter" data-target="6">0</span>+</h1>
+                            <p class="text-white">Certificates and awards</p>
+                        </div>
+                    </div>
+                </section><br><br><br><br><br>
             </div>
         </section>
 
         <!-- What I Do Section -->
-        <section class="py-5">
+        <section class="section">
             <div class="container">
-                <h2 class="section-title text-start">What I Do</h2>
-                <div class="row g-4">
+                <h2 class="section-title text-center" data-aos="fade-left" data-aos-delay="100">Services I Provide</h2>
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-4 text-center " data-aos="zoom-in" data-aos-delay="100">
+                        <!-- From Uiverse.io by MikeAndrewDesigner --> 
+                        <div class="e-card playing mx-auto">
+                            <div class="image"></div>
+                            
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            
+                                <div class="infotop">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/lzgmgrnn.json"
+                                        trigger="hover"
+                                        stroke="bold"
+                                        state="hover-line"
+                                        colors="primary:#fff"
+                                        style="width:65px;height:65px">
+                                    </lord-icon>
+                                <br>      
+                            Web Developer
+                            <br>
+                            <div class="name">I Build fast, responsive, and modern websites tailored for both performance and functionality.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 zero-px" data-aos="zoom-in" data-aos-delay="100">
+                        <!-- From Uiverse.io by MikeAndrewDesigner --> 
+                        <div class="e-card playing mx-auto">
+                            <div class="image"></div>
+                            
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            
+                                <div class="infotop">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/exymduqj.json"
+                                        trigger="hover"
+                                        stroke="bold"
+                                        state="hover-line"
+                                        colors="primary:#fff,secondary:#fff"
+                                        style="width:65px;height:65px">
+                                    </lord-icon>
+                                <br>      
+                            Graphics Designer
+                            <br>
+                            <div class="name">I craft visually compelling designs that convey ideas clearly and with lasting impact.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4 zero-px" data-aos="zoom-in" data-aos-delay="100">
+                        <!-- From Uiverse.io by MikeAndrewDesigner --> 
+                        <div class="e-card playing mx-auto">
+                            <div class="image"></div>
+                            
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            
+                                <div class="infotop">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/wsaaegar.json"
+                                        trigger="hover"
+                                        stroke="bold"
+                                        state="hover-line"
+                                        colors="primary:#fff,secondary:#fff"
+                                        style="width:65px;height:65px">
+                                    </lord-icon>
+                                <br>      
+                            Photographer
+                            <br>
+                            <div class="name">I capture powerful visuals that tell stories and bring moments to life with creative precision.</div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
-                        <div class="card p-4">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/lzgmgrnn.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-line"
-                                colors="primary:#00ff00"
-                                style="width:65px;height:65px">
-                            </lord-icon>
-                            <h5>Web Developer</h5>
-                            <p>I Build fast, responsive, and modern websites tailored for both performance and functionality.</p>
+                        <!-- From Uiverse.io by MikeAndrewDesigner --> 
+                        <div class="e-card playing mx-auto">
+                            <div class="image"></div>
+                            
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            
+                                <div class="infotop">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/qfwgmyhc.json"
+                                        trigger="hover"
+                                        stroke="bold"
+                                        state="hover-line"
+                                        colors="primary:#fff,secondary:#fff"
+                                        style="width:65px;height:65px">
+                                    </lord-icon>
+                                <br>      
+                            Video Editor
+                            <br>
+                            <div class="name">I Create engaging video content with smooth transitions, sound design, and visual storytelling.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
-                        <div class="card p-4">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/exymduqj.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-line"
-                                colors="primary:#00ff00,secondary:#00ff00"
-                                style="width:65px;height:65px">
-                            </lord-icon>
-                            <h5>Graphics Designer</h5>
-                            <p>I craft visually compelling designs that convey ideas clearly and with lasting impact.
-                            </p>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <!-- From Uiverse.io by MikeAndrewDesigner --> 
+                        <div class="e-card playing mx-auto">
+                            <div class="image"></div>
+                            
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            
+                                <div class="infotop">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fwkrbvja.json"
+                                        trigger="hover"
+                                        stroke="bold"
+                                        state="hover-line"
+                                        colors="primary:#fff,secondary:#fff"
+                                        style="width:65px;height:65px">
+                                    </lord-icon>
+                                <br>      
+                            Hobbyist Inventor
+                            <br>
+                            <div class="name">I design and build innovative projects, transforming concepts and ideas into working prototypes.</div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="300">
-                        <div class="card p-4">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/wsaaegar.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-line"
-                                colors="primary:#00ff00,secondary:#00ff00"
-                                style="width:65px;height:65px">
-                            </lord-icon>
-                            <h5>Photographer</h5>
-                            <p>I capture powerful visuals that tell stories and bring moments to life with creative precision.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="400">
-                        <div class="card p-4">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/qfwgmyhc.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-line"
-                                colors="primary:#00ff00,secondary:#00ff00"
-                                style="width:65px;height:65px">
-                            </lord-icon>
-                            <h5>Video Editor</h5>
-                            <p>I Create engaging video content with smooth transitions, sound design, and visual storytelling.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="500">
-                        <div class="card p-4">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/fwkrbvja.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-line"
-                                colors="primary:#00ff00,secondary:#00ff00"
-                                style="width:65px;height:65px">
-                            </lord-icon>
-                            <h5>Hobbyist Inventor</h5>
-                            <p>I design and build innovative projects, transforming concepts and ideas into working prototypes.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="600">
-                        <div class="card p-4">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/fikcyfpp.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-line"
-                                colors="primary:#00ff00,secondary:#00ff00"
-                                style="width:65px;height:65px">
-                            </lord-icon>
-                            <h5>Creative Writer</h5>
-                            <p>I deliver well-structured, and original content tailored to engage and inform any audience.
-                            </p>
+                    <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                        <!-- From Uiverse.io by MikeAndrewDesigner --> 
+                        <div class="e-card playing mx-auto">
+                            <div class="image"></div>
+                            
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            <div class="wave"></div>
+                            
+                                <div class="infotop">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/fikcyfpp.json"
+                                        trigger="hover"
+                                        stroke="bold"
+                                        state="hover-line"
+                                        colors="primary:#fff,secondary:#fff"
+                                        style="width:65px;height:65px">
+                                    </lord-icon>
+                                <br>      
+                            Creative Writer
+                            <br>
+                            <div class="name">I deliver well-structured, and original content tailored to engage and inform any audience.</div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -284,7 +386,9 @@
     <!-- AOS JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init();
+        AOS.init({
+            once: true  // Animation happens only once as you scroll down
+        });
     </script>
 
     <!-- preloader JS -->
@@ -380,5 +484,80 @@
         });
     </script>
 
+    <!-- Type effect JS -->
+    <script>
+        const counters = document.querySelectorAll('.counter');
+        const speed = 90; // The lower the faster
+
+        const animateCounters = () => {
+            counters.forEach(counter => {
+            const updateCount = () => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+
+                const increment = Math.ceil(target / speed);
+
+                if (count < target) {
+                counter.innerText = count + increment;
+                setTimeout(updateCount, 20);
+                } else {
+                counter.innerText = target.toLocaleString();
+                }
+            };
+            updateCount();
+            });
+        };
+
+        const options = {
+            threshold: 0.3
+        };
+
+        const observer = new IntersectionObserver(function(entries, observer) {
+            entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateCounters();
+                observer.disconnect();
+            }
+            });
+        }, options);
+
+        observer.observe(document.querySelector('.counter'));
+    </script>
+
+    <script>
+        const dot = document.querySelector('.cursor-dot');
+
+        let mouseX = 0;
+        let mouseY = 0;
+        let dotX = 0;
+        let dotY = 0;
+
+        // Update mouse position on move
+        window.addEventListener('mousemove', (e) => {
+            mouseX = e.clientX;
+            mouseY = e.clientY;
+        });
+
+        // Smooth animation loop using lerp
+        function animateDot() {
+            // Interpolation speed (0.1 = slow, 1 = instant)
+            dotX += (mouseX - dotX) * 0.15;
+            dotY += (mouseY - dotY) * 0.15;
+
+            dot.style.left = `${dotX}px`;
+            dot.style.top = `${dotY}px`;
+
+            requestAnimationFrame(animateDot);
+        }
+
+        animateDot(); // Start animation
+
+        // Optional: Add hover effect on interactive elements
+        const hoverTargets = document.querySelectorAll('button, a, lord-icon, i, svg, .hover-target');
+        hoverTargets.forEach(el => {
+            el.addEventListener('mouseenter', () => dot.classList.add('hovering'));
+            el.addEventListener('mouseleave', () => dot.classList.remove('hovering'));
+        });
+    </script>
 </body>
 </html>
