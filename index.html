@@ -77,7 +77,7 @@
                                     trigger="hover"
                                     stroke="bold"
                                     state="hover-draw"
-                                    colors="primary:#fff,secondary:#fff"
+                                    colors="primary:#ff00,secondary:#ff00"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -86,7 +86,7 @@
                                     src="https://cdn.lordicon.com/jjxzcivr.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#fff,secondary:#fff"
+                                    colors="primary:#ff00,secondary:#ff00"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -95,7 +95,7 @@
                                     src="https://cdn.lordicon.com/dsdlqjde.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#fff,secondary:#fff"
+                                    colors="primary:#ff00,secondary:#ff00"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -104,7 +104,7 @@
                                     src="https://cdn.lordicon.com/roscsuft.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#fff,secondary:#fff"
+                                    colors="primary:#ff00,secondary:#ff00"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -350,9 +350,121 @@
                 </div>    
             </div>
         </section>
-    </main>
-    <footer>
 
+        <section id="contact">
+            <h1 class="text-center">Send me a message!</h1>
+            <p class="text-center">Got a question or a job offer, or just want to say hi? Go ahead.</p><br>
+            <form id="chatForm" novalidate>
+                <div class="form-floating mb-3">
+                <input
+                    type="text"
+                    class="form-control"
+                    id="nameInput"
+                    placeholder="Your Name"
+                    required
+                />
+                <label for="nameInput">Your Name</label>
+                <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                <input
+                    type="email"
+                    class="form-control"
+                    id="emailInput"
+                    placeholder="name@example.com"
+                    required
+                />
+                <label for="emailInput">Email address</label>
+                <div class="invalid-feedback">Please enter a valid email.</div>
+                </div>
+
+                <div class="form-floating mb-3">
+                <textarea
+                    class="form-control"
+                    placeholder="Your message"
+                    id="messageInput"
+                    style="height: 120px"
+                    required
+                ></textarea>
+                <label for="messageInput">Message</label>
+                <div class="invalid-feedback">Don’t be shy—say hello!</div>
+                </div>
+                <div class="txt-center my-3">
+                    <button type="submit" class="py-2">
+                        <div class="svg-wrapper-1">
+                            <div class="svg-wrapper">
+                            <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 24 24"
+                                width="28"
+                                height="28">
+                                <path fill="none" d="M0 0h24v24H0z"></path>
+                                <path
+                                fill="currentColor"
+                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
+                                ></path>
+                            </svg>
+                            </div>
+                        </div>
+                        <span>Send</span>
+                    </button>
+                </div>
+                <div
+                id="successMsg"
+                class="alert alert-success text-center mt-3"
+                role="alert"
+                >
+                Thanks for reaching out! I’ll get back to you soon.
+                </div>
+            </form>
+        </section>
+    </main>
+    
+    <footer class="footer py-4">
+        <div class="container">
+            <div class="row">
+            <!-- Brand / About -->
+            <div class="col-md-4 mb-3">
+                <h5 class="footer-heading">Your Name</h5>
+                <p class="small">
+                Crafting digital experiences with creativity, code, and design. Let’s build something great.
+                </p>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="col-md-4 mb-3">
+                <h5 class="footer-heading">Quick Links</h5>
+                <ul class="list-unstyled">
+                <li><a href="#projects" class="footer-link">Projects</a></li>
+                <li><a href="#about" class="footer-link">About Me</a></li>
+                <li><a href="#contact" class="footer-link">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Social -->
+            <div class="col-md-4 mb-3">
+                <h5 class="footer-heading">Connect</h5>
+                <ul class="list-inline">
+                <li class="list-inline-item">
+                    <a href="https://github.com/yourusername" class="footer-link">GitHub</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://linkedin.com/in/yourusername" class="footer-link">LinkedIn</a>
+                </li>
+                <li class="list-inline-item">
+                    <a href="https://twitter.com/yourusername" class="footer-link">Twitter</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+
+            <hr>
+
+            <div class="text-center small">
+            &copy; 2025 Your Name. All rights reserved.
+            </div>
+        </div>
     </footer>
 
     <!-- Bootstrap JS -->
@@ -533,6 +645,37 @@
             el.addEventListener('mouseenter', () => dot.classList.add('hovering'));
             el.addEventListener('mouseleave', () => dot.classList.remove('hovering'));
         });
+    </script>
+
+    <!-- form JS -->
+    <script>
+        (function () {
+            const form = document.getElementById('chatForm');
+            const success = document.getElementById('successMsg');
+
+            form.addEventListener('submit', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            if (!form.checkValidity()) {
+                form.classList.add('was-validated');
+                return;
+            }
+
+            // MOCK: pretend to send...
+            form.querySelectorAll('.form-control').forEach((input) => input.setAttribute('disabled', ''));
+            form.querySelector('button').setAttribute('disabled', '');
+            
+            // Simulate network delay
+            setTimeout(() => {
+                success.style.display = 'block';
+                form.reset();
+                form.classList.remove('was-validated');
+                form.querySelectorAll('.form-control').forEach((input) => input.removeAttribute('disabled'));
+                form.querySelector('button').removeAttribute('disabled');
+            }, 800);
+            });
+        })();
     </script>
 </body>
 </html>
