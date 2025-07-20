@@ -62,8 +62,8 @@ html, body {
     color: #7173F5;
 }
 
-.green {
-    color: #00ff00;
+.blue {
+    color: #1f84e2 !important;
 }
 
 /* preloader css */
@@ -108,8 +108,8 @@ html, body {
 /* cursor dot css */
 .cursor-dot {
     position: fixed;
-    width: 12px;
-    height: 12px;
+    width: 18px;
+    height: 18px;
     background-color: #55bff5;
     border-radius: 50%;
     pointer-events: none;
@@ -496,6 +496,7 @@ a > .btn-z {
     border-color: #1BD497;
 }
 
+/* floating shapes bg css */
 .services-section {
   position: relative;
   overflow: hidden;
@@ -523,4 +524,140 @@ a > .btn-z {
 @keyframes floatSpin {
   from { transform: translate(-50%, -50%) rotate(0deg); }
   to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* scroll mouse animation css */
+.btn-y {
+  width: 30px;
+  height: 50px;
+  border-radius: 30px;
+  padding: 0px !important;
+  width: 35px !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: transparent;
+  border: none;
+  outline: 2px solid #1F84E2 !important;
+  box-shadow: 0px 0px 7px rgb(24, 25, 26) !important;
+  position: relative;
+}
+
+.scroll {
+  width: 5px;
+  height: 10px;
+  border-radius: 10px;
+  background-color: rgb(105, 127, 255) !important;
+  box-shadow: 0px 0px 10px rgb(105, 127, 255) !important;
+  animation: scroll_4013 2s linear infinite;
+  transform: translateY(40%);
+}
+
+.btn-y:after {
+  content: 'scroll';
+  position: absolute;
+  top: 140%;
+  color: whitesmoke;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+@keyframes scroll_4013 {
+  0% {
+    transform: translateY(40%);
+  }
+
+  50% {
+    transform: translateY(90%);
+  }
+};
+
+/* navbar css */
+nav ul li a {
+    position: relative;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-size: 18px !important;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 9px;
+    bottom: 6px;
+    width: 0;
+    height: 2.6px;
+    background-color: #1F84E2; 
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after {
+    width: 35px;
+}
+
+nav ul li a.active::after {
+    width: 35px;
+}
+
+.navbar {
+    z-index: 99 !important;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.35);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
+    
+    /* hide by default */
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* when we add .visible, it fades in */
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translateY(0);
+}
+
+/* let's chat btn css */
+.container-z > button {
+    font-size: 1em !important;
+    padding: 0.8em 1em !important;
+    border-radius: 0.5em;
+    border: none;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;    
+    box-shadow: 2px 2px 3px #000000b4;
+}
+
+.container-z {
+    position: relative;
+    padding: 3px;
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    border-radius: 0.5em;
+    transition: all 0.4s ease;
+}
+
+.container-z::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    margin: auto;
+    border-radius: 0.5em;
+    z-index: -10;
+    filter: blur(0);
+    transition: filter 0.4s ease;
+}
+
+.container-z:hover::before {
+    background: linear-gradient(90deg, #03a9f4, #f441a5);
+    filter: blur(1.2em);
+}
+.container-z:active::before {
+    filter: blur(0.2em);
 }

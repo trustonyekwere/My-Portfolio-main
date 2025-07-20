@@ -33,38 +33,9 @@
     </div>
 
     <!-- cursor dot -->
-    <div class="cursor-dot"></div>
+    <div class="cursor-dot d-none d-lg-block"></div>
 
-    <header>
-        <nav class="navbar navbar-expand-lg navbar-custom sticky-top">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    <img src="img/my logo-no_bg.png" style="width: 10%; display: inline-block !important;" alt="">
-                </a>
-                <a class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                    <span class="navbar-toggler-icon"></span>
-                </a>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Projects</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Contact</a>
-                        </li>
-                    </ul>
-                    <a class="btn btn-chat">Let's Chat</a>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <main>
+    <header id="home">
         <!-- Hero Section -->
         <section class="hero text-center">
             <div class="container">
@@ -75,56 +46,105 @@
                         </div>
                     </div>
                     <div class="col-lg-6 text-lg-start" data-aos="fade-right">
-                        <p class="text-muted">Welcome to my world</p>
-                        <h1>Hi, I'm <span class="green" >Tee</span><br><span class="text-dark">a Professional Software Developer.</span></h1>
+                        <h1>Hi, I'm <span class="blue" >Tee</span><br><span class="text-dark">a Professional Software Developer.</span></h1>
                         <p>I design and build cool stuff.</p>
                         <div class="social-icons my-3">
-                            <a href="http://x.com/fujistudioz" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <!-- LinkedIn -->
+                            <a href="http://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/jvodbtcr.json"
+                                    src="https://cdn.lordicon.com/dsdlqjde.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    state="hover-draw"
-                                    colors="primary:#ff00,secondary:#ff00"
+                                    colors="primary:#1f84e2,secondary:#1f84e2"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
+                            <!-- GitHub -->
                             <a href="http://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/jjxzcivr.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#ff00,secondary:#ff00"
+                                    colors="primary:#1f84e2,secondary:#1f84e2"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
-                            <a href="http://www.linkedin.com/in/onyekwere-trust-5989412b7/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <!-- X -->
+                            <a href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                                 <lord-icon
-                                    src="https://cdn.lordicon.com/dsdlqjde.json"
+                                    src="https://cdn.lordicon.com/jvodbtcr.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#ff00,secondary:#ff00"
+                                    state="hover-draw"
+                                    colors="primary:#1f84e2,secondary:#1f84e2"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
-                            <a href="http://www.instagram.com/fujistudioz/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                            <!-- Instagram -->
+                            <a href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/roscsuft.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#ff00,secondary:#ff00"
+                                    colors="primary:#1f84e2,secondary:#1f84e2"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
                         </div>
                     </div>
-                </div><br><br><br>
+                    <div class="txt-center my-4">
+                        <button class="btn-y ">
+                            <div class="scroll"> </div>
+                        </button>
+                        scroll
+                    </div>
+                </div>
             </div>
         </section>
+    </header>
 
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container-fluid container">
+            <div class="navbar-brand">
+                <a href="index.html">
+                    <img src="img/my logo-no_bg.png" class="d-none d-md-block" style="width: 60px !important;" alt="">
+                </a>
+                <a href="index.html">
+                    <img src="img/my logo-no_bg.png" class="d-block d-md-none text-start" style="width: 6em;" alt="">
+                </a>
+            </div>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div style="height: 60px !important;" class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+                <ul class="navbar-nav mx-auto mb-4 mb-md-0">
+                    <li class="nav-item">
+                        <a class="nav-link text-black active" aria-current="page" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#aboutme">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-black" href="#">Contact Us</a>
+                    </li>
+                </ul>
+                <a href="#" target="_blank" style="text-decoration: none !important;">
+                    <div class="container-z">
+                        <button class="button">Hover me</button>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <!-- Underline element -->
+        <div class="nav-underline"></div>
+    </nav>
 
+    <main>
         <!-- Who am I section -->
-        <section class="section-z">
+        <section class="section-z" id="aboutme">
             <div class="container"><br><br><br>
                 <!-- About Section -->
                 <section id="about" class="py-5">
@@ -189,7 +209,7 @@
         </section>
 
         <!-- What I Do Section -->
-        <section class="section">
+        <section class="section" id="services">
             <div class="container"><br><br>
                 <h2 class="section-title text-center" data-aos="fade-left" data-aos-delay="100">Services I Provide</h2>
                 <div class="services-section">
@@ -353,8 +373,8 @@
         <!-- Portfolio Section -->
         <section class="portfolio-section py-5 bg-black text-white">
             <div class="container text-center">
-                <h2 class="fw-bold display-5 mb-4">My Work</h2>
-                <p>Below are some of the projects i've built over the years, either individually or in collaboration with other software developers.</p><br><br>
+                <h2 class="fw-bold display-5 mb-4" data-aos="fade-up">My Work</h2>
+                <p data-aos="fade-up">Below are some of the projects i've built over the years, either individually or in collaboration with other software developers.</p><br><br>
 
                 <!-- Portfolio Grid -->
                 <div class="row g-4 justify-content-center">
@@ -465,7 +485,7 @@
             </div>
         </section>
 
-        <div class="section-w">
+        <div class="section-w" data-aos="fade-up">
             <section id="contact">
                 <h1 class="text-center">Send me a message!</h1>
                 <p class="text-center">Got a question or a job offer, or just want to say hi? Go ahead.</p><br>
@@ -540,11 +560,11 @@
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-6"><br>
+                <div class="col-md-6" data-aos="fade-up"><br>
                     <h5>TRUST ONYEKWERE</h5><br>
                     <p>A creative and tech-driven individual, building innovative prototypes, apps, and digital content to inspire and empower others.</p>
                 </div>
-                <div class="col-md-6 text-md-end mt-4 mt-md-0">
+                <div class="col-md-6 text-md-end mt-4 mt-md-0" data-aos="fade-up">
                     <h5>SOCIALS</h5>
                     <!-- LinkedIn -->
                     <a href="https://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer">
@@ -654,6 +674,46 @@
         document.body.scrollTop = 0;
         document.documentElement.scrollTop = 0;
         }
+    </script>
+
+    <!-- nav anime -->
+    <script>
+    document.addEventListener("DOMContentLoaded", () => {
+        const sections = document.querySelectorAll("section");
+        const navLinks = document.querySelectorAll("nav ul li a");
+
+        function updateActiveOnScroll() {
+        const scrollPos = window.pageYOffset;
+        let currentSectionId = "";
+
+        // Find the last section whose top is <= scroll position
+        sections.forEach(section => {
+            const offsetTop = section.offsetTop;
+            // tweak this if you have a fixed header: e.g. offsetTop - headerHeight
+            if (scrollPos >= offsetTop - 10) {
+            currentSectionId = section.id;
+            }
+        });
+        }
+    });
+    </script>
+    <!-- hero-dissappear -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const nav  = document.querySelector('.navbar');
+            const hero = document.getElementById('home');
+
+            console.log('NAV:', nav, 'HERO:', hero);
+
+            const io = new IntersectionObserver(
+            ([entry]) => {
+                console.log('hero intersection:', entry.isIntersecting);
+                nav.classList.toggle('visible', !entry.isIntersecting);
+            },
+            { root: null, threshold: 0 }
+            );
+            io.observe(hero);
+        });
     </script>
 
     <script>
