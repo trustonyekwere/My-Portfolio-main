@@ -312,7 +312,7 @@ html, body {
 button {
     font-family: inherit;
     font-size: 24px !important;
-    background: #11a4ee;
+    background: #1f84e2;
     color: white;
     padding: 1.2em 2em !important;
     padding-left: 0.9em;
@@ -419,7 +419,7 @@ a > .btn-z {
 
 .btn-z {
     background-color: #fff;
-    color: #11a4ee;
+    color: #1f84e2;
     border-radius: 8px;
     font-size: 1rem !important;
     cursor: pointer;   
@@ -447,4 +447,51 @@ a > .btn-z {
 }
 .back-to-top:hover {
     background-color: #54A6F3 !important;
+}
+
+/* projects card css */
+.portfolio-card {
+    cursor: pointer;
+    transition: transform 0.4s ease;
+}
+
+.portfolio-card:hover {
+    transform: scale(1.05);
+}
+
+.portfolio-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(14, 14, 14, 0.8);
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.portfolio-card:hover .overlay {
+    opacity: 1;
+}
+
+.portfolio-card .overlay h5 {
+    position: relative;
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-card .overlay .icons {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.portfolio-card:hover .overlay .icons {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.filter-btn.active {
+    background-color: #1BD497;
+    border-color: #1BD497;
 }
