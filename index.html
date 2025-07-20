@@ -42,12 +42,12 @@
                 <div class="row align-items-center">
                     <div class="col-lg-6" data-aos="fade-left">
                         <div class="card p-0">
-                            <img src="img/profile - Copy.png" alt="me" class="img-fluid rounded">
+                            <img src="img/profile - Copy.png" alt="me :)" class="img-fluid rounded">
                         </div>
                     </div>
                     <div class="col-lg-6 text-lg-start" data-aos="fade-right">
-                        <h1>Hi, I'm <span class="blue" >Tee</span><br><span class="text-dark">a Professional Software Developer.</span></h1>
-                        <p>I design and build cool stuff.</p>
+                        <h1>Hi, I'm <span class="blue" >Tee</span><br>a Professional Software Developer.</h1>
+                        <p>I design and build cool stuff (^_^)</p>
                         <div class="social-icons my-3">
                             <!-- LinkedIn -->
                             <a href="http://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
@@ -616,7 +616,7 @@
     </footer>
 
     <!-- Back to top button -->
-    <a type="button" class="btn btn-danger btn-floating btn-lg back-to-top" id="btn-back-to-top">
+    <a type="button" class="btn btn-danger btn-floating btn-lg back-to-top" id="back-to-top">
         <i class="bi bi-chevron-double-up"></i>
     </a>
 
@@ -649,32 +649,20 @@
     
     <!-- Back to top -->
     <script>
-        //Get the button
-        let mybutton = document.getElementById("btn-back-to-top");
+        const backBtn = document.querySelector('.back-to-top');
 
-        // When the user scrolls down 20px from the top of the document, show the button
-        window.onscroll = function () {
-        scrollFunction();
-        };
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 200) {
+            backBtn.classList.add('visible');
+            } else {
+            backBtn.classList.remove('visible');
+            }
+        });
 
-        function scrollFunction() {
-        if (
-            document.body.scrollTop > 20 ||
-            document.documentElement.scrollTop > 20
-        ) {
-            mybutton.style.display = "block";
-        } else {
-            mybutton.style.display = "none";
-        }
-        }
-        // When the user clicks on the button, scroll to the top of the document
-        mybutton.addEventListener("click", backToTop);
-
-        function backToTop() {
-        document.body.scrollTop = 0;
-        document.documentElement.scrollTop = 0;
-        }
-    </script>
+        backBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>  
 
     <!-- nav anime -->
     <script>

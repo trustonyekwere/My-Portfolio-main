@@ -5,6 +5,10 @@
     scroll-behavior: smooth;
 }
 
+a {
+    display: inline-block !important;
+}
+
 @font-face {
     font-family: roboto;
     src: url(/fonts/Roboto-VariableFont_wdth\,wght.ttf);
@@ -434,17 +438,25 @@ a > .btn-z {
     background-color: #1f84e2 !important;
     color: white;
     border: none !important;
-    border-radius: 50%;
     width: 50px;
     height: 50px;
-    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 20px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     cursor: pointer;
     z-index: 99;
+    display: none !important;
+    opacity: 0;
+    transition: opacity 0.3s ease;
 }
+
+/* when we add `.visible` it shows up */
+.back-to-top.visible {
+    display: flex !important;  /* or block, whichever you need */
+    opacity: 1;
+}
+
 .back-to-top:hover {
     background-color: #54A6F3 !important;
 }
@@ -528,48 +540,48 @@ a > .btn-z {
 
 /* scroll mouse animation css */
 .btn-y {
-  width: 30px;
-  height: 50px;
-  border-radius: 30px;
-  padding: 0px !important;
-  width: 35px !important;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: transparent;
-  border: none;
-  outline: 2px solid #1F84E2 !important;
-  box-shadow: 0px 0px 7px rgb(24, 25, 26) !important;
-  position: relative;
+    width: 30px;
+    height: 50px;
+    border-radius: 30px;
+    padding: 0px !important;
+    width: 35px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: none;
+    outline: 2px solid #1F84E2 !important;
+    box-shadow: 0px 0px 7px rgb(24, 25, 26) !important;
+    position: relative;
 }
 
 .scroll {
-  width: 5px;
-  height: 10px;
-  border-radius: 10px;
-  background-color: rgb(105, 127, 255) !important;
-  box-shadow: 0px 0px 10px rgb(105, 127, 255) !important;
-  animation: scroll_4013 2s linear infinite;
-  transform: translateY(40%);
+    width: 5px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #1f84e2 !important;
+    box-shadow: 0px 0px 10px #1e63a3 !important;
+    animation: scroll_4013 2s linear infinite;
+    transform: translateY(40%);
 }
 
 .btn-y:after {
-  content: 'scroll';
-  position: absolute;
-  top: 140%;
-  color: whitesmoke;
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
+    content: 'scroll';
+    position: absolute;
+    top: 140%;
+    color: whitesmoke;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
 }
 
 @keyframes scroll_4013 {
-  0% {
-    transform: translateY(40%);
-  }
+    0% {
+        transform: translateY(40%);
+    }
 
-  50% {
-    transform: translateY(90%);
-  }
+    50% {
+        transform: translateY(90%);
+    }
 };
 
 /* navbar css */
