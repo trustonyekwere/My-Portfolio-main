@@ -313,7 +313,7 @@ html, body {
 }
 
 /* form button */
-button {
+form button {
     font-family: inherit;
     font-size: 24px !important;
     background: #1f84e2;
@@ -323,37 +323,37 @@ button {
     display: flex;
     align-items: center;
     border: none;
-    border-radius: 16px;
+    border-radius: 4px;
     overflow: hidden;
     transition: all 0.2s;
     cursor: pointer;
 }
 
-button span {
+form button span {
     display: block;
     margin-left: 0.3em;
     transition: all 0.3s ease-in-out;
 }
 
-button svg {
+form button svg {
     display: block;
     transform-origin: center center;
     transition: transform 0.3s ease-in-out;
 }
 
-button:hover .svg-wrapper {
+form button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
-button:hover svg {
+form button:hover svg {
     transform: translateX(1.2em) rotate(45deg) scale(1.1);
 }
 
-button:hover span {
+form button:hover span {
     transform: translateX(5em);
 }
 
-button:active {
+form button:active {
     transform: scale(0.95);
 }
 
@@ -568,10 +568,10 @@ a > .btn-z {
 .btn-y:after {
     content: 'scroll';
     position: absolute;
-    top: 140%;
-    color: whitesmoke;
+    top: 120%;
+    color: #c9c9c9;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px !important;
 }
 
 @keyframes scroll_4013 {
