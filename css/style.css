@@ -66,6 +66,10 @@ html, body {
     color: #7173F5;
 }
 
+.bg-bll {
+    background-color: #1f84e2 !important;
+}
+
 .blue {
     color: #1f84e2 !important;
 }
@@ -463,6 +467,11 @@ a > .btn-z {
     outline: 2px solid #1F84E2 !important;
     box-shadow: 0px 0px 7px rgb(24, 25, 26) !important;
     position: relative;
+}
+
+.lead {
+    font-size: 1.2rem !important;
+    color: #fff !important;
 }
 
 .scroll {
