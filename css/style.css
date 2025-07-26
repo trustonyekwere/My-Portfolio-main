@@ -67,11 +67,11 @@ html, body {
 }
 
 .bg-bll {
-    background-color: #1f84e2 !important;
+    background-color: #3444E1 !important;
 }
 
 .blue {
-    color: #1f84e2 !important;
+    color: #3444E1 !important;
 }
 
 /* preloader css */
@@ -191,8 +191,8 @@ html, body {
 }
 
 /* form css */
-#contact {
-    background: #f9f9f9;
+#c-tact {
+    background: #f9f9f9 !important;
     padding: 3rem 1rem;
     border-radius: 0.5rem;
     max-width: 600px;
@@ -201,11 +201,10 @@ html, body {
 }
 
 .section-w {
-    background-color: #e0e0e0;
-    padding: 2rem 1rem;
+    background-color: #d4d0d0 !important;
 }
 
-#contact h2 {
+#c-tact h2 {
     font-weight: 600;
     margin-bottom: 1.5rem;
 }
@@ -226,11 +225,16 @@ html, body {
     display: none;
 }
 
+.sent {
+    margin-top: 0px !important;
+    margin-bottom: 0px !important;
+}
+
 /* form button */
 form button {
     font-family: inherit;
     font-size: 24px !important;
-    background: #1f84e2;
+    background: #3444E1;
     color: white;
     padding: 1.2em 2em !important;
     padding-left: 0.9em;
@@ -337,7 +341,7 @@ a > .btn-z {
 
 .btn-z {
     background-color: #fff;
-    color: #1f84e2;
+    color: #3444E1;
     border-radius: 8px;
     font-size: 1rem !important;
     cursor: pointer;   
@@ -349,7 +353,7 @@ a > .btn-z {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #1f84e2 !important;
+    background-color: #3444E1 !important;
     color: white;
     border: none !important;
     width: 50px;
@@ -464,7 +468,7 @@ a > .btn-z {
     justify-content: center;
     background-color: transparent;
     border: none;
-    outline: 2px solid #1F84E2 !important;
+    outline: 2px solid #3444E1 !important;
     box-shadow: 0px 0px 6px rgb(24, 25, 26) !important;
     position: relative;
 }
@@ -478,7 +482,7 @@ a > .btn-z {
     width: 5px;
     height: 10px;
     border-radius: 10px;
-    background-color: #1f84e2 !important;
+    background-color: #3444E1 !important;
     box-shadow: 0px 0px 10px #1e63a3 !important;
     animation: scroll_4013 2s linear infinite;
     transform: translateY(40%);
@@ -518,7 +522,7 @@ nav ul li a::after {
     bottom: 6px;
     width: 0;
     height: 2.6px;
-    background-color: #1F84E2; 
+    background-color: #3444E1; 
     transition: width 0.3s ease;
 }
 
@@ -561,11 +565,11 @@ nav ul li a.active::after {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.05em;
-    border: 2px solid #1F84E2 !important;
+    border: 2px solid #3444E1 !important;
     border-radius: 0.4em;
     cursor: pointer;
     border: none;
-    background: linear-gradient(to right, #1F84E2, #4a00e0);
+    background: linear-gradient(to right, #3444E1, #4a00e0);
     color: ghostwhite;
     overflow: hidden;
 }

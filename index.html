@@ -55,7 +55,7 @@
                                     src="https://cdn.lordicon.com/dsdlqjde.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#1f84e2,secondary:#1f84e2"
+                                    colors="primary:#3444E1,secondary:#3444E1"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -65,7 +65,7 @@
                                     src="https://cdn.lordicon.com/jjxzcivr.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#1f84e2,secondary:#1f84e2"
+                                    colors="primary:#3444E1,secondary:#3444E1"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -76,7 +76,7 @@
                                     trigger="hover"
                                     stroke="bold"
                                     state="hover-draw"
-                                    colors="primary:#1f84e2,secondary:#1f84e2"
+                                    colors="primary:#3444E1,secondary:#3444E1"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -86,7 +86,7 @@
                                     src="https://cdn.lordicon.com/roscsuft.json"
                                     trigger="hover"
                                     stroke="bold"
-                                    colors="primary:#1f84e2,secondary:#1f84e2"
+                                    colors="primary:#3444E1,secondary:#3444E1"
                                     style="width:40px;height:40px">
                                 </lord-icon>
                             </a>
@@ -133,7 +133,7 @@
                         <a class="nav-link text-black" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <a href="#" target="_blank" style="text-decoration: none !important;">
+                <a href="#contact" style="text-decoration: none !important;">
                     <button class="cssbuttons-io">
                         <span>Let's Chat</span>
                     </button>
@@ -145,6 +145,8 @@
     </nav>
 
     <main>
+        <p id="about"></p>
+        <p></p>
         <!-- About Section -->
         <section class="bg-black py-5" id="about">
             <div class="container">
@@ -206,10 +208,13 @@
             </div>
         </section>
 
+        <p id="services"></p>
+        <p></p><br>
+
         <!-- What I Do Section -->
-        <section class="py-5 mt-3" style="background-color: #fff;">
+        <section class="py-5 mt-3" style="background-color: #fff;" >
             <div class="container">
-                <h2 class="blue text-center fw-bold display-5" data-aos="fade-left" data-aos-delay="100">Services</h2>
+                <h1 class="blue text-center fw-bold" style="font-size: 60px !important;" data-aos="fade-left" data-aos-delay="100">Services</h1>
                 <br><br>
                 <div class="row g-4">
                     <!-- Service Card -->
@@ -293,7 +298,7 @@
                                     style="width:65px;height:65px">
                                 </lord-icon>
                             </div>
-                            <h4 class="card-title blue">DIY tinkering</h4>
+                            <h4 class="card-title blue">DIY Tinkering</h4>
                             <p class="card-text">I design and build cool projects in my free time, transforming concepts and ideas into working prototypes.</p>
                         </div>
                     </div>
@@ -318,9 +323,11 @@
             </div>
         </section>
 
+        <p id="projects"></p>
+        <p></p>
         <!-- Portfolio Section -->
-        <section class="portfolio-section py-5 bg-black text-white">
-            <div class="container text-center">
+        <section class="portfolio-section py-5 bg-black text-white" id="projects">
+            <div class="container text-center"><br>
                 <h2 class="fw-bold display-5 mb-4" data-aos="fade-up">My Work</h2>
                 <p data-aos="fade-up">Below are some of the projects i've built over the years, either individually or in collaboration with other software developers.</p><br><br>
 
@@ -432,9 +439,10 @@
                 <br><br>
             </div>
         </section>
-
-        <div class="section-w" >
-            <section id="contact" data-aos="fade-up">
+        
+        <div id="contact"></div>
+        <div class="section-w py-5">
+            <section id="c-tact" class="sent" data-aos="fade-up">
                 <h1 class="text-center">Send me a message!</h1>
                 <p class="text-center">Got a question or a job offer, or just want to say hi? Go ahead.</p><br>
                 <form id="chatForm" novalidate>
