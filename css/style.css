@@ -32,14 +32,11 @@ html, body {
 .hero {
     padding: 5rem 1rem;
     background-color: #fff;
-}
-
-.hero h1 span {
-    color:  #00ff00;
+    min-height: 100vh !important;
 }
 
 .hero p {
-    max-width: 500px;
+    padding: 0px 50px;
 }
 
 .social-icons i, .skills-icons i {
@@ -66,12 +63,23 @@ html, body {
     color: #7173F5;
 }
 
+.larger {
+    margin-top: 100px !important;
+    font-size: 2.8rem;
+}
+
+.sub {
+    color: #555;
+}
+
 .bg-bll {
-    background-color: #3444E1 !important;
+    background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
 }
 
 .blue {
-    color: #3444E1 !important;
+    background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 /* preloader css */
@@ -133,7 +141,7 @@ html, body {
 
 /* navbar css */
 .navbar-custom {
-    background: linear-gradient(135deg, #6F65F6, #3EDBF0);
+    background: linear-gradient(135deg, #6F65F6, #4B88D7);
     box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 .navbar-brand {
@@ -161,7 +169,7 @@ html, body {
 }
 .btn-chat:hover {
     background-color: #f2f2f2;
-    color: #3EDBF0;
+    color: #4B88D7;
 }
 
 /* preloader spinner css*/ 
@@ -209,12 +217,12 @@ html, body {
     margin-bottom: 1.5rem;
 }
 .form-control:focus {
-    border-color: #3EDBF0;
+    border-color: #4B88D7;
     box-shadow: 0 0 0 0.2rem rgba(62,219,240,0.25);
 }
 .btn-chat {
-    background-color: #3EDBF0;
-    border-color: #3EDBF0;
+    background-color: #4B88D7;
+    border-color: #4B88D7;
     transition: background-color 0.2s;
 }
 .btn-chat:hover {
@@ -310,7 +318,7 @@ hr {
 }
 
 .footer a:hover {
-    color: #3EDBF0;
+    color: #4B88D7;
 }
 
 .footer p {
@@ -569,7 +577,7 @@ nav ul li a.active::after {
     border-radius: 0.4em;
     cursor: pointer;
     border: none;
-    background: linear-gradient(to right, #3444E1, #4a00e0);
+    background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
     color: ghostwhite;
     overflow: hidden;
 }
