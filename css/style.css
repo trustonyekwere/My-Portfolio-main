@@ -27,6 +27,13 @@ a {
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+}
+
+/* Chrome, Safari, Opera */
+body::-webkit-scrollbar {
+    display: none;
 }
 
 .hero {
@@ -69,6 +76,7 @@ html, body {
 .blue {
     background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
     -webkit-background-clip: text;
+    background-clip: text;
     -webkit-text-fill-color: transparent;
 }
 
@@ -146,7 +154,7 @@ html, body {
     transition: color 0.3s ease;
 }
 .nav-link:hover {
-    color: #a1a1a1 !important;
+    color: #b1b1b1 !important;
 }
 .btn-chat {
     background-color: #ffffff;
@@ -351,7 +359,7 @@ a > .btn-z {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #54A6F3 !important;
+    background-color: #3E7CCE !important;
     color: white;
     border: none !important;
     width: 50px;
@@ -374,7 +382,7 @@ a > .btn-z {
 }
 
 .back-to-top:hover {
-    background-color: #5691de !important;
+    background-color: #5d95df !important;
 }
 
 /* projects card css */
@@ -553,7 +561,7 @@ nav ul li a.active::after {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.05em;
-    border: 2px solid #5691DE !important;
+    border: 2px solid #78AFF6 !important;
     border-radius: 0.4em;
     cursor: pointer;
     border: none;

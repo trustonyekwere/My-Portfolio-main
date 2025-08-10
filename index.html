@@ -36,57 +36,176 @@
 
     <header id="home">
         <!-- Hero Section -->
-        <section class="hero text-center">
-            <div class="container">
-                <h1 class="larger">Hi, I'm <span class="blue">Trust Onyekwere.</span><br><span class="sub">- a Professional Software Developer -</span></h1>
-                <div class="justify-content-center">
-                    <p>I’m a tech enthusiast driven by creativity and innovation. I build responsive web apps and websites, design sleek visuals, and prototype ideas into real, working products. From code to concept, I bring bold ideas to life ✨.</p>
-                </div>
-                <div class="social-icons my-3">
-                    <!-- LinkedIn -->
-                    <a href="http://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/dsdlqjde.json"
-                            trigger="hover"
-                            stroke="bold"
-                            colors="primary:#5691de,secondary:#5691de"
-                            style="width:45px;height:45px">
-                        </lord-icon>
-                    </a>
-                    <!-- GitHub -->
-                    <a href="http://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/jjxzcivr.json"
-                            trigger="hover"
-                            stroke="bold"
-                            colors="primary:#5691de,secondary:#5691de"
-                            style="width:45px;height:45px">
-                        </lord-icon>
-                    </a>
-                    <!-- X -->
-                    <a href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/jvodbtcr.json"
-                            trigger="hover"
-                            stroke="bold"
-                            state="hover-draw"
-                            colors="primary:#5691de,secondary:#5691de"
-                            style="width:45px;height:45px">
-                        </lord-icon>
-                    </a>
-                    <!-- Instagram -->
-                    <a href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/roscsuft.json"
-                            trigger="hover"
-                            stroke="bold"
-                            colors="primary:#5691de,secondary:#5691de"
-                            style="width:45px;height:45px">
-                        </lord-icon>
-                    </a>
-                </div>
+        <section class="hero text-center position-relative overflow-hidden">
+            <!-- Animated Floating Shapes -->
+            <div class="floating-shapes">
+                <div class="shape shape-1"></div>
+                <div class="shape shape-2"></div>
+                <div class="shape shape-3"></div>
+                <div class="shape shape-4"></div>
+                <div class="shape shape-5"></div>
             </div>
-            <div class="txt-center bottom">
+            <style>
+            .floating-shapes {
+                position: absolute;
+                top: 0; left: 0; width: 100%; height: 100%;
+                pointer-events: none;
+                z-index: 0;
+            }
+            .shape {
+                position: absolute;
+                border-radius: 50%;
+                opacity: 0.35;
+                filter: blur(2px);
+                animation: float 12s infinite ease-in-out alternate;
+            }
+            .shape-1 {
+                width: 120px; height: 120px;
+                background: linear-gradient(135deg, #2F6FC3 60%, #fff 100%);
+                top: 10%; left: 8%;
+                animation-delay: 0s;
+            }
+            .shape-2 {
+                width: 80px; height: 80px;
+                background: linear-gradient(135deg, #ffb347 60%, #fff 100%);
+                top: 60%; left: 15%;
+                animation-delay: 2s;
+            }
+            .shape-3 {
+                width: 100px; height: 100px;
+                background: linear-gradient(135deg, #e96443 60%, #fff 100%);
+                top: 30%; right: 10%;
+                animation-delay: 4s;
+            }
+            .shape-4 {
+                width: 60px; height: 60px;
+                background: linear-gradient(135deg, #43cea2 60%, #fff 100%);
+                bottom: 15%; right: 18%;
+                animation-delay: 6s;
+            }
+            .shape-5 {
+                width: 90px; height: 90px;
+                background: linear-gradient(135deg, #a770ef 60%, #fff 100%);
+                bottom: 5%; left: 40%;
+                animation-delay: 8s;
+            }
+            @keyframes float {
+                0%   { transform: translateY(0) scale(1); }
+                50%  { transform: translateY(-40px) scale(1.08); }
+                100% { transform: translateY(0) scale(1); }
+            }
+            </style>
+            <div class="container position-relative" style="z-index:1;">
+            <h1 class="larger">
+                Hi, I'm <span class="blue">Trust Onyekwere.</span>
+                <br>
+                <span class="sub type-gradient" id="type-effect"></span>
+                <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                const text = 'a Professional Software Developer';
+                const el = document.getElementById('type-effect');
+                let i = 0;
+                let started = false;
+
+                function typeLoop() {
+                    if (i <= text.length) {
+                    el.textContent = text.slice(0, i);
+                    i++;
+                    setTimeout(typeLoop, 70);
+                    }
+                }
+
+                function startTyping() {
+                    if (!started) {
+                    started = true;
+                    // Start typing from "-a", not the first character
+                    i = text.indexOf('a');
+                    if (i < 0) i = 0;
+                    el.textContent = '';
+                    typeLoop();
+                    }
+                }
+
+                // Start typing on scroll into view or on page refresh
+                function isInViewport(elem) {
+                    const rect = elem.getBoundingClientRect();
+                    return rect.top < window.innerHeight && rect.bottom > 0;
+                }
+
+                window.addEventListener('scroll', () => {
+                    if (isInViewport(el)) startTyping();
+                });
+
+                // Also start on page load if already in view
+                if (isInViewport(el)) startTyping();
+                });
+                </script>
+                <style>
+                .type-gradient {
+                background: linear-gradient(90deg, #222, #888, #222, #bbb, #222);
+                background-size: 200% auto;
+                color: transparent;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
+                animation: shine 2s linear infinite;
+                font-weight: bold;
+                letter-spacing: 1px;
+                }
+                @keyframes shine {
+                to {
+                    background-position: 200% center;
+                }
+                }
+                </style>
+            </h1>
+            <div class="justify-content-center">
+                <p>I’m a tech enthusiast driven by creativity and innovation. I build responsive web apps and websites, design sleek visuals, and prototype ideas into real, working products. From code to concept, I bring bold ideas to life ✨.</p>
+            </div>
+            <div class="social-icons my-3">
+                <!-- LinkedIn -->
+                <a href="http://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/dsdlqjde.json"
+                        trigger="hover"
+                        stroke="bold"
+                        colors="primary:#2F6FC3,secondary:#2F6FC3"
+                        style="width:45px;height:45px">
+                    </lord-icon>
+                </a>
+                <!-- GitHub -->
+                <a href="http://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/jjxzcivr.json"
+                        trigger="hover"
+                        stroke="bold"
+                        colors="primary:#2f6fc3,secondary:#2f6fc3"
+                        style="width:45px;height:45px">
+                    </lord-icon>
+                </a>
+                <!-- X -->
+                <a href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/jvodbtcr.json"
+                        trigger="hover"
+                        stroke="bold"
+                        state="hover-draw"
+                        colors="primary:#2F6FC3,secondary:#2F6FC3"
+                        style="width:45px;height:45px">
+                    </lord-icon>
+                </a>
+                <!-- Instagram -->
+                <a href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/roscsuft.json"
+                        trigger="hover"
+                        stroke="bold"
+                        colors="primary:#2F6FC3,secondary:#2F6FC3"
+                        style="width:45px;height:45px">
+                    </lord-icon>
+                </a>
+            </div>
+            <div class="txt-center bottom mt-5">
                 <button class="btn-y" onclick="location.href='#about'" style="text-decoration: none !important;">
                     <div class="scroll"> </div>
                 </button>
@@ -180,7 +299,7 @@
             </div>
         </section>
         <section class="bg-bll">
-            <div class="row text-center py-5" data-aos="fade-right" data-aos-delay="100">
+            <div class="row text-center py-5" data-aos="fade-right" data-aos-delay="400">
                 <div class="col-md-3">
                     <h1 class="fw-bold big-txt"><span class="counter" data-target="3">0</span>+</h1>
                     <p class="text-white">Years of experience</p>
@@ -210,7 +329,7 @@
                 <div class="row g-4 pb-5 mb-3">
                     <!-- Service Card -->
                     <div class="col-md-4">
-                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
                             <div class="justify-content-center">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/lzgmgrnn.json"
@@ -227,7 +346,7 @@
                     </div>
                     
                     <div class="col-md-4">
-                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
                             <div class="justify-content-center">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/exymduqj.json"
@@ -244,7 +363,7 @@
                     </div>
                     
                     <div class="col-md-4">
-                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
                             <div class="justify-content-center">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/wsaaegar.json"
@@ -261,7 +380,7 @@
                     </div>
                     
                     <div class="col-md-4">
-                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
                             <div class="justify-content-center">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/qfwgmyhc.json"
@@ -278,7 +397,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
                             <div class="justify-content-center">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/fwkrbvja.json"
@@ -295,7 +414,7 @@
                     </div>
 
                     <div class="col-md-4">
-                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="card glass-card text-center p-4" data-aos="zoom-in" data-aos-delay="400">
                             <div class="justify-content-center">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/fikcyfpp.json"
@@ -325,7 +444,7 @@
                 <!-- Portfolio Grid -->
                 <div class="row g-4 justify-content-center">
                     <!-- Project Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                         <a href="https://s-martpos.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
                                 <img src="img/S-Mart POS site.png" alt="Project 1" class="card-img-top img-fluid w-100">
@@ -342,7 +461,7 @@
                         </a>
                     </div>
                     <!-- Project Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                         <a href="https://coresystech.ng" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
                                 <img src="img/CORETECH site.png" alt="Project 1" class="card-img-top img-fluid w-100">
@@ -359,7 +478,7 @@
                         </a>
                     </div>
                     <!-- Project Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                         <a href="https://gosirvee.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
                                 <img src="img/gosirvee.png" alt="Project 1" class="card-img-top img-fluid w-100">
@@ -376,7 +495,7 @@
                         </a>
                     </div>
                     <!-- Project Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                         <a href="https://queennbethel.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
                                 <img src="img/q&b.png" alt="Project 1" class="card-img-top img-fluid w-100">
@@ -393,7 +512,7 @@
                         </a>
                     </div>
                     <!-- Project Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                         <a href="https://audi-landing-page-eight.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
                                 <img src="img/NOVA.png" alt="Project 1" class="card-img-top img-fluid w-100">
@@ -410,7 +529,7 @@
                         </a>
                     </div>
                     <!-- Project Card -->
-                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
                         <a href="https://www.onatechngc.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
                                 <img src="img/OnaTech website.png" alt="Project 1" class="card-img-top img-fluid w-100">
