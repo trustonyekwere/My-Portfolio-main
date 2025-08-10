@@ -146,7 +146,7 @@ html, body {
     transition: color 0.3s ease;
 }
 .nav-link:hover {
-    color: #e0e0e0 !important;
+    color: #a1a1a1 !important;
 }
 .btn-chat {
     background-color: #ffffff;
