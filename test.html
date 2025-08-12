@@ -3,202 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>portfolio test — smooth scroller</title>
+    <title>test</title>
+    <link rel="shortcut icon" href="img/my logo-no_bg.png" type="image/x-icon">
+    <!-- css -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="test.css">
+    <!-- AOS (Animate On Scroll Library) -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- icons -->
+    <script src="https://cdn.lordicon.com/lordicon.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-
-    <style>
-        :root{ --duration: 800ms; --indicator-right: 28px; --indicator-gap: 18px }
-        *{box-sizing:border-box}
-        body {
-            margin: 0;
-            font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-            height: 100vh;
-            overflow: hidden; /* hide native scroll */
-            color: #fff;
-            background: #d8f38a; /* match lime-ish background from image for easier preview */
-        }
-
-        /* viewport / scroller */
-        .viewport {
-            width:100vw;
-            height:100vh;
-            position:relative;
-            overflow:hidden;
-        }
-
-        .scroller {
-            width:100%;
-            will-change: transform;
-            transition: transform var(--duration) cubic-bezier(0.22, 0.8, 0.36, 1);
-            transform: translateY(0);
-        }
-
-        .item {
-            width:100vw;
-            height:100vh;
-            display:flex;
-            align-items:center;
-            justify-content:center;
-            font-size:6vw;
-            color:#0b1220;
-        }
-
-        .item-inner{ width:100%; height:100%; display:flex; align-items:center; justify-content:center }
-
-        .item:nth-child(odd){ background: linear-gradient(180deg,#fff,#fff) }
-        .item:nth-child(even){ background: linear-gradient(180deg,#2593,#2593) }
-
-        /* disables text highlighting */
-        /* .no-select{user-select:none;-webkit-user-select:none} */
-
-        /* SECTION INDICATOR — positioned right, vertically centered */
-        .section-indicator {
-            position: fixed;
-            right: var(--indicator-right);
-            top: 85%;
-            transform: translateY(-50%);
-            z-index: 120;
-            display: flex;
-            flex-direction: column;
-            gap: var(--indicator-gap);
-            align-items: center;
-            pointer-events: auto;
-        }
-
-        .indicator-item {
-            width: 14px;
-            height: 14px;
-            display: grid;
-            place-items: center;
-            transition: transform 260ms cubic-bezier(.2,.9,.25,1), background-color 260ms ease, border-color 260ms ease, opacity 260ms ease, box-shadow 260ms ease;
-            opacity: 0.95;
-            cursor: pointer;
-            background: transparent;
-            border: 0;
-            padding: 0;
-        }
-
-        /* DIAMOND (inactive style) — rotated filled square */
-        .indicator-item.diamond {
-            width: 12px;
-            height: 12px;
-            background: #3A84E1; /* blue base */
-            transform: rotate(45deg);
-            border-radius: 3px;
-            box-shadow: 0 2px 6px rgba(53,32,217,0.12);
-            border: 1px solid rgba(0,0,0,0.06);
-        }
-
-        /* OUTLINE (active style) — outline only, no fill */
-        .indicator-item.outline {
-            width: 18px;
-            height: 18px;
-            border: 2px solid #3A84E1; /* blue outline */
-            background: transparent;
-            border-radius: 3px;
-            transform: rotate(0deg) scale(1.06);
-            box-shadow: 0 6px 18px rgba(59,43,230,0.12);
-        }
-
-        /* small-screen tweaks */
-        @media (max-width: 480px){
-            :root{ --indicator-right: 16px; --indicator-gap: 12px }
-            .indicator-item{ width:16px; height:16px }
-            .indicator-item.diamond{ width:14px; height:14px }
-        }
-
-        .sidenav {
-            position: fixed;
-            left: -250px;
-            top: 100px;
-            height: 320px;
-            width: 250px;
-            background: #3A84E1;
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            justify-content: center;
-            z-index: 130;
-            transition: left 0.3s ease;
-            border-radius: 6px 6px 6px 6px;
-            padding-left: 18px;
-        }
-
-        .check {
-            position: fixed;
-            left: 28px;
-            top: 28px;
-            z-index: 140;
-            background: transparent;
-            border: none;
-            cursor: pointer;
-            padding: 0;
-        }
-
-        #checkbox {
-            display: none;
-        }
-
-        .toggle {
-            position: relative;
-            width: 40px;
-            height: 40px;
-            cursor: pointer;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-            transition-duration: .5s;
-        }
-
-        .bars {
-            width: 100%;
-            height: 4px;
-            background-color: #3A84E1;
-            border-radius: 4px;
-        }
-
-        #bar2 {
-            transition-duration: .8s;
-        }
-
-        #bar1,#bar3 {
-            width: 70%;
-        }
-
-        #checkbox:checked + .toggle .bars {
-            position: absolute;
-            transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle #bar2 {
-            transform: scaleX(0);
-            transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle #bar1 {
-            width: 100%;
-            transform: rotate(45deg);
-            transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle #bar3 {
-            width: 100%;
-            transform: rotate(-45deg);
-            transition-duration: .5s;
-        }
-
-        #checkbox:checked + .toggle {
-            transition-duration: .5s;
-            transform: rotate(180deg);
-        }
-
-        </style>
     </head>
     <body>
-        <div class="container">
         <!-- Toggle Button for Sidenav -->
         <button class="check" id="sidenavToggleBtn">
             <input type="checkbox" id="checkbox" />
@@ -210,11 +27,52 @@
         </button>
         <!-- Simple Sidenav (hidden by default, left side, not full height) -->
         <nav class="sidenav" id="sidenav">
-            <a href="#home" style="margin:18px 0;color:#fff;text-decoration:none;font-size:20px;display:flex;align-items:center;gap:10px;" title="Home">🏠 <span>Home</span></a>
-            <a href="#work" style="margin:18px 0;color:#fff;text-decoration:none;font-size:20px;display:flex;align-items:center;gap:10px;" title="Work">💼 <span>Work</span></a>
-            <a href="#shelf" style="margin:18px 0;color:#fff;text-decoration:none;font-size:20px;display:flex;align-items:center;gap:10px;" title="Shelf">📚 <span>Shelf</span></a>
-            <a href="#resume" style="margin:18px 0;color:#fff;text-decoration:none;font-size:20px;display:flex;align-items:center;gap:10px;" title="Resume">📄 <span>Resume</span></a>
+            <a href="#home" class="links" title="Home">🏠 <span>Home</span></a>
+            <a href="#work" class="links" title="Work">💼 <span>Work</span></a>
+            <a href="#shelf" class="links" title="Shelf">📚 <span>Shelf</span></a>
+            <a href="#resume" class="links mb-4" title="Resume">📄 <span>Resume</span></a>
+            <hr style="width:90%;border:1px solid rgba(255,255,255,0.2);margin:0 0 20px 0;">
+            
+            <div class="icons">
+                <!-- github -->
+                <a class="lords" href="https://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/jjxzcivr.json"
+                        trigger="hover"
+                        colors="primary:#fff,secondary:#fff"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </a>
+                <!-- linkedin -->
+                <a class="lords" href="https://www.linkedin.com/in/onyekwere-trust/" target="_blank" rel="noopener noreferrer">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/qgebwute.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </a>
+                <!-- x -->
+                <a class="lords" href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/yizwahhw.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </a>
+                <!-- instagram -->
+                <a class="lords" href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer">
+                    <lord-icon
+                        src="https://cdn.lordicon.com/tgyvxauj.json"
+                        trigger="hover"
+                        colors="primary:#ffffff,secondary:#ffffff"
+                        style="width:40px;height:40px">
+                    </lord-icon>
+                </a>
+            </div>
         </nav>
+
         <!-- Section indicator positioned to the right -->
         <div class="section-indicator" id="sectionIndicator" aria-hidden="false">
             <button class="indicator-item" data-index="0" aria-label="Go to Home" title="Home"></button>
@@ -233,7 +91,18 @@
                 <section class="item" id="misc"><div class="item-inner">and hope it works 💡</div></section>
             </div>
         </div>
-    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    
+    <!-- AOS JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <script>
+        AOS.init({
+            once: true  // Animation happens only once as you scroll down
+        });
+    </script>
 
     <script>
         const scroller = document.getElementById('scroller');
@@ -291,11 +160,19 @@
         });
 
         // Sidenav click support
-        document.querySelectorAll('.sidenav a').forEach((el, i) => {
-            el.addEventListener('click', function(e){
-                e.preventDefault();
-                goTo(i);
-                hideSidenav();
+        document.querySelectorAll('.sidenav a').forEach((el) => {
+            el.addEventListener('click', function(e) {
+                const href = el.getAttribute('href');
+
+                if (href && href.startsWith('#')) {
+                    // Internal section link
+                    e.preventDefault();
+                    const targetId = href.slice(1); // remove the #
+                    const targetIndex = Array.from(sections).findIndex(s => s.id === targetId);
+                    if (targetIndex !== -1) goTo(targetIndex);
+                }
+                
+                hideSidenav(); // Always close after click
             });
         });
 
@@ -337,6 +214,7 @@
             else goTo(index - 1);
         });
 
+        // Sidenav functionality
         const sidenav = document.getElementById('sidenav');
         const sidenavToggleBtn = document.getElementById('sidenavToggleBtn');
         const checkbox = document.getElementById('checkbox');
@@ -347,6 +225,7 @@
             sidenavVisible = true;
             checkbox.checked = true;
         }
+
         function hideSidenav() {
             sidenav.style.left = '-250px';
             sidenavVisible = false;
@@ -360,9 +239,21 @@
         sidenavToggleBtn.addEventListener('click', toggleSidenav);
         checkbox.addEventListener('change', toggleSidenav);
 
+        // Handle clicks *inside* sidenav
+        sidenav.addEventListener('click', function (e) {
+            const link = e.target.closest('a');
+            if (!link) return;
+
+            // Internal links (start with "#") → navigate + close
+            if (link.getAttribute('href').startsWith('#')) {
+                hideSidenav();
+            }
+            // External links → just let browser handle it (no preventDefault)
+        });
+
         // Hide sidenav when clicking outside
         document.addEventListener('click', function (e) {
-            if (sidenavVisible && !sidenav.contains(e.target) && !sidenavToggleBtn.contains(e.target)) {
+            if (sidenavVisible && !e.target.closest('#sidenav') && !sidenavToggleBtn.contains(e.target)) {
                 hideSidenav();
             }
         });
