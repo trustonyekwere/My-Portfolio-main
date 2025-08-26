@@ -16,6 +16,21 @@
 
     </head>
     <body>
+
+        <!-- Preloader -->
+        <div id="preloader">
+            <div class="three-body">
+                <div class="three-body__dot"></div>
+                <div class="three-body__dot"></div>
+                <div class="three-body__dot"></div>
+            </div>
+        </div>
+
+        <!-- brand logo -->
+        <a href="test.html">
+            <img class="check-2" src="img/my logo-no_bg.png" alt="brand_logo" loading="lazy">
+        </a>
+
         <!-- Toggle Button for Sidenav -->
         <button class="check" id="sidenavToggleBtn">
             <input type="checkbox" id="checkbox" />
@@ -25,7 +40,9 @@
                 <div class="bars" id="bar3"></div>
             </label>
         </button>
-        <!-- Simple Sidenav (hidden by default, left side, not full height) -->
+        
+
+        <!-- Simple Sidenav (hidden by default) --> 
         <nav class="sidenav" id="sidenav">
             <a href="#home" class="links" title="Home">🏠 <span>Home</span></a>
             <a href="#work" class="links" title="Work">💼 <span>Work</span></a>
@@ -73,13 +90,13 @@
             </div>
         </nav>
 
-        <!-- Section indicator positioned to the right -->
+        <!-- Section indicator -->
         <div class="section-indicator" id="sectionIndicator" aria-hidden="false">
             <button class="indicator-item" data-index="0" aria-label="Go to Home" title="Home"></button>
             <button class="indicator-item" data-index="1" aria-label="Go to Work" title="Work"></button>
             <button class="indicator-item" data-index="2" aria-label="Go to Shelf" title="Shelf"></button>
             <button class="indicator-item" data-index="3" aria-label="Go to Resume" title="Resume"></button>
-            <button class="indicator-item" data-index="4" aria-label="Go to Misc" title="Misc"></button>
+            <button class="indicator-item" data-index="4" aria-label="Go to Footer" title="Footer"></button>
         </div>
     
         <div class="viewport no-select" id="viewport">
@@ -88,7 +105,78 @@
                 <section class="item" id="work"><div class="item-inner">I build cool stuff 🧸</div></section>
                 <section class="item" id="shelf"><div class="item-inner">code everyday 🧑‍💻</div></section>
                 <section class="item" id="resume"><div class="item-inner">CSS and JS ✨</div></section>
-                <section class="item" id="misc"><div class="item-inner">and hope it works 💡</div></section>
+                <section class="item" id="misc">
+                    <div class="item-inner">
+                        <div class="container">
+                            <div class="row w-100 pt-5">
+                                <div class="mb-lg-0 mb-3 col-lg-6 col-md-12 col-sm-12">
+                                    SAY HELLO <br>
+                                    <a href="">trustonyekwere151@gmail.com</a> <br>
+                                    <a href="">+234 810 821 2511</a> <br>
+                                </div>
+                                <div class="col-lg-3 col-md-6 col-sm-6">
+
+                                </div>
+                                <div class="col-lg-3 col-md-12 col-sm-6 mb-lg-3">
+                                    Quick links <br>
+                                    <a href="">Home</a> <br>
+                                    <a href="">Work</a> <br>
+                                    <a href="">Resume</a> <br>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row w-100 pt-4">
+                                <div class="col-lg-9 mb-lg-0 mb-3">
+                                    &copy; Trust Onyekwere 2025
+                                </div>
+                                <div class="col-lg-3">
+                                    <div class="icons">
+                                        <!-- github -->
+                                        <a class="lords" href="https://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/jjxzcivr.json"
+                                                trigger="hover"
+                                                stroke="bold"
+                                                colors="primary:#3a84e1,secondary:#3a84e1"
+                                                style="width:45px;height:45px">
+                                            </lord-icon>
+                                        </a>
+                                        <!-- linkedin -->
+                                        <a class="lords" href="https://www.linkedin.com/in/onyekwere-trust/" target="_blank" rel="noopener noreferrer">
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/qgebwute.json"
+                                                trigger="hover"
+                                                stroke="bold"
+                                                colors="primary:#3a84e1,secondary:#3a84e1"
+                                                style="width:45px;height:45px">
+                                            </lord-icon>
+                                        </a>
+                                        <!-- x -->
+                                        <a class="lords" href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer">
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/yizwahhw.json"
+                                                trigger="hover"
+                                                stroke="bold"
+                                                colors="primary:#3a84e1,secondary:#3a84e1"
+                                                style="width:45px;height:45px">
+                                            </lord-icon>
+                                        </a>
+                                        <!-- instagram -->
+                                        <a class="lords" href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer">
+                                            <lord-icon
+                                                src="https://cdn.lordicon.com/tgyvxauj.json"
+                                                trigger="hover"
+                                                stroke="bold"
+                                                colors="primary:#3a84e1,secondary:#3a84e1"
+                                                style="width:45px;height:45px">
+                                            </lord-icon>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
             </div>
         </div>
 
@@ -101,6 +189,22 @@
     <script>
         AOS.init({
             once: true  // Animation happens only once as you scroll down
+        });
+    </script>
+
+    <!-- preloader JS -->
+    <script>
+        window.addEventListener('load', () => {
+        const pre = document.getElementById('preloader');
+        
+        // Ensure eyes animate slower if you change this later
+        document.documentElement.style.setProperty('--loader-speed', '12s');
+
+        // Keep preloader for extra 1 second(s)
+        setTimeout(() => {
+            pre.classList.add('hidden');
+            pre.addEventListener('transitionend', () => pre.remove());
+        }, 1000);
         });
     </script>
 
