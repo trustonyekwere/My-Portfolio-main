@@ -118,10 +118,10 @@ html, body {
 .social-icons lord-icon { vertical-align: middle; }
 
 .hero {
-    min-height: 78vh;
+    min-height: 90vh;
     display: flex;
     align-items: center;
-    padding: 3rem 0;
+    /* padding: 3rem 0; */
 }
 
 .hero .eyebrow { font-size: .95rem; color: #6c757d; margin-bottom: .8rem; }
@@ -138,26 +138,18 @@ html, body {
     margin-bottom: 1.4rem;
 }
 
-.btn-pill {
-    border-radius: 999px;
-    padding: .6rem 1.4rem;
-    font-weight:600;
-    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
-}
-
 /* Right illustration */
 .hero-illustration {
     display: flex;
-    justify-content: center;
-    align-items: center;
     height: 100%;
-    position: relative;
+    align-items: center;
+    justify-content: center;
 }
 .hero-illustration img {
     max-width: 100%;
     width: 520px;
     height: auto;
-    object-fit: contain;
+    object-fit: cover;
     transform: translateX(6%);
 }
 
