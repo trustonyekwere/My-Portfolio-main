@@ -188,14 +188,14 @@ html, body {
     background-color: var(--black);
     color: white;
     border: none;
-    padding: 15px 25px !important;
+    padding: 15px 20px !important;
     border-radius: 30px !important;
 }
 
 .btn-light {
     color: white;
     border: 2px solid var(--black) !important;
-    padding: 15px 25px !important;
+    padding: 15px 20px !important;
     border-radius: 30px !important;
 }
 
