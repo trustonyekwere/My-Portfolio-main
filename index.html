@@ -298,7 +298,7 @@
                 </div>
             </div>
         </section>
-        <section class="bg-bll">
+        <section class="bg-bll" id="counter-section">
             <div class="row text-center py-5" data-aos="fade-right" data-aos-delay="400">
                 <div class="col-md-3">
                     <h1 class="fw-bold big-txt"><span class="counter" data-target="3">0</span>+</h1>
@@ -452,7 +452,7 @@
                                     <p class="card-text">A minimal POS solution landing page built for efficiency, speed, and style.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h5 class="fw-bold mb-2">view site</h5>
+                                    <h5 class="mb-2">view site</h5>
                                     <div class="icons">
                                         <i class="bi bi-link-45deg fs-3"></i>
                                     </div>
@@ -469,7 +469,7 @@
                                     <p class="card-text">A professional website for CORE-TECH, designed with efficiency and precision.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h5 class="fw-bold mb-2">view site</h5>
+                                    <h5 class="mb-2">view site</h5>
                                     <div class="icons">
                                         <i class="bi bi-link-45deg fs-3"></i>
                                     </div>
@@ -486,7 +486,7 @@
                                     <p class="card-text">A professional flight service site showcasing comfort and reliability.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h5 class="fw-bold mb-2">view site</h5>
+                                    <h5 class="mb-2">view site</h5>
                                     <div class="icons">
                                         <i class="bi bi-link-45deg fs-3"></i>
                                     </div>
@@ -503,7 +503,7 @@
                                     <p class="card-text">A modern wedding site designed to celebrate timeless love.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h5 class="fw-bold mb-2">view site</h5>
+                                    <h5 class="mb-2">view site</h5>
                                     <div class="icons">
                                         <i class="bi bi-link-45deg fs-3"></i>
                                     </div>
@@ -520,7 +520,7 @@
                                     <p class="card-text">A sleek and futuristic landing page for a concept vehicle.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h5 class="fw-bold mb-2">view site</h5>
+                                    <h5 class="mb-2">view site</h5>
                                     <div class="icons">
                                         <i class="bi bi-link-45deg fs-3"></i>
                                     </div>
@@ -537,7 +537,7 @@
                                     <p class="card-text">A sleek, modern site for a tech firm that reflects innovation and reliability.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
-                                    <h5 class="fw-bold mb-2">view site</h5>
+                                    <h5 class="mb-2">view site</h5>
                                     <div class="icons">
                                         <i class="bi bi-link-45deg fs-3"></i>
                                     </div>
@@ -831,45 +831,64 @@
         });
     </script>
 
-    <!-- Type effect JS -->
+    <!-- Counter JS -->
     <script>
         const counters = document.querySelectorAll('.counter');
-        const speed = 90; // The lower the faster
+        const DEFAULT_DURATION = 1600; // ms
 
-        const animateCounters = () => {
-            counters.forEach(counter => {
-            const updateCount = () => {
-                const target = +counter.getAttribute('data-target');
-                const count = +counter.innerText;
+        const fmt = n => n.toLocaleString();
 
-                const increment = Math.ceil(target / speed);
+        function animateCounter(el, target, duration = DEFAULT_DURATION) {
+            // cancel any previous animation on this element
+            if (el._rafId) cancelAnimationFrame(el._rafId);
 
-                if (count < target) {
-                counter.innerText = count + increment;
-                setTimeout(updateCount, 20);
-                } else {
-                counter.innerText = target.toLocaleString();
-                }
+            const start = performance.now();
+            const to = Number(target) || 0;
+            const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
+
+            el.textContent = '0';
+
+            const tick = (now) => {
+            const t = Math.min(1, (now - start) / duration);
+            const eased = easeOutCubic(t);
+            const value = Math.round(to * eased);
+            el.textContent = fmt(value);
+
+            if (t < 1) {
+                el._rafId = requestAnimationFrame(tick);
+            } else {
+                el._rafId = null;
+                el.textContent = fmt(to);
+            }
             };
-            updateCount();
-            });
-        };
 
-        const options = {
-            threshold: 0.3
-        };
+            el._rafId = requestAnimationFrame(tick);
+        }
 
-        const observer = new IntersectionObserver(function(entries, observer) {
+        // Observe the whole section, not individual counters
+        const section = document.querySelector('#counter-section');
+        const io = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
             if (entry.isIntersecting) {
-                animateCounters();
-                observer.disconnect();
+                // start/restart animations on enter
+                counters.forEach(c => {
+                const target = c.dataset.target;
+                const dur = c.dataset.duration ? Number(c.dataset.duration) : DEFAULT_DURATION;
+                animateCounter(c, target, dur);
+                });
+            } else {
+                // optional: reset on exit so it replays from 0 next time
+                counters.forEach(c => {
+                if (c._rafId) cancelAnimationFrame(c._rafId);
+                c.textContent = '0';
+                });
             }
             });
-        }, options);
+        }, { threshold: 0.4 });
 
-        observer.observe(document.querySelector('.counter'));
+        if (section) io.observe(section);
     </script>
+
 
     <script>
         const dot = document.querySelector('.cursor-dot');
