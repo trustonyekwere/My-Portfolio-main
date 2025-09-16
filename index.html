@@ -940,53 +940,65 @@
     <!-- form JS -->
     <script>
         (function () {
-            const form = document.getElementById('contactForm');
+            const form = document.getElementById('contactForm'); // or #chatForm if that's your id
             const success = document.getElementById('successMsg');
             const sendBtn = document.getElementById('sendBtn');
 
             form.addEventListener('submit', async function (e) {
-            e.preventDefault();
+                e.preventDefault();
 
-            // Reset previous success
-            success.style.display = 'none';
+                // hide old success
+                success.style.display = 'none';
 
-            // Trigger browser validation UI (we use was-validated to show .invalid-feedback)
-            if (!form.checkValidity()) {
+                // show validation feedback if invalid
+                if (!form.checkValidity()) {
                 form.classList.add('was-validated');
                 return;
-            }
+                }
 
-            // form is valid -> prepare to send
-            form.classList.remove('was-validated'); // optional: remove old validation state
-            // disable inputs/buttons to prevent double submit
-            const controls = form.querySelectorAll('.form-control, button');
-            controls.forEach((el) => el.setAttribute('disabled', ''));
-
-            try {
+                // --- IMPORTANT: collect form data BEFORE disabling inputs ---
                 const formData = new FormData(form);
 
+                // Optional: debug log the fields you'll send (useful while testing)
+                // Uncomment to see what is being sent in DevTools console:
+                // for (const [k,v] of formData.entries()) console.log(k, ':', v);
+
+                // disable submit button (and optionally inputs) to prevent double-submit
+                sendBtn.setAttribute('disabled', '');
+                // If you want to disable inputs too (UX choice), do it AFTER creating formData:
+                const inputs = form.querySelectorAll('.form-control');
+                inputs.forEach(i => i.setAttribute('disabled', ''));
+
+                try {
                 const resp = await fetch(form.action, {
-                method: 'POST',
-                body: formData,
-                headers: { 'Accept': 'application/json' }
+                    method: 'POST',
+                    body: formData,
+                    headers: { 'Accept': 'application/json' } // use Formsubmit /ajax endpoint
                 });
 
-                if (!resp.ok) throw new Error('Network response was not OK');
+                // Try to parse JSON response from formsubmit for clearer errors
+                let data;
+                try { data = await resp.json(); } catch (err) { data = null; }
 
-                // success - show message and reset form
+                if (!resp.ok) {
+                    console.error('Formsubmit returned an error', resp.status, data);
+                    throw new Error(data?.message || 'Server error');
+                }
+
+                // Success
                 success.style.display = 'block';
                 form.reset();
-            } catch (err) {
-                // If Formsubmit returns an error or network fails, show something useful in console
-                console.error('Form submit failed:', err);
-                alert('Something went wrong sending the message. Try again later.');
-            } finally {
-                // always re-enable controls
-                controls.forEach((el) => el.removeAttribute('disabled'));
-            }
+                } catch (err) {
+                console.error('Submit failed:', err);
+                alert('Sending failed — check console for details or try again later.');
+                } finally {
+                // re-enable button & inputs
+                sendBtn.removeAttribute('disabled');
+                inputs.forEach(i => i.removeAttribute('disabled'));
+                }
             });
 
-            // Optional: remove was-validated when user starts typing (nicer UX)
+            // remove validation state as user types
             form.addEventListener('input', () => form.classList.remove('was-validated'));
         })();
     </script>
