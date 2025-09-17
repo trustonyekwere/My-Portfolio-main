@@ -941,41 +941,70 @@
     <script>
         (function () {
             const form = document.getElementById('contactForm');
-            const successMsg = document.getElementById('successMsg') || (function(){
-                const d = document.createElement('div');
-                d.id = 'successMsg';
-                d.style.display = 'none';
-                d.style.marginTop = '1rem';
-                d.textContent = 'Thanks — your message was sent!';
-                form.parentNode.insertBefore(d, form.nextSibling);
-                return d;
-            })();
+            if (!form) return console.warn('No #contactForm found');
+
+            // create success / error nodes if not present
+            const ensureNode = (id, text, color) => {
+                let node = document.getElementById(id);
+                if (!node) {
+                node = document.createElement('div');
+                node.id = id;
+                node.style.display = 'none';
+                node.style.marginTop = '1rem';
+                node.style.padding = '.75rem 1rem';
+                node.style.borderRadius = '6px';
+                node.style.fontSize = '.95rem';
+                node.style.boxSizing = 'border-box';
+                node.setAttribute('role', id === 'errorMsg' ? 'alert' : 'status');
+                form.parentNode.insertBefore(node, form.nextSibling);
+                }
+                node.textContent = text || '';
+                node.style.background = color?.bg || '';
+                node.style.border = color?.border || '';
+                node.style.color = color?.color || '';
+                return node;
+            };
+
+            const successMsg = ensureNode('successMsg', 'Thanks — your message was sent!', {
+                bg: '#e6ffed', border: '1px solid #a6f3b0', color: '#0b6623'
+            });
+
+            const errorMsg = ensureNode('errorMsg', '', {
+                bg: '#ffeef0', border: '1px solid #f5c2c7', color: '#842029'
+            });
+
+            // Helper to show/hide
+            const show = (node) => node.style.display = 'block';
+            const hide = (node) => node.style.display = 'none';
+            hide(successMsg); hide(errorMsg);
+
+            // Clear messages on input
+            form.addEventListener('input', () => {
+                form.classList.remove('was-validated');
+                hide(errorMsg);
+                hide(successMsg);
+            });
 
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
+                hide(successMsg);
+                hide(errorMsg);
 
-                // Hide any old success
-                successMsg.style.display = 'none';
-
-                // Show builtin invalid-feedback if fields are missing
                 if (!form.checkValidity()) {
                 form.classList.add('was-validated');
                 return;
                 }
 
-                // --- IMPORTANT: create FormData BEFORE disabling any inputs ---
+                // collect data BEFORE disabling elements
                 const formData = new FormData(form);
 
-                // Debug: list what will be sent (open DevTools Console)
-                console.group('Form data being sent');
-                for (const [k, v] of formData.entries()) console.log(k + ':', v);
-                console.groupEnd();
+                // Debug: optionally log entries while testing
+                // for (const [k,v] of formData.entries()) console.log(k, ':', v);
 
-                // Disable submit button to prevent double submits
+                // disable submit to prevent double submit (do after FormData)
                 const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
                 if (submitBtn) submitBtn.setAttribute('disabled', '');
 
-                // (Optional) disable inputs too, but AFTER creating FormData
                 const inputs = form.querySelectorAll('.form-control');
                 inputs.forEach(i => i.setAttribute('disabled', ''));
 
@@ -983,36 +1012,40 @@
                 const resp = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
-                    headers: { 'Accept': 'application/json' } // Formsubmit /ajax endpoint returns JSON
+                    headers: { 'Accept': 'application/json' } // Formsubmit /ajax returns JSON usually
                 });
 
-                // Try to show the raw response for debugging
-                let text = await resp.text();
-                try { console.log('Response JSON:', JSON.parse(text)); }
-                catch (err) { console.log('Response text:', text); }
+                // read text then try to parse JSON (so we can show server message if any)
+                const raw = await resp.text();
+                let parsed = null;
+                try { parsed = JSON.parse(raw); } catch (err) { /* not JSON */ }
 
                 if (!resp.ok) {
-                    console.error('Formsubmit returned non-OK status', resp.status, text);
-                    alert('There was an error sending the message. Check console (Network tab) for details.');
+                    // Build a helpful error message for the user
+                    let serverMsg = parsed?.message || parsed?.errors || raw || 'Server returned an error.';
+                    if (typeof serverMsg === 'object') serverMsg = JSON.stringify(serverMsg);
+                    errorMsg.textContent = `Send failed — server responded ${resp.status}. ${serverMsg}`;
+                    show(errorMsg);
+                    console.error('Formsubmit error response:', resp.status, raw);
                     return;
                 }
 
-                // success
-                successMsg.style.display = 'block';
+                // success path
+                successMsg.textContent = parsed?.message || 'Thanks — your message was sent!';
+                show(successMsg);
                 form.reset();
                 } catch (err) {
-                console.error('Network or CORS error:', err);
-                alert('Send failed — network or CORS issue. See console for details.');
+                // network / CORS / other fatal errors
+                console.error('Network/CORS error during submit:', err);
+                errorMsg.textContent = 'Send failed — network or CORS error. Try again, or check the console for details.';
+                show(errorMsg);
                 } finally {
-                // re-enable controls
                 if (submitBtn) submitBtn.removeAttribute('disabled');
                 inputs.forEach(i => i.removeAttribute('disabled'));
                 }
             });
-
-            // Clean validation state as user types
-            form.addEventListener('input', () => form.classList.remove('was-validated'));
         })();
     </script>
+
 </body>
 </html>
