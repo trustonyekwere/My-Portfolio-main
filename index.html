@@ -99,64 +99,70 @@
             <h1 class="larger">
                 Hi, I'm <span class="blue">Trust Onyekwere.</span>
                 <br>
-                <span class="sub type-gradient" id="type-effect"></span>
-                <script>
-                document.addEventListener('DOMContentLoaded', () => {
-                const text = 'a Professional Software Developer';
-                const el = document.getElementById('type-effect');
-                let i = 0;
-                let started = false;
+                <div class="d-none d-sm-block">
 
-                function typeLoop() {
-                    if (i <= text.length) {
-                    el.textContent = text.slice(0, i);
-                    i++;
-                    setTimeout(typeLoop, 70);
+                    <span class="sub type-gradient" id="type-effect"></span>
+
+                    <script>
+                    document.addEventListener('DOMContentLoaded', () => {
+                    const text = 'a Professional Software Developer';
+                    const el = document.getElementById('type-effect');
+                    let i = 0;
+                    let started = false;
+
+                    function typeLoop() {
+                        if (i <= text.length) {
+                        el.textContent = text.slice(0, i);
+                        i++;
+                        setTimeout(typeLoop, 70);
+                        }
                     }
-                }
 
-                function startTyping() {
-                    if (!started) {
-                    started = true;
-                    // Start typing from "-a", not the first character
-                    i = text.indexOf('a');
-                    if (i < 0) i = 0;
-                    el.textContent = '';
-                    typeLoop();
+                    function startTyping() {
+                        if (!started) {
+                        started = true;
+                        // Start typing from "-a", not the first character
+                        i = text.indexOf('a');
+                        if (i < 0) i = 0;
+                        el.textContent = '';
+                        typeLoop();
+                        }
                     }
-                }
 
-                // Start typing on scroll into view or on page refresh
-                function isInViewport(elem) {
-                    const rect = elem.getBoundingClientRect();
-                    return rect.top < window.innerHeight && rect.bottom > 0;
-                }
+                    // Start typing on scroll into view or on page refresh
+                    function isInViewport(elem) {
+                        const rect = elem.getBoundingClientRect();
+                        return rect.top < window.innerHeight && rect.bottom > 0;
+                    }
 
-                window.addEventListener('scroll', () => {
+                    window.addEventListener('scroll', () => {
+                        if (isInViewport(el)) startTyping();
+                    });
+
+                    // Also start on page load if already in view
                     if (isInViewport(el)) startTyping();
-                });
+                    });
+                    </script>
 
-                // Also start on page load if already in view
-                if (isInViewport(el)) startTyping();
-                });
-                </script>
+                </div>
+
                 <style>
-                .type-gradient {
-                background: linear-gradient(90deg, #222, #888, #222, #bbb, #222);
-                background-size: 200% auto;
-                color: transparent;
-                background-clip: text;
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                animation: shine 2s linear infinite;
-                font-weight: bold;
-                letter-spacing: 1px;
-                }
-                @keyframes shine {
-                to {
-                    background-position: 200% center;
-                }
-                }
+                    .type-gradient {
+                    background: linear-gradient(90deg, #222, #888, #222, #bbb, #222);
+                    background-size: 200% auto;
+                    color: transparent;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    animation: shine 2s linear infinite;
+                    font-weight: bold;
+                    letter-spacing: 1px;
+                    }
+                    @keyframes shine {
+                    to {
+                        background-position: 200% center;
+                    }
+                    }
                 </style>
             </h1>
             <div class="justify-content-center">
@@ -276,7 +282,7 @@
                         <h2 class="blue text-start fw-bold display-5" data-aos="fade-left">About Me</h2>
                         <div data-aos="fade-left">
                             <p class="lead">
-                            Hi there! I’m <strong>Trust Onyekwere</strong>, a DIY enthusiast, web developer,
+                            Hi there! I’m Trust Onyekwere, a DIY enthusiast, web developer,
                             and graphics designer passionate about crafting interactive digital
                             experiences. Whether I’m building custom gaming controllers, designing
                             sleek UI components, or animating in Blender, I approach every project
@@ -309,7 +315,7 @@
                     <p class="text-white">Projects completed</p>
                 </div>
                 <div class="col-md-3">
-                    <h1 class="fw-bold big-txt"><span class="counter" data-target="99">0</span>%</h1>
+                    <h1 class="fw-bold big-txt"><span class="counter" data-target="98">0</span>%</h1>
                     <p class="feature-desc text-white">Satisfaction rate from clients</p>
                 </div>
                 <div class="col-md-3">
@@ -428,17 +434,17 @@
         <section class="portfolio-section py-5 bg-black text-white" id="projects">
             <div class="container text-center"><br>
                 <h2 class="fw-bold display-5 mb-4" data-aos="fade-up">My Work</h2>
-                <p data-aos="fade-up">Below are some of the projects i've built over the years, either individually or in collaboration with other software developers.</p><br><br>
+                <p class="lighter" data-aos="fade-up">Below are some of the projects I’ve built over the years, both independently and in collaboration with other developers. Each one highlights my growth, creativity, and problem-solving skills, as well as my commitment to building practical, well-crafted solutions while exploring diverse technologies.</p><br><br>
 
                 <!-- Portfolio Grid -->
                 <div class="row g-4 justify-content-center">
                     <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
-                        <a href="https://s-martpos.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://coresystech.ng" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/S-Mart POS site.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/CORETECH site.png" alt="Project 1" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A minimal POS solution landing page built for efficiency, speed, and style.</p>
+                                    <p class="card-text">A professional website for CORE-TECH, designed with efficiency and precision.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
@@ -451,11 +457,11 @@
                     </div>
                     <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
-                        <a href="https://coresystech.ng" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://s-martpos.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/CORETECH site.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/S-Mart POS site.png" alt="Project 1" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A professional website for CORE-TECH, designed with efficiency and precision.</p>
+                                    <p class="card-text">A minimal POS solution landing page built for efficiency, speed, and style.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
@@ -502,11 +508,11 @@
                     </div>
                     <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
-                        <a href="https://audi-landing-page-eight.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://www.onatechngc.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/NOVA.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/OnaTech website.png" alt="Project 1" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A sleek and futuristic landing page for a concept vehicle.</p>
+                                    <p class="card-text">A sleek, modern site for a tech firm that reflects innovation and reliability.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
@@ -519,11 +525,11 @@
                     </div>
                     <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-delay="400">
-                        <a href="https://www.onatechngc.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://audi-landing-page-eight.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/OnaTech website.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/NOVA.png" alt="Project 1" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A sleek, modern site for a tech firm that reflects innovation and reliability.</p>
+                                    <p class="card-text">A sleek and futuristic landing page for a concept vehicle.</p>
                                 </div>
                                 <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
@@ -544,7 +550,7 @@
             <section id="contact">
                 <div id="c-tact" class="sent" data-aos="fade-up">
                     <h1 class="text-center">Send me a message!</h1>
-                    <p class="text-center">Got a question or a job offer, or just want to say hi? Go ahead.</p>
+                    <p class="text-center">Got a question or a job offer, or just want to say hi? Go ahead!</p>
                     
                     
                     <form id="contactForm" action="https://formsubmit.co/2563e7495c9fe09c84919bf99113aef3" method="POST" novalidate>
@@ -592,7 +598,7 @@
                             placeholder="Write your message..."
                             required
                             ></textarea>
-                            <div class="invalid-feedback">Please enter a message.</div>
+                            <div class="invalid-feedback">Don't be shy, say hello</div>
                         </div>
 
                         <div class="txt-center my-3">
@@ -629,51 +635,60 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6" data-aos="fade-up"><br>
-                    <h5>TRUST ONYEKWERE</h5><br>
-                    <p>A creative and tech-driven individual, building innovative prototypes, apps, and digital content to inspire and empower others.</p>
+                    <h5>TRUST ONYEKWERE</h5>
+                    <p class="fs-6 lighter mt-3">I’m passionate about merging technology and creativity to design modern, efficient websites and web apps. I build innovative prototypes and craft digital experiences that engage and inspire.</p>
+                    <p class="fs-6 lighter">
+                        Feel free to reach out for collaborations or just to say hi 😊
+                    </p>
                 </div>
-                <div class="col-md-6 text-md-end mt-4 mt-md-0" data-aos="fade-up">
+                <div class="col-md-6 text-md-end mt-4" data-aos="fade-up">
+
                     <h5>SOCIALS</h5>
-                    <!-- LinkedIn -->
-                    <a href="https://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer">
-                        <lord-icon
-                            src="https://cdn.lordicon.com/qgebwute.json"
+
+                    <div class="mt-3">
+
+                        <!-- LinkedIn -->
+                        <a href="https://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/qgebwute.json"
+                                trigger="hover"
+                                stroke="bold"
+                                colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px">
+                            </lord-icon>
+                        </a>
+                        <!-- Github -->
+                        <a href="https://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
+                            <lord-icon
+                            src="https://cdn.lordicon.com/jjxzcivr.json"
                             trigger="hover"
-                            stroke="bold"
-                            colors="primary:#ffffff,secondary:#ffffff"
-                            style="width:30px;height:30px">
-                        </lord-icon>
-                    </a>
-                    <!-- Github -->
-                    <a href="https://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
-                        <lord-icon
-                        src="https://cdn.lordicon.com/jjxzcivr.json"
-                        trigger="hover"
-                            stroke="bold"
-                            colors="primary:#ffffff,secondary:#ffffff"
-                            style="width:30px;height:30px">
-                        </lord-icon>
-                    </a>
-                    <!-- X -->
-                    <a href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer">
-                        <lord-icon
-                        src="https://cdn.lordicon.com/yizwahhw.json"
-                        trigger="hover"
-                        stroke="bold"
-                        colors="primary:#ffffff,secondary:#ffffff"
-                        style="width:30px;height:30px">
-                    </lord-icon>
-                </a>
-                <!-- Insta -->
-                <a href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer">
-                    <lord-icon
-                            src="https://cdn.lordicon.com/tgyvxauj.json"
-                            trigger="hover"
-                            stroke="bold"
-                            colors="primary:#ffffff,secondary:#ffffff"
-                            style="width:30px;height:30px">
-                        </lord-icon>
-                    </a>
+                                stroke="bold"
+                                colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px">
+                            </lord-icon>
+                        </a>
+                        <!-- X -->
+                        <a href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/yizwahhw.json"
+                                trigger="hover"
+                                stroke="bold"
+                                colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px">
+                            </lord-icon>
+                        </a>
+                        <!-- Insta -->
+                        <a style="margin-right: 0 !important;" href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer">
+                            <lord-icon
+                                src="https://cdn.lordicon.com/tgyvxauj.json"
+                                trigger="hover"
+                                stroke="bold"
+                                colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px">
+                            </lord-icon>
+                        </a>
+
+                    </div>
                 </div>
             </div>
             <br><br><hr><br>

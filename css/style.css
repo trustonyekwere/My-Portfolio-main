@@ -27,13 +27,6 @@ a {
 html, body {
     max-width: 100% !important;
     overflow-x: hidden !important;
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE/Edge */
-}
-
-/* Chrome, Safari, Opera */
-body::-webkit-scrollbar {
-    display: none;
 }
 
 .hero {
@@ -57,6 +50,10 @@ body::-webkit-scrollbar {
 .larger {
     margin-top: 100px !important;
     font-size: 2.8rem;
+}
+
+.lighter {
+    font-weight: 400 !important;
 }
 
 .larger span.blue {
@@ -336,7 +333,6 @@ hr {
 .copyright {
     text-align: center;
     color: #f9f9f9;
-    margin-top: 1rem;
     font-size: 0.875rem;
 }
 
@@ -419,7 +415,7 @@ a > .btn-z {
     background: rgba(14, 14, 14, 0.8);
     color: #fff;
     opacity: 0;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
 }
 
 .portfolio-card:hover .overlay {
@@ -471,7 +467,8 @@ a > .btn-z {
 }
 
 .lead {
-    font-size: 1.2rem !important;
+    font-size: 1rem !important;
+    font-weight: 500 !important;
     color: #fff !important;
 }
 
