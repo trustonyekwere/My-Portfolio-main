@@ -558,7 +558,7 @@
                     <p class="text-center">Got a question or a job offer, or just want to say hi? Go ahead.</p>
                     
                     
-                    <form id="contactForm" action="https://formsubmit.co/ajax/2563e7495c9fe09c84919bf99113aef3" method="POST" novalidate>
+                    <form id="contactForm" action="https://formsubmit.co/2563e7495c9fe09c84919bf99113aef3" method="POST" novalidate>
                         <!-- honeypot -->
                         <input type="text" name="_honey" style="display:none">
                         <!-- disable captcha -->
@@ -940,32 +940,42 @@
     <!-- form JS -->
     <script>
         (function () {
-            const form = document.getElementById('contactForm'); // or #chatForm if that's your id
-            const success = document.getElementById('successMsg');
-            const sendBtn = document.getElementById('sendBtn');
+            const form = document.getElementById('contactForm');
+            const successMsg = document.getElementById('successMsg') || (function(){
+                const d = document.createElement('div');
+                d.id = 'successMsg';
+                d.style.display = 'none';
+                d.style.marginTop = '1rem';
+                d.textContent = 'Thanks — your message was sent!';
+                form.parentNode.insertBefore(d, form.nextSibling);
+                return d;
+            })();
 
-            form.addEventListener('submit', async function (e) {
+            form.addEventListener('submit', async (e) => {
                 e.preventDefault();
 
-                // hide old success
-                success.style.display = 'none';
+                // Hide any old success
+                successMsg.style.display = 'none';
 
-                // show validation feedback if invalid
+                // Show builtin invalid-feedback if fields are missing
                 if (!form.checkValidity()) {
                 form.classList.add('was-validated');
                 return;
                 }
 
-                // --- IMPORTANT: collect form data BEFORE disabling inputs ---
+                // --- IMPORTANT: create FormData BEFORE disabling any inputs ---
                 const formData = new FormData(form);
 
-                // Optional: debug log the fields you'll send (useful while testing)
-                // Uncomment to see what is being sent in DevTools console:
-                // for (const [k,v] of formData.entries()) console.log(k, ':', v);
+                // Debug: list what will be sent (open DevTools Console)
+                console.group('Form data being sent');
+                for (const [k, v] of formData.entries()) console.log(k + ':', v);
+                console.groupEnd();
 
-                // disable submit button (and optionally inputs) to prevent double-submit
-                sendBtn.setAttribute('disabled', '');
-                // If you want to disable inputs too (UX choice), do it AFTER creating formData:
+                // Disable submit button to prevent double submits
+                const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
+                if (submitBtn) submitBtn.setAttribute('disabled', '');
+
+                // (Optional) disable inputs too, but AFTER creating FormData
                 const inputs = form.querySelectorAll('.form-control');
                 inputs.forEach(i => i.setAttribute('disabled', ''));
 
@@ -973,32 +983,34 @@
                 const resp = await fetch(form.action, {
                     method: 'POST',
                     body: formData,
-                    headers: { 'Accept': 'application/json' } // use Formsubmit /ajax endpoint
+                    headers: { 'Accept': 'application/json' } // Formsubmit /ajax endpoint returns JSON
                 });
 
-                // Try to parse JSON response from formsubmit for clearer errors
-                let data;
-                try { data = await resp.json(); } catch (err) { data = null; }
+                // Try to show the raw response for debugging
+                let text = await resp.text();
+                try { console.log('Response JSON:', JSON.parse(text)); }
+                catch (err) { console.log('Response text:', text); }
 
                 if (!resp.ok) {
-                    console.error('Formsubmit returned an error', resp.status, data);
-                    throw new Error(data?.message || 'Server error');
+                    console.error('Formsubmit returned non-OK status', resp.status, text);
+                    alert('There was an error sending the message. Check console (Network tab) for details.');
+                    return;
                 }
 
-                // Success
-                success.style.display = 'block';
+                // success
+                successMsg.style.display = 'block';
                 form.reset();
                 } catch (err) {
-                console.error('Submit failed:', err);
-                alert('Sending failed — check console for details or try again later.');
+                console.error('Network or CORS error:', err);
+                alert('Send failed — network or CORS issue. See console for details.');
                 } finally {
-                // re-enable button & inputs
-                sendBtn.removeAttribute('disabled');
+                // re-enable controls
+                if (submitBtn) submitBtn.removeAttribute('disabled');
                 inputs.forEach(i => i.removeAttribute('disabled'));
                 }
             });
 
-            // remove validation state as user types
+            // Clean validation state as user types
             form.addEventListener('input', () => form.classList.remove('was-validated'));
         })();
     </script>
