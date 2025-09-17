@@ -229,10 +229,34 @@
                     <img src="img/my logo-no_bg.png" class="d-block d-md-none text-start" style="width: 3em;" alt="">
                 </a>
             </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div style="height: 60px !important;" class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+            <div class="navbar-toggler" id="sidenavToggleBtn">
+                <input type="checkbox" id="checkbox"/>
+                <label for="checkbox" class="toggle">
+                    <div class="bars" id="bar1"></div>
+                    <div class="bars" id="bar2"></div>
+                    <div class="bars" id="bar3"></div>
+                </label>
+            </div>
+            <style>
+                .navbar-toggler,
+                .toggle,
+                #checkbox {
+                    outline: none !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                }
+                .navbar-toggler:focus,
+                .navbar-toggler:active,
+                #checkbox:focus,
+                #checkbox:active,
+                .toggle:focus,
+                .toggle:active {
+                    outline: none !important;
+                    box-shadow: none !important;
+                    border: none !important;
+                } 
+            </style>
+            <div style="height: 60% !important;" class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-4 mb-md-0">
                     <li class="nav-item">
                         <a class="nav-link text-black" aria-current="page" href="#home">Home</a>
@@ -798,52 +822,54 @@
         });
     </script>
 
+    <!-- Sidenav functionality: Only open/close when clicking the hamburger icon or checkbox itself, with working animation -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-        const nav       = document.getElementById('mainNav');
-        const toggle    = document.getElementById('sidenavToggle');
-        const sideNav   = document.getElementById('sideNav');
-        const closeBtn  = document.getElementById('sidenavClose');
-        const overlay   = document.getElementById('overlay');
+        const nav = document.querySelector('.navbar');
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                nav.classList.toggle('scrolled', window.scrollY > 50);
+            });
+        }
 
-        // Sticky background on scroll
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) nav.classList.add('scrolled');
-            else nav.classList.remove('scrolled');
-        });
+        const sidenavToggleBtn = document.getElementById('sidenavToggleBtn');
+        const navbarCollapse = document.getElementById('navbarSupportedContent');
+        const checkbox = document.getElementById('checkbox');
+        const hamburgerIcon = sidenavToggleBtn?.querySelector('label.toggle');
 
-        // Open sidenav
-        toggle.addEventListener('click', () => {
-            sideNav.classList.add('open');
-            overlay.classList.add('active');
-        });
+        function isValidToggleClick(target) {
+            return (
+                target === checkbox ||
+                target === hamburgerIcon ||
+                hamburgerIcon.contains(target)
+            );
+        }
 
-        // Close sidenav
-        const closeSidenav = () => {
-            sideNav.classList.remove('open');
-            overlay.classList.remove('active');
-        };
-        closeBtn.addEventListener('click', closeSidenav);
-        overlay.addEventListener('click', closeSidenav);
-        });
-    </script>
+        function toggleMenu(e) {
+            if (isValidToggleClick(e.target)) {
+                checkbox.checked = !checkbox.checked;
+                navbarCollapse.classList.toggle('show', checkbox.checked);
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }
 
-    <script>
-        const burgerBtn = document.getElementById('burgerBtn');
-        const sidenav = document.getElementById('sideNav');
-        const overlay = document.getElementById('overlay');
+        if (hamburgerIcon && navbarCollapse && checkbox) {
+            // Only attach listener to label and checkbox, not the button
+            hamburgerIcon.addEventListener('click', toggleMenu);
+            checkbox.addEventListener('click', toggleMenu);
+        }
 
-        burgerBtn.addEventListener('click', () => {
-            burgerBtn.classList.toggle('open');
-            sidenav.classList.toggle('open');
-            overlay.classList.toggle('active');
-        });
-
-        overlay.addEventListener('click', () => {
-            burgerBtn.classList.remove('open');
-            sidenav.classList.remove('open');
-            overlay.classList.remove('active');
-        });
+        // Prevent button from toggling when not clicked on toggle
+        if (sidenavToggleBtn) {
+            sidenavToggleBtn.addEventListener('click', (e) => {
+                if (!isValidToggleClick(e.target)) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                }
+            });
+        }
+    });
     </script>
 
     <!-- Counter JS -->
