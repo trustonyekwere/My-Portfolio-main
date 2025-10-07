@@ -1,8 +1,9 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'Cal Sans', sans-serif;
+    font-family: 'josefin', sans-serif;
     scroll-behavior: smooth;
+    font-weight: 600;
 }
 
 a {
@@ -19,9 +20,9 @@ a {
     src: url(/fonts/ShameimaruSans.ttf);
 }
 
-.cal-sans-regular {
-    font-family: "Cal Sans", sans-serif;
-    font-style: normal !important;
+@font-face {
+    font-family: josefin;
+    src: url(/fonts/JosefinSans-Medium.ttf);
 }
 
 html, body {
@@ -391,8 +392,8 @@ a > .btn-z {
 
 /* card css */
 .card-text {
-    font-weight: 500 !important;
-    font-size: 1rem !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
     line-height: 1.5 !important;
 }
 
@@ -467,7 +468,7 @@ a > .btn-z {
 }
 
 .lead {
-    font-size: 1rem !important;
+    font-size: 1.1rem !important;
     font-weight: 500 !important;
     color: #fff !important;
 }
