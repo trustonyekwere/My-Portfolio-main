@@ -391,8 +391,13 @@ a > .btn-z {
 }
 
 /* card css */
-.card-text {
+.card-title {
     font-weight: 600 !important;
+    font-size: 1.7rem !important;
+}
+
+.card-text {
+    font-weight: 500 !important;
     font-size: 1.1rem !important;
     line-height: 1.5 !important;
 }
@@ -621,19 +626,16 @@ nav ul li a.active::after {
 
 /* glass card css */
 .glass-card {
-    background: rgba(255, 255, 255, 0.2) !important;
+    background: #eee !important;
     border: none;
-    border-radius: 1rem;
-    backdrop-filter: blur(8px) !important;
-    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 1.2rem !important;
     transition: all 0.3s ease !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
 }
 
 .glass-card:hover {
-    transform: translateY(-5px) !important;
+    transform: translateY(-10px) !important;
     box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
-    border: #518CDA 1px solid !important;
 }
 
 .check {
