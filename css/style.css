@@ -628,9 +628,9 @@ nav ul li a.active::after {
 .glass-card {
     background: #eee !important;
     border: none;
-    border-radius: 1.2rem !important;
+    border-radius: .8rem !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
-    transition: transform 0.3s ease !important;
+    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* 👈 smooth hover effect */
 }
 
 .glass-card:hover {
@@ -719,4 +719,8 @@ nav ul li a.active::after {
 #checkbox:checked + .toggle {
     transition-duration: .5s;
     transform: rotate(180deg);
+}
+
+.heavy {
+    font-weight: 700 !important;
 }
