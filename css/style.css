@@ -393,19 +393,19 @@ a > .btn-z {
 /* card css */
 .card-title {
     font-weight: 600 !important;
-    font-size: 1.7rem !important;
+    font-size: 1.5rem !important;
 }
 
 .card-text {
     font-weight: 500 !important;
-    font-size: 1.1rem !important;
+    font-size: 1rem !important;
     line-height: 1.5 !important;
 }
 
 /* projects card css */
 .portfolio-card {
     cursor: pointer;
-    transition: transform 0.4s ease;
+    transition: transform 0.3s ease;
 }
 
 .portfolio-card:hover {
@@ -629,12 +629,13 @@ nav ul li a.active::after {
     background: #eee !important;
     border: none;
     border-radius: 1.2rem !important;
-    transition: all 0.3s ease !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
+    transition: transform 0.3s ease !important;
 }
 
 .glass-card:hover {
-    transform: translateY(-10px) !important;
+    /* transform: translateY(-10px) !important; //animation slides up */
+    transform: scale(1.05) !important; /*//animation zooms in */
     box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
 }
 
