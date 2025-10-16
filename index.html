@@ -37,69 +37,68 @@
     <header id="home">
         <!-- Hero Section -->
         <section class="hero text-center position-relative overflow-hidden">
-            <!-- Animated Floating Shapes -->
-            <div class="floating-shapes">
-                <div class="shape shape-1"></div>
-                <div class="shape shape-2"></div>
-                <div class="shape shape-3"></div>
-                <div class="shape shape-4"></div>
-                <div class="shape shape-5"></div>
-            </div>
+            <!-- Animated Diagonal Moving Lines Background -->
+            <div class="diagonal-lines-bg"></div>
             <style>
-            .floating-shapes {
+            .diagonal-lines-bg {
                 position: absolute;
                 top: 0; left: 0; width: 100%; height: 100%;
-                pointer-events: none;
+                background: #fff;
                 z-index: 0;
+                pointer-events: none;
+                overflow: hidden;
             }
-            .shape {
+            .diagonal-lines-bg .line {
                 position: absolute;
-                border-radius: 50%;
-                opacity: 0.35;
-                filter: blur(2px);
-                animation: float 12s infinite ease-in-out alternate;
+                width: 40px;
+                height: 3px;
+                background: linear-gradient(120deg, #4B88D7 80%, transparent 100%);
+                opacity: 0.18;
+                border-radius: 2px;
+                pointer-events: none;
+                transform: rotate(30deg);
+                animation: move-diagonal 3.5s linear infinite;
             }
-            .shape-1 {
-                width: 120px; height: 120px;
-                background: linear-gradient(135deg, #2F6FC3 60%, #fff 100%);
-                top: 10%; left: 8%;
-                animation-delay: 0s;
-            }
-            .shape-2 {
-                width: 80px; height: 80px;
-                background: linear-gradient(135deg, #ffb347 60%, #fff 100%);
-                top: 60%; left: 15%;
-                animation-delay: 2s;
-            }
-            .shape-3 {
-                width: 100px; height: 100px;
-                background: linear-gradient(135deg, #e96443 60%, #fff 100%);
-                top: 30%; right: 10%;
-                animation-delay: 4s;
-            }
-            .shape-4 {
-                width: 60px; height: 60px;
-                background: linear-gradient(135deg, #43cea2 60%, #fff 100%);
-                bottom: 15%; right: 18%;
-                animation-delay: 6s;
-            }
-            .shape-5 {
-                width: 90px; height: 90px;
-                background: linear-gradient(135deg, #a770ef 60%, #fff 100%);
-                bottom: 5%; left: 40%;
-                animation-delay: 8s;
-            }
-            @keyframes float {
-                0%   { transform: translateY(0) scale(1); }
-                50%  { transform: translateY(-40px) scale(1.08); }
-                100% { transform: translateY(0) scale(1); }
+            @keyframes move-diagonal {
+                0% {
+                    top: var(--startY);
+                    left: var(--startX);
+                }
+                100% {
+                    top: var(--endY);
+                    left: var(--endX);
+                }
             }
             </style>
+            <script>
+            // Generate short blue lines moving diagonally across the screen
+            (function() {
+                const bg = document.querySelector('.diagonal-lines-bg');
+                if (!bg) return;
+                const linesCount = 18;
+                for (let i = 0; i < linesCount; i++) {
+                    const line = document.createElement('div');
+                    line.className = 'line';
+                    // Start and end positions for diagonal movement
+                    const startX = Math.random() * 100;
+                    const startY = Math.random() * 60;
+                    const endX = startX + 30 + Math.random() * 20;
+                    const endY = startY + 60 + Math.random() * 20;
+                    line.style.setProperty('--startX', `${startX}%`);
+                    line.style.setProperty('--startY', `${startY}%`);
+                    line.style.setProperty('--endX', `${endX}%`);
+                    line.style.setProperty('--endY', `${endY}%`);
+                    // Stagger animation delay for continuous effect
+                    line.style.animationDelay = `${(Math.random() * 3.5).toFixed(2)}s`;
+                    bg.appendChild(line);
+                }
+            })();
+            </script>
             <div class="container position-relative" style="z-index:1;">
             <h1 class="larger">
                 Hi, I'm <span class="blue">Trust Onyekwere.</span>
                 <br>
-                <div class="d-none d-sm-block">
+                <div>
 
                     <span class="sub type-gradient" id="type-effect"></span>
 
@@ -166,7 +165,7 @@
                 </style>
             </h1>
             <div class="justify-content-center">
-                <p class="fs-5">I’m a tech enthusiast driven by creativity and innovation. I build responsive web apps and websites, design sleek visuals, and prototype ideas into real, working products. From code to concept, I bring bold ideas to life ✨.</p>
+                <p class="fs-5">I build responsive websites, design sleek visuals, and prototype ideas into real, working products ✨.</p>
             </div>
             <div class="social-icons my-3">
                 <!-- LinkedIn -->
@@ -175,7 +174,7 @@
                         src="https://cdn.lordicon.com/dsdlqjde.json"
                         trigger="hover"
                         stroke="bold"
-                        colors="primary:#2F6FC3,secondary:#2F6FC3"
+                        colors="primary:#4B88D7,secondary:#4B88D7"
                         style="width:45px;height:45px">
                     </lord-icon>
                 </a>
@@ -185,7 +184,7 @@
                         src="https://cdn.lordicon.com/jjxzcivr.json"
                         trigger="hover"
                         stroke="bold"
-                        colors="primary:#2f6fc3,secondary:#2f6fc3"
+                        colors="primary:#4B88D7,secondary:#4B88D7"
                         style="width:45px;height:45px">
                     </lord-icon>
                 </a>
@@ -196,7 +195,7 @@
                         trigger="hover"
                         stroke="bold"
                         state="hover-draw"
-                        colors="primary:#2F6FC3,secondary:#2F6FC3"
+                        colors="primary:#4B88D7,secondary:#4B88D7"
                         style="width:45px;height:45px">
                     </lord-icon>
                 </a>
@@ -206,12 +205,12 @@
                         src="https://cdn.lordicon.com/tgyvxauj.json"
                         trigger="hover"
                         stroke="bold"
-                        colors="primary:#2F6FC3,secondary:#2F6FC3"
+                        colors="primary:#4B88D7,secondary:#4B88D7"
                         style="width:45px;height:45px">
                     </lord-icon>
                 </a>
             </div>
-            <div class="txt-center bottom mt-5 pt-5">
+            <div class="txt-center bottom">
                 <button class="btn-y" onclick="location.href='#about'" style="text-decoration: none !important;">
                     <div class="scroll"> </div>
                 </button>
@@ -359,7 +358,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/ailnzwyn.json"
                                         trigger="hover"
-                                        colors="primary:#4986d5,secondary:#4986d5"
+                                        colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
                                 </div>
@@ -377,7 +376,7 @@
                                         src="https://cdn.lordicon.com/exymduqj.json"
                                         trigger="hover"
                                         state="hover-line"
-                                        colors="primary:#4986d5,secondary:#4986d5"
+                                        colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
                                 </div>
@@ -394,7 +393,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/tamskqkf.json"
                                         trigger="hover"
-                                        colors="primary:#4986d5,secondary:#4986d5"
+                                        colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
                                 </div>
@@ -411,7 +410,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/wsaaegar.json"
                                         trigger="hover"
-                                        colors="primary:#4986d5,secondary:#4986d5"
+                                        colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
                                 </div>
@@ -428,7 +427,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/fwkrbvja.json"
                                         trigger="hover"
-                                        colors="primary:#4986d5,secondary:#4986d5"
+                                        colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
                                 </div>
@@ -445,7 +444,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/fikcyfpp.json"
                                         trigger="hover"
-                                        colors="primary:#4986d5,secondary:#4986d5"
+                                        colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
                                 </div>
@@ -786,29 +785,29 @@
         const navLinks = document.querySelectorAll('.nav-link');
 
         window.addEventListener('scroll', () => {
-        let current = '';
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.clientHeight;
-            if (scrollY >= sectionTop - sectionHeight / 3) {
-            current = section.getAttribute('id');
-            }
-        });
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if (scrollY >= sectionTop - sectionHeight / 3) {
+                    current = section.getAttribute('id');
+                }
+            });
 
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-            }
-        });
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
         });
 
         // Optional: Highlight immediately on click
         navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-        });
+            link.addEventListener('click', () => {
+                navLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+            });
         });
     </script>
 
