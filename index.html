@@ -290,7 +290,7 @@
         <p></p>
         <!-- About Section -->
         <section class="bg-black py-5" id="about">
-            <div class="container">
+            <div class="container pt-4">
                 <div class="row align-items-center my-4">
                     <!-- Photo -->
                     <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-up">
@@ -345,11 +345,12 @@
         </section>
 
         <!-- What I Do Section -->
-        <section class="" style="background-color: #fff;" id="services">
-            <div class="container">
-                <p id="services" class="py-1"></p><br>
-                <h1 class="blue text-center fw-bold" style="font-size: 60px !important;" data-aos="fade-left">Services</h1>
-                <br><br>
+        <section class="py-4" style="background-color: #eee;" id="services">
+            <div class="container pt-5">
+                <div class="section-title">
+                    <h1 class="bg-text">SERVICES</h1>
+                    <h2 class="main-text">WHAT I PROVIDE</h2>
+                </div>
                 <div class="row g-4 pb-5 mb-3">
                     <!-- Service Card -->
                     <div class="col-md-4">
@@ -487,6 +488,10 @@
                                 <div class="logo-caption">React</div>
                             </div>
                             <div class="logo-box">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP logo" />
+                                <div class="logo-caption">PHP</div>
+                            </div>
+                            <div class="logo-box">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub logo" />
                                 <div class="logo-caption">GitHub</div>
                             </div>
@@ -513,10 +518,6 @@
                             <div class="logo-box">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects logo" />
                                 <div class="logo-caption">After Effects</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP logo" />
-                                <div class="logo-caption">PHP</div>
                             </div>
                             <!-- repeated for seamless scrolling -->
                             <div class="logo-box">
@@ -540,6 +541,10 @@
                                 <div class="logo-caption">React</div>
                             </div>
                             <div class="logo-box">
+                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP logo" />
+                                <div class="logo-caption">PHP</div>
+                            </div>
+                            <div class="logo-box">
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub logo" />
                                 <div class="logo-caption">GitHub</div>
                             </div>
@@ -567,21 +572,15 @@
                                 <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects logo" />
                                 <div class="logo-caption">After Effects</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP logo" />
-                                <div class="logo-caption">PHP</div>
-                            </div>
                         </div>
                     </div>
                 </section>
             </div>
         </section>
 
-        <p id="projects"></p>
-        <p></p>
         <!-- Portfolio Section -->
         <section class="portfolio-section py-5 bg-black text-white" id="projects">
-            <div class="container text-center"><br>
+            <div class="container text-center pt-2"><br>
                 <h2 class="fw-bold display-5 mb-4" data-aos="fade-up">My Work</h2>
                 <p class="lighter" data-aos="fade-up">Below are some of the projects I’ve built over the years, both independently and in collaboration with other developers. Each one highlights my growth, creativity, and problem-solving skills, as well as my commitment to building practical, well-crafted solutions while exploring diverse technologies.</p><br><br>
 
@@ -974,6 +973,8 @@
             }
         }
     </style>
+
+    <!-- hamburger js -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
         const nav = document.querySelector('.navbar');
@@ -1081,7 +1082,7 @@
         if (section) io.observe(section);
     </script>
 
-
+    <!-- cursor dot -->
     <script>
         const dot = document.querySelector('.cursor-dot');
 

@@ -369,7 +369,7 @@ a > .btn-z {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #3E7CCE !important;
+    background-color: #4B88D7 !important;
     color: white;
     border: none !important;
     width: 50px;
@@ -392,8 +392,40 @@ a > .btn-z {
 }
 
 .back-to-top:hover {
-    background-color: #5d95df !important;
+    background-color: #64a1f1 !important;
 }
+
+/* special section title css */
+.section-title {
+    position: relative;
+    text-align: center;
+    padding: 50px 0;
+    overflow: hidden;
+}
+
+.bg-text {
+    font-size: 400%;
+    font-weight: 900;
+    color: rgba(0, 0, 0, 0.05); /* faint background text */
+    letter-spacing: 5px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+    user-select: none;
+}
+
+.main-text {
+    position: relative;
+    z-index: 1;
+    font-size: 24px;
+    font-weight: 700;
+    color: #4B88D7;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
 
 /* card css */
 /* glass card css */
@@ -409,9 +441,9 @@ a > .btn-z {
 }
 
 .glass-card {
-    background: #eee !important;
+    background: #fff !important;
     border: none;
-    border-radius: .8rem !important;
+    border-radius: .5rem !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
     transition: transform 0.2s ease, box-shadow 0.3s ease !important; /* 👈 smooth hover effect */
 }
@@ -740,7 +772,7 @@ nav ul li a.active::after {
 .logo-carousel {
     overflow: hidden;
     position: relative;
-    background: #fff;
+    background: #eee;
     padding: 30px 0;
     align-items: center;
     gap:1.25rem;
