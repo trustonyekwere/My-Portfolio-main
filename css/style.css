@@ -822,6 +822,7 @@ nav ul li a.active::after {
 }
 
 @media (max-width:576px) {
-    .logo-carousel .logo-box img { width:40px; height:40px; }
-    .logo-carousel .logo-caption { font-size:0.78rem; }
+    .logo-track {
+        gap:0.1rem;
+    }
 }
