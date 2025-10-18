@@ -396,8 +396,9 @@ a > .btn-z {
 }
 
 /* card css */
+/* glass card css */
 .card-title {
-    font-weight: 600 !important;
+    font-weight: 500 !important;
     font-size: 1.5rem !important;
 }
 
@@ -407,19 +408,25 @@ a > .btn-z {
     line-height: 1.5 !important;
 }
 
-/* glass card css */
 .glass-card {
     background: #eee !important;
     border: none;
     border-radius: .8rem !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
-    transition: transform 0.3s ease, box-shadow 0.3s ease !important; /* 👈 smooth hover effect */
+    transition: transform 0.2s ease, box-shadow 0.3s ease !important; /* 👈 smooth hover effect */
 }
 
 .glass-card:hover {
     /* transform: translateY(-10px) !important; //animation slides up */
     transform: scale(1.05) !important; /*//animation zooms in */
     box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+    background: #4B88D7 !important;
+    color: #fff !important;
+}
+
+.glass-card:hover lord-icon {
+  --lord-icon-primary: #fff; /* Change to desired hover color */
+  --lord-icon-secondary: #fff; /* If the icon has a secondary color */
 }
 
 /* projects card css */

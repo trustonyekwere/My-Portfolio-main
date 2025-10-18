@@ -359,6 +359,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/ailnzwyn.json"
                                         trigger="hover"
+                                        target=".glass-card"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
@@ -376,6 +377,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/exymduqj.json"
                                         trigger="hover"
+                                        target=".glass-card"
                                         state="hover-line"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
@@ -394,6 +396,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/tamskqkf.json"
                                         trigger="hover"
+                                        target=".glass-card"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
@@ -411,6 +414,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/wsaaegar.json"
                                         trigger="hover"
+                                        target=".glass-card"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
@@ -428,6 +432,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/fwkrbvja.json"
                                         trigger="hover"
+                                        target=".glass-card"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
@@ -445,6 +450,7 @@
                                     <lord-icon
                                         src="https://cdn.lordicon.com/fikcyfpp.json"
                                         trigger="hover"
+                                        target=".glass-card"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
                                         style="width:80px;height:80px">
                                     </lord-icon>
@@ -825,7 +831,7 @@
             once: true  // Animation happens only once as you scroll down
         });
         AOS.init({
-            duration: 800  // Animation duration in milliseconds
+            duration: 500  // Animation duration in milliseconds
         });
     </script>
 
@@ -837,11 +843,11 @@
         // Ensure eyes animate slower if you change this later
         document.documentElement.style.setProperty('--loader-speed', '12s');
 
-        // Keep preloader for extra 3 seconds
+        // Keep preloader for extra 1.5 seconds
         setTimeout(() => {
             pre.classList.add('hidden');
             pre.addEventListener('transitionend', () => pre.remove());
-        }, 2000);
+        }, 1500);
         });
     </script>
     
