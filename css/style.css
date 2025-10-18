@@ -773,11 +773,18 @@ nav ul li a.active::after {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transform: translateZ(0) scale(1);
+    transform-origin: center center;
+    will-change: transform, box-shadow;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 
 .logo-box:hover {
     transform: scale(1.05);
+    /* keep same transform-origin to avoid jump */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
 }
 
 .logo-box img {
@@ -788,7 +795,8 @@ nav ul li a.active::after {
     object-fit:contain;
     filter: grayscale(100%);
     opacity: 0.8;
-    transition: all 0.3s ease;
+    transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
+    transform: translateZ(0);
 }
 
 .logo-box:hover img {
