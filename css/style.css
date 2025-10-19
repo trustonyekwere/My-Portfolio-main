@@ -638,11 +638,11 @@ nav ul li a.active::after {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.05em;
-    border: 2px solid #78AFF6 !important;
+    border: 2px solid #4B88D7 !important;
     border-radius: 0.4em;
     cursor: pointer;
     border: none;
-    background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
+    background: #4B88D7;
     color: ghostwhite;
     overflow: hidden;
 }
