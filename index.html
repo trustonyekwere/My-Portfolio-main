@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tee | Dev</title>
-    <link rel="shortcut icon" href="img/my logo-no_bg.png" type="image/x-icon">
+    <!-- favicon -->
+    <link rel="shortcut icon" href="img/BlueCircleIMG.webp" type="image/x-icon">
     <!-- css -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
@@ -19,6 +20,95 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
 </head>
+<style>
+    /* container */
+    .x-grid {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        pointer-events: none;
+        overflow: hidden;
+        background: transparent;
+    }
+
+    /* keep hero content above unchanged */
+    .hero > *:not(.x-grid) { position: relative; z-index: 1; }
+
+    /* X wrapper (positioned in organized columns) */
+    .x-grid .x {
+        position: absolute;
+        left: var(--left, 50%);
+        top: 0;
+        width: var(--size, 18px);
+        height: var(--size, 18px);
+        transform-origin: center;
+        will-change: transform, opacity, filter;
+        opacity: var(--op, 0.14);
+        mix-blend-mode: screen; /* softens look on various backgrounds */
+        filter: blur(var(--blur, 6px));
+        animation: fallSpin var(--dur, 12s) linear var(--delay, 0s) infinite;
+        z-index: 0;
+        pointer-events: none;
+        backface-visibility: hidden;
+    }
+
+    /* draw the X using two bars */
+    .x-grid .x::before,
+    .x-grid .x::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: var(--bar, 2.2px);
+        transform: translateY(-50%);
+        border-radius: 2px;
+        background: linear-gradient(90deg, var(--c1, rgba(38,92,190,0.95)), var(--c2, rgba(75,150,255,0.95)));
+        box-shadow: 0 6px 16px rgba(10,20,40,0.06);
+        opacity: 1;
+    }
+
+    .x-grid .x::before { transform: translateY(-50%) rotate(45deg); }
+    .x-grid .x::after  { transform: translateY(-50%) rotate(-45deg); }
+
+    /* subtle falling + spin animation driven by CSS vars
+        Note: we use calc(-50% + var(--xj)) so horizontal position is stable but gently jittered */
+    @keyframes fallSpin {
+        0% {
+        transform: translate(calc(-50% + var(--xj, 0px)), var(--start, -28vh)) rotate(0deg);
+        opacity: 0;
+        filter: blur(var(--blur, 6px));
+        }
+        10% {
+        opacity: var(--op, 0.14);
+        filter: blur(calc(var(--blur, 6px) * 0.95));
+        }
+        80% {
+        opacity: calc(var(--op, 0.14) * 0.95);
+        filter: blur(calc(var(--blur, 6px) * 1.02));
+        }
+        100% {
+        transform: translate(calc(-50% + var(--xj, 0px)), var(--end, 110vh)) rotate(var(--spin, 540deg));
+        opacity: 0;
+        filter: blur(calc(var(--blur, 6px) * 1.15));
+        }
+    }
+
+    /* reduced motion accessibility */
+    @media (prefers-reduced-motion: reduce) {
+        .x-grid .x {
+        animation: none !important;
+        transform: translate(calc(-50% + var(--xj, 0px)), 0);
+        opacity: 0.18 !important;
+        filter: blur(4px) !important;
+        }
+    }
+
+    /* mobile adjustments */
+    @media (max-width: 480px) {
+        .x-grid .x { --size: 20px; --bar: 2.6px; --blur: 5px; }
+    }
+</style>
 <body>
 
     <!-- Preloader -->
@@ -40,96 +130,6 @@
         <section class="hero text-center position-relative overflow-hidden">
             <div class="animated-bg x-grid" aria-hidden="true"></div>
 
-            <style>
-            /* container */
-            .x-grid {
-                position: absolute;
-                inset: 0;
-                z-index: 0;
-                pointer-events: none;
-                overflow: hidden;
-                background: transparent;
-            }
-
-            /* keep hero content above unchanged */
-            .hero > *:not(.x-grid) { position: relative; z-index: 1; }
-
-            /* X wrapper (positioned in organized columns) */
-            .x-grid .x {
-                position: absolute;
-                left: var(--left, 50%);
-                top: 0;
-                width: var(--size, 18px);
-                height: var(--size, 18px);
-                transform-origin: center;
-                will-change: transform, opacity, filter;
-                opacity: var(--op, 0.14);
-                mix-blend-mode: screen; /* softens look on various backgrounds */
-                filter: blur(var(--blur, 6px));
-                animation: fallSpin var(--dur, 12s) linear var(--delay, 0s) infinite;
-                z-index: 0;
-                pointer-events: none;
-                backface-visibility: hidden;
-            }
-
-            /* draw the X using two bars */
-            .x-grid .x::before,
-            .x-grid .x::after {
-                content: "";
-                position: absolute;
-                left: 0;
-                top: 50%;
-                width: 100%;
-                height: var(--bar, 2.2px);
-                transform: translateY(-50%);
-                border-radius: 2px;
-                background: linear-gradient(90deg, var(--c1, rgba(38,92,190,0.95)), var(--c2, rgba(75,150,255,0.95)));
-                box-shadow: 0 6px 16px rgba(10,20,40,0.06);
-                opacity: 1;
-            }
-
-            .x-grid .x::before { transform: translateY(-50%) rotate(45deg); }
-            .x-grid .x::after  { transform: translateY(-50%) rotate(-45deg); }
-
-            /* subtle falling + spin animation driven by CSS vars
-                Note: we use calc(-50% + var(--xj)) so horizontal position is stable but gently jittered */
-            @keyframes fallSpin {
-                0% {
-                transform: translate(calc(-50% + var(--xj, 0px)), var(--start, -28vh)) rotate(0deg);
-                opacity: 0;
-                filter: blur(var(--blur, 6px));
-                }
-                10% {
-                opacity: var(--op, 0.14);
-                filter: blur(calc(var(--blur, 6px) * 0.95));
-                }
-                80% {
-                opacity: calc(var(--op, 0.14) * 0.95);
-                filter: blur(calc(var(--blur, 6px) * 1.02));
-                }
-                100% {
-                transform: translate(calc(-50% + var(--xj, 0px)), var(--end, 110vh)) rotate(var(--spin, 540deg));
-                opacity: 0;
-                filter: blur(calc(var(--blur, 6px) * 1.15));
-                }
-            }
-
-            /* reduced motion accessibility */
-            @media (prefers-reduced-motion: reduce) {
-                .x-grid .x {
-                animation: none !important;
-                transform: translate(calc(-50% + var(--xj, 0px)), 0);
-                opacity: 0.18 !important;
-                filter: blur(4px) !important;
-                }
-            }
-
-            /* mobile adjustments */
-            @media (max-width: 480px) {
-                .x-grid .x { --size: 20px; --bar: 2.6px; --blur: 5px; }
-            }
-            </style>
-
             <div class="container position-relative" style="z-index:1;">
             <h1 class="larger">
                 Hi, I'm <span class="blue">Trust Onyekwere.</span>
@@ -137,48 +137,6 @@
                 <div>
 
                     <span class="sub type-gradient" id="type-effect"></span>
-
-                    <script>
-                    document.addEventListener('DOMContentLoaded', () => {
-                    const text = 'a Professional Software Engineer';
-                    const el = document.getElementById('type-effect');
-                    let i = 0;
-                    let started = false;
-
-                    function typeLoop() {
-                        if (i <= text.length) {
-                        el.textContent = text.slice(0, i);
-                        i++;
-                        setTimeout(typeLoop, 70);
-                        }
-                    }
-
-                    function startTyping() {
-                        if (!started) {
-                        started = true;
-                        // Start typing from "-a", not the first character
-                        i = text.indexOf('a');
-                        if (i < 0) i = 0;
-                        el.textContent = '';
-                        typeLoop();
-                        }
-                    }
-
-                    // Start typing on scroll into view or on page refresh
-                    function isInViewport(elem) {
-                        const rect = elem.getBoundingClientRect();
-                        return rect.top < window.innerHeight && rect.bottom > 0;
-                    }
-
-                    window.addEventListener('scroll', () => {
-                        if (isInViewport(el)) startTyping();
-                    });
-
-                    // Also start on page load if already in view
-                    if (isInViewport(el)) startTyping();
-                    });
-                    </script>
-
                 </div>
 
                 <style>
@@ -219,33 +177,33 @@
                 <!-- GitHub -->
                 <a href="http://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                     <lord-icon
-    src="https://cdn.lordicon.com/lllcnxva.json"
-    trigger="hover"
-    stroke="bold"
-    state="hover-roll"
-    style="width:45px;height:45px">
-</lord-icon>
+                        src="https://cdn.lordicon.com/lllcnxva.json"
+                        trigger="hover"
+                        stroke="bold"
+                        state="hover-roll"
+                        style="width:45px;height:45px">
+                    </lord-icon>
                 </a>
                 <!-- X -->
                 <a href="https://x.com/toristudios18" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
                     <lord-icon
-    src="https://cdn.lordicon.com/guvfanks.json"
-    trigger="hover"
-    stroke="bold"
-    state="hover-draw"
-    colors="primary:#121331,secondary:#3a3347,tertiary:#4b88d7"
-    style="width:45px;height:45px">
-</lord-icon>
+                        src="https://cdn.lordicon.com/guvfanks.json"
+                        trigger="hover"
+                        stroke="bold"
+                        state="hover-draw"
+                        colors="primary:#121331,secondary:#3a3347,tertiary:#4b88d7"
+                        style="width:45px;height:45px">
+                    </lord-icon>
                 </a>
                 <!-- Instagram -->
                 <a href="https://www.instagram.com/toristudios18/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-<lord-icon
-    src="https://cdn.lordicon.com/dbugezxr.json"
-    trigger="hover"
-    state="hover-rotate"
-    colors="primary:#121331,secondary:#ffc738,tertiary:#f28ba8,quaternary:#4b88d7,quinary:#4b88d7"
-    style="width:45px;height:45px">
-</lord-icon>
+                    <lord-icon
+                        src="https://cdn.lordicon.com/dbugezxr.json"
+                        trigger="hover"
+                        state="hover-rotate"
+                        colors="primary:#121331,secondary:#ffc738,tertiary:#f28ba8,quaternary:#4b88d7,quinary:#4b88d7"
+                        style="width:45px;height:45px">
+                    </lord-icon>
                 </a>
             </div>
             <div class="txt-center bottom">
@@ -329,16 +287,15 @@
         <section class="bg-black py-5" id="about">
             <div class="container pt-4">
                 <div class="row align-items-center my-2">
-                    <!-- Photo -->
+                    <!-- Passport -->
                     <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-up">
                         <img
-                        src="img/le me 2_compressed.jpg"
+                        src="img/tee.jpg"
                         alt="Tee"
-                        class="img-fluid rounded-1 about-photo"
+                        class="img-fluid rounded- about-photo rounded-1"
                         />
                     </div>
 
-                    <!-- Text & Button -->
                     <div class="col-md-8">
                         <h2 class="blue text-start fw-bold display-5" data-aos="fade-left">About Me</h2>
                         <div data-aos="fade-left">
@@ -819,9 +776,9 @@
             <div class="row">
                 <div class="col-md-6" data-aos="fade-up"><br>
                     <h5>TRUST ONYEKWERE</h5>
-                    <p class="fs-6 lighter mt-3">I’m passionate about merging technology and creativity to design modern, efficient websites and web apps. I build innovative prototypes and craft digital experiences that engage and inspire.</p><br>
+                    <p class="fs-6 lighter mt-3">I’m passionate about merging technology and creativity to design modern, efficient websites and web apps. I also love building innovative prototypes and creating digital experiences that are both engaging and inspiring.</p><br>
                     <p class="fs-6 lighter">
-                        Feel free to reach out for collaborations or just to say hi 👋😉
+                        Feel free to reach out for collaborations or just to say hi 👋
                     </p>
                 </div>
                 <div class="col-md-6 text-md-end mt-4" data-aos="fade-up">
@@ -836,6 +793,7 @@
                                 src="https://cdn.lordicon.com/qgebwute.json"
                                 trigger="hover"
                                 stroke="bold"
+                                state="hover-draw"
                                 colors="primary:#ffffff,secondary:#ffffff"
                                 style="width:30px;height:30px">
                             </lord-icon>
@@ -843,9 +801,10 @@
                         <!-- Github -->
                         <a href="https://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
                             <lord-icon
-                            src="https://cdn.lordicon.com/jjxzcivr.json"
-                            trigger="hover"
+                                src="https://cdn.lordicon.com/jjxzcivr.json"
+                                trigger="hover"
                                 stroke="bold"
+                                state="hover-roll"
                                 colors="primary:#ffffff,secondary:#ffffff"
                                 style="width:30px;height:30px">
                             </lord-icon>
@@ -856,6 +815,7 @@
                                 src="https://cdn.lordicon.com/yizwahhw.json"
                                 trigger="hover"
                                 stroke="bold"
+                                state="hover-draw"
                                 colors="primary:#ffffff,secondary:#ffffff"
                                 style="width:30px;height:30px">
                             </lord-icon>
@@ -866,6 +826,7 @@
                                 src="https://cdn.lordicon.com/tgyvxauj.json"
                                 trigger="hover"
                                 stroke="bold"
+                                state="hover-rotate"
                                 colors="primary:#ffffff,secondary:#ffffff"
                                 style="width:30px;height:30px">
                             </lord-icon>
@@ -874,7 +835,7 @@
                     </div>
                 </div>
             </div>
-            <br><br><hr><br>
+            <br><hr><br>
         </div>
         <div class="copyright">
         &copy; 2025 | <a href="https://trust-onyekwere.vercel.app/" class="text-white text-decoration-underline">Trust Onyekwere</a>
@@ -1384,6 +1345,48 @@
                 }
             });
         })();
+    </script>
+
+    <!-- typing gradient effect -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+        const text = 'a Professional Software Engineer';
+        const el = document.getElementById('type-effect');
+        let i = 0;
+        let started = false;
+
+        function typeLoop() {
+            if (i <= text.length) {
+            el.textContent = text.slice(0, i);
+            i++;
+            setTimeout(typeLoop, 70);
+            }
+        }
+
+        function startTyping() {
+            if (!started) {
+            started = true;
+            // Start typing from "-a", not the first character
+            i = text.indexOf('a');
+            if (i < 0) i = 0;
+            el.textContent = '';
+            typeLoop();
+            }
+        }
+
+        // Start typing on scroll into view or on page refresh
+        function isInViewport(elem) {
+            const rect = elem.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom > 0;
+        }
+
+        window.addEventListener('scroll', () => {
+            if (isInViewport(el)) startTyping();
+        });
+
+        // Also start on page load if already in view
+        if (isInViewport(el)) startTyping();
+        });
     </script>
 
 </body>
