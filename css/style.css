@@ -445,7 +445,7 @@ a > .btn-z {
     border: none;
     border-radius: .5rem !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
-    transition: transform 0.2s ease, box-shadow 0.3s ease !important; /* 👈 smooth hover effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important; /* 👈 smooth hover effect */
 }
 
 .glass-card:hover {
@@ -464,7 +464,7 @@ a > .btn-z {
 /* projects card css */
 .portfolio-card {
     cursor: pointer;
-    transition: transform 0.3s ease;
+    transition: transform 0.4s ease;
 }
 
 .portfolio-card:hover {
@@ -596,7 +596,8 @@ nav ul li a::after {
     bottom: 0;
     transform: translateX(-50%);
     width: 0;
-    height: 2.6px;
+    height: .22em;
+    border-radius: 100px;
     background-color: #4280D0;
     transition: width 0.3s ease;
 }
@@ -805,7 +806,7 @@ nav ul li a.active::after {
     border: 1px solid #ddd;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.4s ease, box-shadow 0.3s ease;
     transform: translateZ(0) scale(1);
     transform-origin: center center;
     will-change: transform, box-shadow;
