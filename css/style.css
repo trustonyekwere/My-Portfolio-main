@@ -1,9 +1,9 @@
 * {
     margin: 0px;
     padding: 0px;
-    font-family: 'josefin', sans-serif;
-    scroll-behavior: smooth;
-    font-weight: 600;
+    font-family: 'nunito', sans-serif;
+    scroll-behavior: smooth !important;
+    font-weight: 700 !important;
 }
 
 a {
@@ -16,13 +16,8 @@ a {
 }
 
 @font-face {
-    font-family: shame;
-    src: url(/fonts/ShameimaruSans.ttf);
-}
-
-@font-face {
-    font-family: josefin;
-    src: url(/fonts/JosefinSans-Medium.ttf);
+    font-family: nunito;
+    src: url(/fonts/Nunito-VariableFont_wght.ttf);
 }
 
 html, body {
@@ -72,7 +67,7 @@ html, body {
 }
 
 .blue {
-    color: #4B88D7 !important;
+    color: #0149d8 !important;
 }
 
 /* preloader css */
@@ -104,7 +99,7 @@ html, body {
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 .big-txt {
-    font-size: 3.4rem;
+    font-size: 2.7rem;
     font-weight: 500;
     color: #fff;
 }
@@ -369,7 +364,7 @@ a > .btn-z {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #4B88D7 !important;
+    background-color: #0149d8 !important;
     color: white;
     border: none !important;
     width: 50px;
@@ -392,7 +387,7 @@ a > .btn-z {
 }
 
 .back-to-top:hover {
-    background-color: #64a1f1 !important;
+    background-color: #1760f3 !important;
 }
 
 /* special section title css */
@@ -411,7 +406,7 @@ a > .btn-z {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -55% );
     z-index: 0;
     user-select: none;
 }
@@ -424,6 +419,16 @@ a > .btn-z {
     color: #4B88D7;
     text-transform: uppercase;
     letter-spacing: 2px;
+}
+
+.grad {
+    /* Define the rainbow gradient */
+    background: linear-gradient(45deg, red, blue, red, blue);
+    /* Clip the background to the text area */
+    -webkit-background-clip: text;
+    background-clip: text;
+    /* Make the actual text transparent so the background shows through */
+    color: transparent;
 }
 
 
@@ -452,7 +457,7 @@ a > .btn-z {
     /* transform: translateY(-10px) !important; //animation slides up */
     transform: scale(1.05) !important; /*//animation zooms in */
     box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
-    background: #4B88D7 !important;
+    background: #0149d8 !important;
     color: #fff !important;
 }
 
@@ -639,11 +644,11 @@ nav ul li a.active::after {
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.05em;
-    border: 2px solid #4B88D7 !important;
+    border: 2px solid #0149d8 !important;
     border-radius: 0.4em;
     cursor: pointer;
     border: none;
-    background: #4B88D7;
+    background: #0149d8;
     color: ghostwhite;
     overflow: hidden;
 }
