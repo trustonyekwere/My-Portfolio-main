@@ -59,95 +59,6 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
 </head>
-<style>
-    /* container */
-    .x-grid {
-        position: absolute;
-        inset: 0;
-        z-index: 0;
-        pointer-events: none;
-        overflow: hidden;
-        background: transparent;
-    }
-
-    /* keep hero content above unchanged */
-    .hero > *:not(.x-grid) { position: relative; z-index: 1; }
-
-    /* X wrapper (positioned in organized columns) */
-    .x-grid .x {
-        position: absolute;
-        left: var(--left, 50%);
-        top: 0;
-        width: var(--size, 18px);
-        height: var(--size, 18px);
-        transform-origin: center;
-        will-change: transform, opacity, filter;
-        opacity: var(--op, 0.14);
-        mix-blend-mode: screen; /* softens look on various backgrounds */
-        filter: blur(var(--blur, 6px));
-        animation: fallSpin var(--dur, 12s) linear var(--delay, 0s) infinite;
-        z-index: 0;
-        pointer-events: none;
-        backface-visibility: hidden;
-    }
-
-    /* draw the X using two bars */
-    .x-grid .x::before,
-    .x-grid .x::after {
-        content: "";
-        position: absolute;
-        left: 0;
-        top: 50%;
-        width: 100%;
-        height: var(--bar, 2.2px);
-        transform: translateY(-50%);
-        border-radius: 2px;
-        background: linear-gradient(90deg, var(--c1, rgba(38,92,190,0.95)), var(--c2, rgba(75,150,255,0.95)));
-        box-shadow: 0 6px 16px rgba(10,20,40,0.06);
-        opacity: 1;
-    }
-
-    .x-grid .x::before { transform: translateY(-50%) rotate(45deg); }
-    .x-grid .x::after  { transform: translateY(-50%) rotate(-45deg); }
-
-    /* subtle falling + spin animation driven by CSS vars
-        Note: we use calc(-50% + var(--xj)) so horizontal position is stable but gently jittered */
-    @keyframes fallSpin {
-        0% {
-        transform: translate(calc(-50% + var(--xj, 0px)), var(--start, -28vh)) rotate(0deg);
-        opacity: 0;
-        filter: blur(var(--blur, 6px));
-        }
-        10% {
-        opacity: var(--op, 0.14);
-        filter: blur(calc(var(--blur, 6px) * 0.95));
-        }
-        80% {
-        opacity: calc(var(--op, 0.14) * 0.95);
-        filter: blur(calc(var(--blur, 6px) * 1.02));
-        }
-        100% {
-        transform: translate(calc(-50% + var(--xj, 0px)), var(--end, 110vh)) rotate(var(--spin, 540deg));
-        opacity: 0;
-        filter: blur(calc(var(--blur, 6px) * 1.15));
-        }
-    }
-
-    /* reduced motion accessibility */
-    @media (prefers-reduced-motion: reduce) {
-        .x-grid .x {
-        animation: none !important;
-        transform: translate(calc(-50% + var(--xj, 0px)), 0);
-        opacity: 0.18 !important;
-        filter: blur(4px) !important;
-        }
-    }
-
-    /* mobile adjustments */
-    @media (max-width: 480px) {
-        .x-grid .x { --size: 20px; --bar: 2.6px; --blur: 5px; }
-    }
-</style>
 <body>
 
     <!-- Preloader -->
@@ -167,7 +78,6 @@
     <header id="home">
         <!-- Hero Section -->
         <section class="hero text-center position-relative overflow-hidden">
-            <div class="animated-bg x-grid" aria-hidden="true"></div>
 
             <div class="container position-relative" style="z-index:1;">
             <h1 class="larger">
@@ -254,13 +164,13 @@
     </header>
 
     <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container-fluid container">
+        <div class="container">
             <div class="navbar-brand">
                 <a href="#">
-                    <img src="img/mi_logo.png" class="d-none d-md-block" style="width: 60px !important;" alt="">
+                    <img src="img/KOMODO.png" class="d-none d-md-block" style="width: 80px !important;" alt="">
                 </a>
                 <a href="#">
-                    <img src="img/mi_logo.png" class="d-block d-md-none text-start" style="width: 3em;" alt="">
+                    <img src="img/KOMODO.png" class="d-block d-md-none text-start" style="width: 4em;" alt="">
                 </a>
             </div>
             <div class="navbar-toggler" id="sidenavToggleBtn">
@@ -340,10 +250,10 @@
                         <h2 class="blue text-start fw-bold display-5" data-aos="fade-left" data-aos-duration="800">About Me</h2>
                         <div data-aos="fade-left" data-aos-duration="800">
                             <p class="lead">
-                            Hi there! I’m Trust Onyekwere, a web developer and graphics designer passionate about creating interactive digital experiences and delivering polished, user-centric solutions. I specialize in building responsive websites and web applications that are both visually appealing and highly functional.
+                            Hola! I’m Tee, a web developer, graphics designer, artist, photographer, writer... yeah I do a bit of everything 😂. Basically I love to build things that are both unique and inspiring. I specialize in building responsive and user-friendly websites and web applications that are both aesthetic and functional.
                             </p>
                             <p class="lead"> 
-                            From designing intuitive user interfaces to creating impactful brand visuals, I ensure every project is interactive and engaging. I pay close attention to detail and enjoy collaborating with clients — transforming their ideas into digital products that drive engagement, deliver results, and leave a lasting impression.
+                            Whether it's building an affordable website for a client or creating impactful brand visuals, I keep things simple, intentional, and always on time 🙂‍↕️. Take a look around — you might find something you like 😉.
                             </p> 
                             <a href="https://drive.google.com/file/d/1O0mXqOLtoib4BshmvNDHqU679pR19TtU/view?usp=drive_link" target="_blank" style="text-decoration: none !important;">
                                 <button class="cssbuttons-io">
@@ -619,10 +529,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="text-center d-block d-md-none grad">
+                    <div class="text-center d-block d-lg-none grad">
                         <p>Tap to reveal color!</p>
                     </div>
-                    <div class="text-center d-none d-md-block grad">
+                    <div class="text-center d-none d-lg-block grad">
                         <p>Hover to reveal color!</p>
                     </div>
                 </section>
@@ -885,8 +795,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-6" data-aos="fade-up" data-aos-duration="800"><br>
-                    <h5>TRUST ONYEKWERE</h5>
-                    <p class="fs-6 lighter mt-3">I’m passionate about merging technology and creativity to design modern, efficient websites and web apps. I also love building innovative prototypes and creating digital experiences that are both engaging and inspiring.</p><br>
+                    <a href="#">
+                        <img src="img/KOMODO.png" class="d-none d-md-block" style="width: 80px !important;" alt="">
+                    </a>
+                    <p class="fs-6 lighter">I’m passionate about merging technology and creativity to design modern, efficient websites and web apps. I also love building innovative prototypes and creating digital experiences that are both engaging and inspiring.</p><br>
                     <p class="fs-6 lighter">
                         Feel free to reach out for collaborations or just to say hi 👋
                     </p>
