@@ -46,6 +46,7 @@ html, body {
 .larger {
     margin-top: 100px !important;
     font-size: 2.8rem;
+    color: #333;
 }
 
 .lighter {
@@ -54,6 +55,10 @@ html, body {
 
 .larger span.blue {
     font-size: 3.3rem;
+}
+
+.heirarchy {
+    color: #555;
 }
 
 .sub {
@@ -399,7 +404,7 @@ a > .btn-z {
 }
 
 .bg-text {
-    font-size: 400%;
+    font-size: 350%;
     font-weight: 900;
     color: rgba(0, 0, 0, 0.05); /* faint background text */
     letter-spacing: 5px;
@@ -414,7 +419,7 @@ a > .btn-z {
 .main-text {
     position: relative;
     z-index: 1;
-    font-size: 28px;
+    font-size: 24px;
     font-weight: 700;
     color: #4B88D7;
     text-transform: uppercase;
@@ -624,7 +629,7 @@ nav ul li a.active::after {
 
     z-index: 999;
 
-    padding: 0 7% !important;
+    padding: 0 5% !important;
     margin: 0 2% !important;
     border-radius: 60px;
 
