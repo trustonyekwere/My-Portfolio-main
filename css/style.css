@@ -1,18 +1,14 @@
-* {
-    margin: 0px;
-    padding: 0px;
-    font-family: 'nunito', sans-serif;
-    scroll-behavior: smooth !important;
-    font-weight: 700 !important;
-}
+/* ============================================================
+IMPORTS
+============================================================ */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
-a {
-    display: inline-block !important;
-}
-
+/* ============================================================
+CUSTOM FONTS
+============================================================ */
 @font-face {
     font-family: roboto;
-    src: url(/fonts/Roboto-VariableFont_wdth\,wght.ttf);
+    src: url(/fonts/Roboto-VariableFont_wdth,wght.ttf);
 }
 
 @font-face {
@@ -20,27 +16,71 @@ a {
     src: url(/fonts/Nunito-VariableFont_wght.ttf);
 }
 
-html, body {
-    max-width: 100% !important;
-    overflow-x: hidden !important;
+/* ============================================================
+RESET & BASE
+============================================================ */
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'nunito', sans-serif;
+    scroll-behavior: smooth;
+    font-weight: 700;
 }
 
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Scoped to nav/footer only — avoids breaking flex/grid children globally */
+nav a,
+footer a {
+    display: inline-block;
+}
+
+/* ============================================================
+TYPOGRAPHY HELPERS
+============================================================ */
+.lighter {
+    font-weight: 400 !important;
+}
+
+.heavy {
+    font-weight: 700 !important;
+}
+
+.blue {
+    color: #0149d8 !important;
+}
+
+.heirarchy {
+    color: #555;
+}
+
+.lead {
+    font-size: 1.1rem !important;
+    font-weight: 500 !important;
+    color: #fff !important;
+}
+
+.big-txt {
+    font-size: 2.7rem;
+    font-weight: 500;
+    color: #fff;
+}
+
+/* ============================================================
+HERO
+============================================================ */
 .hero {
     padding: 5rem 1rem;
     background-color: #fff;
-    min-height: 100vh !important;
+    min-height: 100vh;
 }
 
 .hero p {
-    /* padding: 0px 50px; */
     text-align: center;
-}
-
-.section-title {
-    text-transform: uppercase;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #7173F5;
 }
 
 .larger {
@@ -49,101 +89,146 @@ html, body {
     color: #333;
 }
 
-.lighter {
-    font-weight: 400 !important;
-}
-
 .larger span.blue {
     font-size: 3.3rem;
-}
-
-.heirarchy {
-    color: #555;
 }
 
 .sub {
     color: #555;
     font-size: 2.2rem;
-    line-height: .5 !important;
+    line-height: 0.5;
 }
 
-.bg-bll {
-    background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
+/* Typing gradient */
+.type-gradient {
+    background: linear-gradient(90deg, #222, #888, #222, #bbb, #222);
+    background-size: 200% auto;
+    color: transparent;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: shine 2s linear infinite;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 70%;
 }
 
-.blue {
-    color: #0149d8 !important;
+@keyframes shine {
+    to { background-position: 200% center; }
 }
 
-/* preloader css */
-#preloader {
-    position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: #000; 
+/* ============================================================
+SCROLL MOUSE BUTTON
+============================================================ */
+.btn-y {
+    width: 35px;
+    height: 50px;
+    border-radius: 30px;
+    padding: 0;
     display: flex;
     align-items: center;
     justify-content: center;
-    z-index: 9999;
-    transition: opacity 0.6s ease, visibility 0.6s;
-}
-#preloader.hidden {
-    opacity: 0;
-    visibility: hidden;
-}
-
-@keyframes dash_682 {
-    72.5% {
-        opacity: 0;
-    }
-
-    to {
-        stroke-dashoffset: 0;
-    }
+    background-color: transparent;
+    border: none;
+    outline: 2px solid #4B88D7 !important;
+    box-shadow: 0 0 6px rgb(24, 25, 26) !important;
+    position: relative;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-
-.big-txt {
-    font-size: 2.7rem;
-    font-weight: 500;
-    color: #fff;
+.scroll {
+    width: 5px;
+    height: 10px;
+    border-radius: 10px;
+    background-color: #0e52ac;
+    box-shadow: 0 0 8px #1e63a3;
+    animation: scroll_anim 2s linear infinite;
+    transform: translateY(40%);
 }
 
-.section-z {
-    background-color: #000;
-    height: 100vh;
+.btn-y::after {
+    content: 'scroll';
+    position: absolute;
+    top: 110%;
+    color: #aaaaaa;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
-/* cursor dot css */
-.cursor-dot {
+@keyframes scroll_anim {
+    0%  { transform: translateY(40%); }
+    50% { transform: translateY(90%); }
+}
+
+.bottom {
+    position: sticky;
+    top: 80%;
+    left: 50%;
+}
+
+.txt-center {
+    justify-items: center;
+}
+
+/* ============================================================
+NAVBAR
+============================================================ */
+.navbar {
     position: fixed;
-    width: 18px;
-    height: 18px;
-    background-color: #0092FF;
-    border-radius: 50%;
-    pointer-events: none;
+    top: 20px;
+    left: 50%;
+    transform: translate(-50%, -10px);
+    width: 100%;
     z-index: 999;
-    transform: translate(-50%, -50%);
-    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
-}
-.cursor-dot.hovering {
-    width: 50px;
-    height: 50px;
-    background-color: rgba(63, 178, 245, 0.6);
-}
-
-/* navbar css */
-.navbar-custom {
-    background: linear-gradient(135deg, #6F65F6, #4B88D7);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    padding: 0 5% !important;
+    background-color: rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.04), 0 1px 2px rgba(0, 0, 0, 0.02);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease;
 }
 
-.navbar-brand {
-    font-weight: bold;
-    font-size: 1.6rem;
-    color: #ffffff;
+.navbar.visible {
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(0, 0);
 }
 
+/* Remove outline/shadow from toggler */
+.navbar-toggler,
+.toggle,
+#checkbox {
+    outline: none !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+/* Smooth mobile nav collapse */
+#navbarSupportedContent {
+    overflow: hidden;
+    max-height: 0;
+    opacity: 0;
+    display: block !important;
+    transition: max-height 0.4s cubic-bezier(.4, 0, .2, 1), opacity 0.3s;
+}
+
+#navbarSupportedContent.show {
+    max-height: 500px;
+    opacity: 1;
+}
+
+@media (min-width: 992px) {
+    #navbarSupportedContent {
+        transition: none;
+        max-height: none;
+        opacity: 1;
+        overflow: visible;
+        display: flex !important;
+    }
+}
+
+/* Nav links */
 .nav-link {
     color: #ffffff !important;
     font-weight: 500;
@@ -151,103 +236,126 @@ html, body {
     transition: color 0.3s ease;
 }
 
-.nav-link:hover {
-    color: #4986D5 !important;
-}
+.nav-link:hover  { color: #4986D5 !important; }
+.nav-link.active { color: #4986D5 !important; }
 
-.nav-link.active {
-    color: #4986D5 !important; 
-}
-
-.btn-chat {
-    background-color: #ffffff;
-    color: #5691DE;
-    border: none;
-    border-radius: 25px;
-    padding: 0.4rem 1rem;
-    font-weight: 500;
-    transition: all 0.3s ease;
-}
-.btn-chat:hover {
-    background-color: #f2f2f2;
-    color: #4B88D7;
-}
-
-/* preloader spinner css*/ 
-.spinner {
-    background-image: linear-gradient(rgb(186, 66, 255) 35%,rgb(0, 225, 255));
-    width: 100px;
-    height: 100px;
-    animation: spinning82341 1.7s linear infinite;
+nav ul {
+    display: flex;
+    list-style: none;
     text-align: center;
-    border-radius: 50px;
-    filter: blur(1px);
-    box-shadow: 0px -5px 20px 0px rgb(186, 66, 255), 0px 5px 20px 0px rgb(0, 225, 255);
+    margin: 0;
+    padding: 0;
 }
 
-.spinner1 {
-    background-color: rgb(36, 36, 36);
-    width: 100px;
-    height: 100px;
-    border-radius: 50px;
-    filter: blur(10px);
+nav ul li { margin: 0 1rem; }
+
+nav ul li a {
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+    padding-bottom: 6px;
+    transition: color 0.3s ease;
+    font-size: 18px !important;
 }
 
-@keyframes spinning82341 {
-    to {
-        transform: rotate(360deg);
-    }
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0.22em;
+    border-radius: 100px;
+    background-color: #4280D0;
+    transition: width 0.3s ease;
 }
 
-/* form css */
-input, textarea { width: 100%; padding: 1rem !important; border:1px solid #ccc; border-radius:4px; font-size:1rem; }
-.invalid-feedback{ display:none; color:#dc3545; margin-top:.35rem; font-size:.9rem; }
-/* Show invalid-feedback when form has .was-validated and control is invalid */
-.was-validated .form-control:invalid + .invalid-feedback { display:block; }
-/* show success message styling */
-#successMsg { background:#e6ffed; border:1px solid #a6f3b0; padding:.75rem 1rem; border-radius:6px; color:#0b6623; }
-
-
-#c-tact {
-    background: #f9f9f9 !important;
-    padding: 3rem 1rem;
-    border-radius: 0.5rem;
-    max-width: 600px;
-    margin: 2rem auto;
-    box-shadow: 0 6px 14px rgba(0,0,0,0.05);
+nav ul li a:hover::after,
+nav ul li a.active::after {
+    width: 60%;
 }
 
-.section-w {
-    background-color: #d4d0d0 !important;
+/* Hamburger */
+#checkbox { display: none; }
+
+.toggle {
+    position: relative;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    transition-duration: 0.5s;
 }
 
-#c-tact h2 {
-    font-weight: 600;
-    margin-bottom: 1.5rem;
-}
-.form-control:focus {
-    border-color: #4B88D7;
-    box-shadow: 0 0 0 0.2rem rgba(62,219,240,0.25);
-}
-.btn-chat {
-    background-color: #4B88D7;
-    border-color: #4B88D7;
-    transition: background-color 0.2s;
-}
-.btn-chat:hover {
-    background-color: #36c1b5;
-    border-color: #36c1b5;
-}
-#successMsg {
-    display: none;
+.bars {
+    width: 100%;
+    height: 4px;
+    background-color: #000;
+    border-radius: 4px;
 }
 
-.sent {
-    margin-top: 0px !important;
-    margin-bottom: 0px !important;
+#bar2 { transition-duration: 0.8s; }
+#bar1, #bar3 { width: 70%; }
+
+#checkbox:checked + .toggle .bars { position: absolute; transition-duration: 0.5s; }
+#checkbox:checked + .toggle #bar2 { transform: scaleX(0); transition-duration: 0.5s; }
+#checkbox:checked + .toggle #bar1 { width: 100%; transform: rotate(45deg); transition-duration: 0.5s; }
+#checkbox:checked + .toggle #bar3 { width: 100%; transform: rotate(-45deg); transition-duration: 0.5s; }
+#checkbox:checked + .toggle       { transition-duration: 0.5s; transform: rotate(180deg); }
+
+/* ============================================================
+BUTTONS
+============================================================ */
+.cssbuttons-io {
+    position: relative;
+    font-family: inherit;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.05em;
+    border: 2px solid #0149d8;
+    border-radius: 0.4em;
+    cursor: pointer;
+    background: #0149d8;
+    color: ghostwhite;
+    overflow: hidden;
 }
 
-/* form button */
+.cssbuttons-io span {
+    position: relative;
+    z-index: 10;
+    transition: color 0.4s;
+    display: inline-flex;
+    align-items: center;
+    padding: 0.8em 1.2em 0.8em 1.05em;
+}
+
+.cssbuttons-io::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0;
+    width: 120%;
+    height: 100%;
+    left: -10%;
+    background: #000;
+    z-index: 0;
+    transform: skew(30deg);
+    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
+}
+
+.cssbuttons-io:hover::before {
+    transform: translate3d(100%, 0, 0);
+}
+
+.cssbuttons-io:active {
+    transform: scale(0.95);
+}
+
+/* Form submit button */
 form button {
     font-family: inherit;
     font-size: 24px !important;
@@ -280,91 +388,18 @@ form button:hover .svg-wrapper {
     animation: fly-1 0.6s ease-in-out infinite alternate;
 }
 
-form button:hover svg {
-    transform: translateX(1.2em) rotate(45deg) scale(1.1);
-}
-
-form button:hover span {
-    transform: translateX(5em);
-}
-
-form button:active {
-    transform: scale(0.95);
-}
+form button:hover svg   { transform: translateX(1.2em) rotate(45deg) scale(1.1); }
+form button:hover span  { transform: translateX(5em); }
+form button:active      { transform: scale(0.95); }
 
 @keyframes fly-1 {
-from {
-    transform: translateY(0.1em);
+    from { transform: translateY(0.1em); }
+    to   { transform: translateY(-0.1em); }
 }
 
-to {
-    transform: translateY(-0.1em);
-}
-}
-
-/* footer css */
-.footer {
-    background-color: #000;
-    padding: 30px;
-}
-
-.footer h5 {
-    font-weight: bold;
-    letter-spacing: 1px;
-    font-size: 1.4em;
-    color: #fff;
-}
-
-.footer a {
-    color: #fff !important;
-    text-decoration: none;
-    margin-right: 15px;
-    font-size: 1.2rem;
-}
-
-hr {
-    color: #FFF !important;
-}
-
-.footer a:hover {
-    color: #4B88D7;
-}
-
-.footer p {
-    max-width: 500px;
-    font-size: .9rem;
-    color: #fff;
-}
-
-.copyright {
-    text-align: center;
-    color: #f9f9f9;
-    font-size: 0.875rem;
-}
-
-.copyright a {
-    font-size: 0.95rem;
-    color: #fff;
-}
-
-.txt-center {
-    justify-items: center !important;
-}
-
-a > .btn-z {
-    text-decoration: none !important;
-}
-
-.btn-z {
-    background-color: #fff;
-    color: #3444E1;
-    border-radius: 8px;
-    font-size: 1rem !important;
-    cursor: pointer;   
-    transition: background-color 0.3s ease;
-}
-
-/* Back to Top Button */
+/* ============================================================
+BACK TO TOP
+============================================================ */
 .back-to-top {
     position: fixed;
     bottom: 20px;
@@ -385,9 +420,8 @@ a > .btn-z {
     transition: opacity 0.3s ease;
 }
 
-/* when we add `.visible` it shows up */
 .back-to-top.visible {
-    display: flex !important;  /* or block, whichever you need */
+    display: flex !important;
     opacity: 1;
 }
 
@@ -395,23 +429,101 @@ a > .btn-z {
     background-color: #1760f3 !important;
 }
 
-/* special section title css */
+/* ============================================================
+CUSTOM CURSOR
+============================================================ */
+.cursor-dot {
+    position: fixed;
+    width: 18px;
+    height: 18px;
+    background-color: #0092FF;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
+}
+
+.cursor-dot.hovering {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(63, 178, 245, 0.6);
+}
+
+/* ============================================================
+PRELOADER
+============================================================ */
+#preloader {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    transition: opacity 0.6s ease, visibility 0.6s;
+}
+
+#preloader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.spinner {
+    background-image: linear-gradient(rgb(186, 66, 255) 35%, rgb(0, 225, 255));
+    width: 100px;
+    height: 100px;
+    animation: spinning 1.7s linear infinite;
+    text-align: center;
+    border-radius: 50px;
+    filter: blur(1px);
+    box-shadow: 0 -5px 20px 0 rgb(186, 66, 255), 0 5px 20px 0 rgb(0, 225, 255);
+}
+
+.spinner1 {
+    background-color: rgb(36, 36, 36);
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    filter: blur(10px);
+}
+
+@keyframes spinning {
+    to { transform: rotate(360deg); }
+}
+
+/* ============================================================
+SECTIONS
+============================================================ */
+.bg-bll {
+    background: linear-gradient(90deg, #7eb4fa 0%, #0e52ac 100%);
+}
+
+.section-w {
+    background-color: #d4d0d0;
+}
+
+/* Section title treatment */
 .section-title {
     position: relative;
     text-align: center;
     padding: 50px 0;
     overflow: hidden;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #7173F5;
 }
 
 .bg-text {
     font-size: 350%;
     font-weight: 900;
-    color: rgba(0, 0, 0, 0.05); /* faint background text */
+    color: rgba(0, 0, 0, 0.05);
     letter-spacing: 5px;
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -55% );
+    transform: translate(-50%, -55%);
     z-index: 0;
     user-select: none;
 }
@@ -427,18 +539,15 @@ a > .btn-z {
 }
 
 .grad {
-    /* Define the rainbow gradient */
     background: linear-gradient(45deg, red, blue, red, blue);
-    /* Clip the background to the text area */
     -webkit-background-clip: text;
     background-clip: text;
-    /* Make the actual text transparent so the background shows through */
     color: transparent;
 }
 
-
-/* card css */
-/* glass card css */
+/* ============================================================
+CARDS — SERVICES
+============================================================ */
 .card-title {
     font-weight: 500 !important;
     font-size: 1.5rem !important;
@@ -454,42 +563,37 @@ a > .btn-z {
 .glass-card {
     background: #fff !important;
     border: none;
-    border-radius: .5rem !important;
+    border-radius: 0.5rem !important;
     box-shadow: 0 0 2px rgba(0, 0, 0, 0.05) !important;
-    transition: transform 0.4s ease, box-shadow 0.4s ease !important; /* 👈 smooth hover effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease !important;
 }
 
 .glass-card:hover {
-    /* transform: translateY(-10px) !important; //animation slides up */
-    transform: scale(1.05) !important; /*//animation zooms in */
-    box-shadow: 0 5px 10px rgba(0,0,0,0.1) !important;
+    transform: scale(1.05) !important;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1) !important;
 }
 
-/* projects card css */
+/* ============================================================
+CARDS — PORTFOLIO
+============================================================ */
 .portfolio-card {
     cursor: pointer;
     transition: transform 0.4s ease;
 }
 
-.portfolio-card:hover {
-    transform: scale(1.05);
-}
+.portfolio-card:hover { transform: scale(1.05); }
 
 .portfolio-card .overlay {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
     background: rgba(14, 14, 14, 0.8);
     color: #fff;
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-.portfolio-card:hover .overlay {
-    opacity: 1;
-}
+.portfolio-card:hover .overlay { opacity: 1; }
 
 .portfolio-card .overlay h5 {
     position: relative;
@@ -507,300 +611,65 @@ a > .btn-z {
     transform: translateY(0);
 }
 
-.img-bg {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    opacity: 0.1;
-    width: 20%;
-}
-
-.filter-btn.active {
-    background-color: #1BD497;
-    border-color: #1BD497;
-}
-
-.bottom{
-    position: sticky;
-    top: 80% !important;
-    left: 50% !important;
-}
-
-/* scroll mouse animation css */
-.btn-y {
-    width: 30px;
-    height: 50px;
-    border-radius: 30px;
-    padding: 0px !important;
-    width: 35px !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: transparent;
-    border: none;
-    outline: 2px solid #4B88D7 !important;
-    box-shadow: 0px 0px 6px rgb(24, 25, 26) !important;
-    position: relative;
-}
-
-.lead {
-    font-size: 1.1rem !important;
-    font-weight: 500 !important;
-    color: #fff !important;
-}
-
-.scroll {
-    width: 5px;
-    height: 10px;
-    border-radius: 10px;
-    background-color: #0e52ac !important;
-    box-shadow: 0px 0px 8px #1e63a3 !important;
-    animation: scroll_4013 2s linear infinite;
-    transform: translateY(40%);
-}
-
-.btn-y:after {
-    content: 'scroll';
-    position: absolute;
-    top: 110%;
-    color: #aaaaaa;
-    text-transform: uppercase;
-    letter-spacing: 1px !important;
-}
-
-@keyframes scroll_4013 {
-    0% {
-        transform: translateY(40%);
-    }
-
-    50% {
-        transform: translateY(90%);
-    }
-};
-
-/* navbar css */
-nav ul {
-    display: flex;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-nav ul li {
-    margin: 0 1rem;
-}
-
-/* 1) Make the <a> shrink to its content */
-nav ul li a {
-    display: inline-block;
-    position: relative;
-    text-decoration: none;
-    padding-bottom: 6px;      /* space for the underline */
-    transition: color 0.3s ease;
-    font-size: 18px !important;
-}
-
-/* 2) Centered underline, zero width by default */
-nav ul li a::after {
-    content: '';
-    position: absolute;
-    left: 50%;
-    bottom: 0;
-    transform: translateX(-50%);
-    width: 0;
-    height: .22em;
-    border-radius: 100px;
-    background-color: #4280D0;
-    transition: width 0.3s ease;
-}
-
-/* 3) Expand only under the hovered/active link */
-nav ul li a:hover::after,
-nav ul li a.active::after {
-    width: 70%;
-}
-
-.navbar {
-    position: fixed;
-    top: 20px;
-    left: 50%;
-    transform: translateY(-10px);
-
-    z-index: 999;
-
-    padding: 0 5% !important;
-    margin: 0 2% !important;
-    border-radius: 60px;
-
-    background-color: rgba(255, 255, 255, 0.35);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-
-    box-shadow: 0 4px 8px rgba(0,0,0,0.04), 0 1px 2px rgba(0,0,0,0.02);
-
-    opacity: 0;
-    pointer-events: none;
-
-    transition: all 0.3s ease;
-}
-
-/* when we add .visible, it fades in */
-.navbar.visible {
-    opacity: 1;
-    pointer-events: auto;
-    transform: translateY(0);
-}
-
-/* button css */
-.cssbuttons-io {
-    position: relative;
-    font-family: inherit;
-    font-weight: 500;
-    font-size: 18px;
-    letter-spacing: 0.05em;
-    border: 2px solid #0149d8 !important;
-    border-radius: 0.4em;
-    cursor: pointer;
-    border: none;
-    background: #0149d8;
-    color: ghostwhite;
-    overflow: hidden;
-}
-
-.cssbuttons-io span {
-    position: relative;
-    z-index: 10;
-    transition: color 0.4s;
-    display: inline-flex;
-    align-items: center;
-    padding: 0.8em 1.2em 0.8em 1.05em;
-}
-
-.cssbuttons-io::before,
-.cssbuttons-io::after {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* ============================================================
+FORM
+============================================================ */
+input, textarea {
     width: 100%;
-    height: 100%;
-    z-index: 0;
-}
-
-.cssbuttons-io::before {
-    content: "";
-    background: #000;
-    width: 120%;
-    left: -10%;
-    transform: skew(30deg);
-    transition: transform 0.4s cubic-bezier(0.3, 1, 0.8, 1);
-}
-
-.cssbuttons-io:hover::before {
-    transform: translate3d(100%, 0, 0);
-}
-
-.cssbuttons-io:active {
-    transform: scale(0.95);
-}
-
-.check {
-    position: fixed;
-    left: 28px;
-    top: 28px;
-    z-index: 140;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-.check-2 {
-    width: 80px;
-    position: fixed;
-    right: 28px;
-    top: 28px;
-    z-index: 140;
-    background: transparent;
-    border: none;
-    cursor: pointer;
-    padding: 0;
-}
-
-#checkbox {
-    display: none;
-}
-
-.toggle {
-    position: relative;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    transition-duration: .5s;
-}
-
-.bars {
-    width: 100%;
-    height: 4px;
-    background-color: #000;
+    padding: 1rem !important;
+    border: 1px solid #ccc;
     border-radius: 4px;
+    font-size: 1rem;
 }
 
-#bar2 {
-    transition-duration: .8s;
+.invalid-feedback {
+    display: none;
+    color: #dc3545;
+    margin-top: 0.35rem;
+    font-size: 0.9rem;
 }
 
-#bar1,#bar3 {
-    width: 70%;
+.was-validated .form-control:invalid + .invalid-feedback {
+    display: block;
 }
 
-#checkbox:checked + .toggle .bars {
-    position: absolute;
-    transition-duration: .5s;
+.form-control:focus {
+    border-color: #4B88D7;
+    box-shadow: 0 0 0 0.2rem rgba(62, 219, 240, 0.25);
 }
 
-#checkbox:checked + .toggle #bar2 {
-    transform: scaleX(0);
-    transition-duration: .5s;
+#c-tact {
+    background: #f9f9f9 !important;
+    padding: 3rem 1rem;
+    border-radius: 0.5rem;
+    max-width: 600px;
+    margin: 2rem auto;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.05);
 }
 
-#checkbox:checked + .toggle #bar1 {
-    width: 100%;
-    transform: rotate(45deg);
-    transition-duration: .5s;
+.sent {
+    margin-top: 0;
+    margin-bottom: 0;
 }
 
-#checkbox:checked + .toggle #bar3 {
-    width: 100%;
-    transform: rotate(-45deg);
-    transition-duration: .5s;
+#successMsg {
+    display: none;
+    background: #e6ffed;
+    border: 1px solid #a6f3b0;
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    color: #0b6623;
 }
 
-#checkbox:checked + .toggle {
-    transition-duration: .5s;
-    transform: rotate(180deg);
-}
-
-.heavy {
-    font-weight: 700 !important;
-}
-
+/* ============================================================
+LOGO CAROUSEL
+============================================================ */
 .logo-carousel {
     overflow: hidden;
     position: relative;
     background: #eee;
     padding: 30px 0;
     align-items: center;
-    gap:1.25rem;
-    flex-direction: column;
-    justify-content: center;
-    min-width:72px; 
-    object-fit:contain;
 }
 
 .logo-track {
@@ -808,13 +677,13 @@ nav ul li a.active::after {
     animation: scroll-left 50s linear infinite;
     width: max-content;
     align-items: center;
-    gap:1.25rem;
+    gap: 1.25rem;
 }
 
 .logo-box {
     flex: 0 0 auto;
     flex-direction: column;
-    min-width:72px; 
+    min-width: 72px;
     width: 160px;
     height: 120px;
     margin: 0 20px;
@@ -827,29 +696,24 @@ nav ul li a.active::after {
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: transform 0.4s ease, box-shadow 0.3s ease;
-    transform: translateZ(0) scale(1);
-    transform-origin: center center;
     will-change: transform, box-shadow;
     backface-visibility: hidden;
-    -webkit-backface-visibility: hidden;
 }
 
 .logo-box:hover {
     transform: scale(1.05);
-    /* keep same transform-origin to avoid jump */
-    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
 .logo-box img {
     max-width: 100%;
     max-height: 80%;
-    width:75px;
-    height:75px;
-    object-fit:contain;
+    width: 75px;
+    height: 75px;
+    object-fit: contain;
     filter: grayscale(100%);
     opacity: 0.8;
     transition: transform 0.3s ease, opacity 0.3s ease, filter 0.3s ease;
-    transform: translateZ(0);
 }
 
 .logo-box:hover img {
@@ -858,24 +722,61 @@ nav ul li a.active::after {
 }
 
 .logo-caption {
-    margin-top:0.5rem; 
-    font-size:1rem; 
-    color:#333; 
-    text-align:center; 
-    line-height:1; 
+    margin-top: 0.5rem;
+    font-size: 1rem;
+    color: #333;
+    text-align: center;
+    line-height: 1;
 }
 
 @keyframes scroll-left {
-    0% {
-    transform: translateX(0);
-    }
-    100% {
-    transform: translateX(-50%);
-    }
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
 }
 
-@media (max-width:576px) {
-    .logo-track {
-        gap:0.1rem;
-    }
+@media (max-width: 576px) {
+    .logo-track { gap: 0.1rem; }
+}
+
+/* ============================================================
+FOOTER
+================================================================= */
+.footer {
+    background-color: #000;
+    padding: 30px;
+}
+
+.footer h5 {
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 1.4em;
+    color: #fff;
+}
+
+.footer a {
+    color: #fff !important;
+    text-decoration: none;
+    margin-right: 15px;
+    font-size: 1.2rem;
+}
+
+.footer a:hover { color: #4B88D7; }
+
+.footer p {
+    max-width: 500px;
+    font-size: 0.9rem;
+    color: #fff;
+}
+
+hr { color: #fff !important; }
+
+.copyright {
+    text-align: center;
+    color: #f9f9f9;
+    font-size: 0.875rem;
+}
+
+.copyright a {
+    font-size: 0.95rem;
+    color: #fff;
 }

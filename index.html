@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tee | Dev</title>
 
     <!-- SEO -->
-    <meta name="description" content="Portfolio of Trust Onyekwere — Fullstack Developer, Graphics Designer, and Video Editor. Explore my projects, designs, and creative work." />
-    <meta name="keywords" content="Trust Onyekwere, Tee, fullstack developer, graphics designer, video editor, portfolio, web developer Nigeria, UI design, creative developer" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description"
+        content="Portfolio of Trust Onyekwere — Fullstack Developer, Graphics Designer, and Video Editor. Explore my projects, designs, and creative work." />
+    <meta name="keywords"
+        content="Trust Onyekwere, Tee, fullstack developer, graphics designer, video editor, portfolio, web developer Nigeria, UI design, creative developer" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph / Social -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Trust Onyekwere — Portfolio" />
-    <meta property="og:description" content="Explore my work as a fullstack developer, graphics designer, and video editor. Clean UI, powerful code, and creative visual design." />
+    <meta property="og:description"
+        content="Explore my work as a fullstack developer, graphics designer, and video editor. Clean UI, powerful code, and creative visual design." />
     <meta property="og:image" content="img/BlueCircleIMG.webp" />
     <meta property="og:url" content="https://trust-onyekwere.vercel.app/" />
     <meta property="og:type" content="website" />
@@ -21,10 +24,11 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="Trust Onyekwere — Portfolio" />
-    <meta name="twitter:description" content="Fullstack developer & creative designer. View my projects, designs, and video edits." />
+    <meta name="twitter:description"
+        content="Fullstack developer & creative designer. View my projects, designs, and video edits." />
     <meta name="twitter:image" content="img/BlueCircleIMG.webp" />
 
-    <!-- JSON-LD (Portfolio Schema) -->
+    <!-- JSON-LD -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
@@ -35,30 +39,30 @@
         "jobTitle": "Fullstack Developer, Graphics Designer, Video Editor",
         "sameAs": [
             "https://github.com/trustonyekwere",
-            "https://www.linkedin.com/in/onyekwere-trust/,
+            "https://www.linkedin.com/in/onyekwere-trust/",
             "https://x.com/trust_onyekwere"
         ],
         "description": "I am a fullstack developer, graphics designer, and video editor passionate about building elegant digital experiences."
     }
     </script>
 
-
-    <!-- favicon -->
+    <!-- Favicon -->
     <link rel="shortcut icon" href="img/KOMODO.png" type="image/x-icon">
-    <!-- css -->
+
+    <!-- CSS -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css">
-    <!-- AOS (Animate On Scroll Library) -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
-    <!-- icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
     <script src="https://cdn.lordicon.com/lordicon.js"></script>
-    <!-- font cdn -->
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cal+Sans&display=swap" rel="stylesheet">
 </head>
+
 <body>
 
     <!-- Preloader -->
@@ -72,193 +76,115 @@
         </div>
     </div>
 
-    <!-- cursor dot -->
+    <!-- Custom cursor (desktop only) -->
     <div class="cursor-dot d-none d-lg-block"></div>
 
-    <header id="home">
-        <!-- Hero Section -->
-        <section class="hero text-center position-relative overflow-hidden">
-
-            <div class="container position-relative" style="z-index:1;">
-            <h1 class="larger">
-                Hi, I'm <span class="blue">Trust Onyekwere.</span>
-                <br>
-                <div>
-
-                    <span class="sub type-gradient" id="type-effect"></span>
-                </div>
-
-                <style>
-                    .type-gradient {
-                    background: linear-gradient(90deg, #222, #888, #222, #bbb, #222);
-                    background-size: 200% auto;
-                    color: transparent;
-                    background-clip: text;
-                    -webkit-background-clip: text;
-                    -webkit-text-fill-color: transparent;
-                    animation: shine 2s linear infinite;
-                    font-weight: bold;
-                    letter-spacing: 1px;
-                    font-size: 70%;
-                    }
-                    @keyframes shine {
-                    to {
-                        background-position: 200% center;
-                    }
-                    }
-                </style>
-            </h1>
-            <div class="justify-content-center">
-                <p class="fs-5 fw-lighter heirarchy">I build responsive websites, design sleek visuals, and prototype ideas into real, working products ✨.</p>
-            </div>
-            <div class="social-icons my-3">
-                <!-- LinkedIn -->
-                <a href="http://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                    <lord-icon
-                        src="https://cdn.lordicon.com/xerxcacw.json"
-                        trigger="hover"
-                        stroke="bold"
-                        state="hover-draw"
-                        colors="primary:#121331,secondary:#ebe6ef,tertiary:#4b88d7"
-                        style="width:45px;height:45px">
-                    </lord-icon>
-                </a>
-                <!-- GitHub -->
-                <a href="http://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                    <lord-icon
-                        src="https://cdn.lordicon.com/lllcnxva.json"
-                        trigger="hover"
-                        stroke="bold"
-                        state="hover-roll"
-                        style="width:45px;height:45px">
-                    </lord-icon>
-                </a>
-                <!-- X -->
-                <a href="https://x.com/trust_onyekwere" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                    <lord-icon
-                        src="https://cdn.lordicon.com/guvfanks.json"
-                        trigger="hover"
-                        stroke="bold"
-                        state="hover-draw"
-                        colors="primary:#121331,secondary:#3a3347,tertiary:#4b88d7"
-                        style="width:45px;height:45px">
-                    </lord-icon>
-                </a>
-                <!-- Instagram -->
-                <a href="https://www.instagram.com/trust0nyekwere/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
-                    <lord-icon
-                        src="https://cdn.lordicon.com/dbugezxr.json"
-                        trigger="hover"
-                        state="hover-rotate"
-                        colors="primary:#121331,secondary:#ffc738,tertiary:#f28ba8,quaternary:#4b88d7,quinary:#4b88d7"
-                        style="width:45px;height:45px">
-                    </lord-icon>
-                </a>
-            </div>
-            <div class="txt-center bottom">
-                <button class="btn-y" onclick="location.href='#about'" style="text-decoration: none !important;">
-                    <div class="scroll"> </div>
-                </button>
-            </div>
-        </section>
-    </header>
-
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
             <div class="navbar-brand">
                 <a href="#">
-                    <img src="img/KOMODO.png" class="d-none d-md-block" style="width: 80px !important;" alt="">
+                    <img src="img/KOMODO.png" class="d-none d-md-block" style="width:80px;" alt="Logo">
                 </a>
                 <a href="#">
-                    <img src="img/KOMODO.png" class="d-block d-md-none text-start" style="width: 4em;" alt="">
+                    <img src="img/KOMODO.png" class="d-block d-md-none" style="width:4em;" alt="Logo">
                 </a>
             </div>
+
             <div class="navbar-toggler" id="sidenavToggleBtn">
-                <input type="checkbox" id="checkbox"/>
+                <input type="checkbox" id="checkbox" />
                 <label for="checkbox" class="toggle">
                     <div class="bars" id="bar1"></div>
                     <div class="bars" id="bar2"></div>
                     <div class="bars" id="bar3"></div>
                 </label>
             </div>
-            <style>
-                .navbar-toggler,
-                .toggle,
-                #checkbox {
-                    outline: none !important;
-                    box-shadow: none !important;
-                    border: none !important;
-                }
-                .navbar-toggler:focus,
-                .navbar-toggler:active,
-                #checkbox:focus,
-                #checkbox:active,
-                .toggle:focus,
-                .toggle:active {
-                    outline: none !important;
-                    box-shadow: none !important;
-                    border: none !important;
-                } 
-            </style>
-            <div style="height: 60% !important;" class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarSupportedContent">
                 <ul class="navbar-nav mx-auto mb-4 mb-md-0">
-                    <li class="nav-item">
-                        <a class="nav-link text-black" aria-current="page" href="#home">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#services">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#projects">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link text-black" href="#contact">Contact</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link text-black" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="#projects">Projects</a></li>
+                    <li class="nav-item"><a class="nav-link text-black" href="#contact">Contact</a></li>
                 </ul>
-                <a href="#contact" class="pb-3 md-pb-0" style="text-decoration: none !important;">
-                    <button class="cssbuttons-io">
-                        <span>Let's Chat</span>
-                    </button>
+                <a href="#contact" class="pb-3 pb-md-0" style="text-decoration:none;">
+                    <button class="cssbuttons-io"><span>Let's Chat</span></button>
                 </a>
             </div>
         </div>
-        <!-- Underline element -->
         <div class="nav-underline"></div>
     </nav>
 
-    <main>
-        <p id="about"></p>
-        <p></p>
+    <!-- Hero -->
+    <header id="home">
+        <section class="hero text-center position-relative overflow-hidden">
+            <div class="container position-relative" style="z-index:1;">
+                <h1 class="larger">
+                    Hi, I'm <span class="blue">Trust Onyekwere.</span>
+                    <br>
+                    <span class="sub type-gradient" id="type-effect"></span>
+                </h1>
+                <p class="fs-5 fw-lighter heirarchy">
+                    I build responsive websites, design sleek visuals, and prototype ideas into real, working products
+                    ✨.
+                </p>
+                <div class="social-icons my-3">
+                    <a href="http://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer">
+                        <lord-icon src="https://cdn.lordicon.com/xerxcacw.json" trigger="hover" stroke="bold"
+                            state="hover-draw" colors="primary:#121331,secondary:#ebe6ef,tertiary:#4b88d7"
+                            style="width:45px;height:45px"></lord-icon>
+                    </a>
+                    <a href="http://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
+                        <lord-icon src="https://cdn.lordicon.com/lllcnxva.json" trigger="hover" stroke="bold"
+                            state="hover-roll" style="width:45px;height:45px"></lord-icon>
+                    </a>
+                    <a href="https://x.com/trust_onyekwere" target="_blank" rel="noopener noreferrer">
+                        <lord-icon src="https://cdn.lordicon.com/guvfanks.json" trigger="hover" stroke="bold"
+                            state="hover-draw" colors="primary:#121331,secondary:#3a3347,tertiary:#4b88d7"
+                            style="width:45px;height:45px"></lord-icon>
+                    </a>
+                    <a href="https://www.instagram.com/trust0nyekwere/" target="_blank" rel="noopener noreferrer">
+                        <lord-icon src="https://cdn.lordicon.com/dbugezxr.json" trigger="hover" state="hover-rotate"
+                            colors="primary:#121331,secondary:#ffc738,tertiary:#f28ba8,quaternary:#4b88d7,quinary:#4b88d7"
+                            style="width:45px;height:45px"></lord-icon>
+                    </a>
+                </div>
+                <div class="txt-center bottom">
+                    <button class="btn-y" onclick="location.href='#about'">
+                        <div class="scroll"></div>
+                    </button>
+                </div>
+            </div>
+        </section>
+    </header>
 
-        <!-- About Section -->
+    <main>
+        <!-- About -->
         <section class="bg-black py-5" id="about">
             <div class="container pt-4">
                 <div class="row align-items-center my-2">
-                    <!-- Passport -->
                     <div class="col-md-4 text-center mb-4 mb-md-0" data-aos="fade-up" data-aos-duration="800">
-                        <img
-                        src="img/monochrome.jpg"
-                        alt="Tee"
-                        class="img-fluid rounded- about-photo rounded-1"
-                        />
+                        <img src="img/monochrome.jpg" alt="Tee" class="img-fluid rounded-1 about-photo" />
                     </div>
-
                     <div class="col-md-8">
-                        <h2 class="blue text-start fw-bold display-5" data-aos="fade-left" data-aos-duration="800">About Me</h2>
+                        <h2 class="blue text-start fw-bold display-5" data-aos="fade-left" data-aos-duration="800">About
+                            Me</h2>
                         <div data-aos="fade-left" data-aos-duration="800">
                             <p class="lead">
-                            Hola! I’m Tee, a web developer, graphics designer, artist, photographer, writer... yeah I do a bit of everything 😂. Basically I love to build things that are both unique and inspiring. I specialize in building responsive and user-friendly websites and web applications that are both aesthetic and functional.
+                                Hola! I'm Tee, a web developer, graphics designer, artist, photographer, writer... yeah
+                                I do a bit of everything 😂. Basically I love to build things that are both unique and
+                                inspiring. I specialize in building responsive and user-friendly websites and web
+                                applications that are both aesthetic and functional.
                             </p>
-                            <p class="lead"> 
-                            Whether it's building an affordable website for a client or creating impactful brand visuals, I keep things simple, intentional, and always on time 🙂‍↕️. Take a look around — you might find something you like 😉.
-                            </p> 
-                            <a href="https://drive.google.com/file/d/1O0mXqOLtoib4BshmvNDHqU679pR19TtU/view?usp=drive_link" target="_blank" style="text-decoration: none !important;">
-                                <button class="cssbuttons-io">
-                                    <span>View Resumé</span>
-                                </button>
+                            <p class="lead">
+                                Whether it's building an affordable website for a client or creating impactful brand
+                                visuals, I keep things simple, intentional, and always on time 🙂‍↕️. Take a look around
+                                — you might find something you like 😉.
+                            </p>
+                            <a href="https://drive.google.com/file/d/1O0mXqOLtoib4BshmvNDHqU679pR19TtU/view?usp=drive_link"
+                                target="_blank" style="text-decoration:none;">
+                                <button class="cssbuttons-io"><span>View Resumé</span></button>
                             </a>
                         </div>
                     </div>
@@ -266,6 +192,7 @@
             </div>
         </section>
 
+        <!-- Stats -->
         <section class="bg-bll" id="counter-section">
             <div class="row text-center py-5" data-aos="fade-right" data-aos-duration="800">
                 <div class="col-md-3">
@@ -287,477 +214,458 @@
             </div>
         </section>
 
-        <!-- What I Do Section -->
-        <section class="py-4" style="background-color: #eee;" id="services">
+        <!-- Services -->
+        <section class="py-4" style="background-color:#eee;" id="services">
             <div class="container pt-5">
                 <div class="section-title" data-aos="fade-up" data-aos-duration="800">
                     <h1 class="bg-text">SERVICES</h1>
                     <h2 class="main-text">WHAT I PROVIDE</h2>
                 </div>
                 <div class="row g-4 pb-5 mb-3">
-                    <!-- Service Card -->
                     <div class="col-md-6 col-lg-4 col-sm-12">
                         <div data-aos="zoom-in" data-aos-duration="800">
                             <div class="card glass-card text-start p-4">
                                 <div class="mb-2">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/ailnzwyn.json"
-                                        trigger="hover"
-                                        target=".glass-card"
-                                        colors="primary:#4B88D7,secondary:#4B88D7"
-                                        style="width:80px;height:80px">
-                                    </lord-icon>
+                                    <lord-icon src="https://cdn.lordicon.com/ailnzwyn.json" trigger="hover"
+                                        target=".glass-card" colors="primary:#4B88D7,secondary:#4B88D7"
+                                        style="width:80px;height:80px"></lord-icon>
                                 </div>
                                 <h3 class="card-title">Web Development</h3>
-                                <p class="card-text">I build fast, responsive, and modern websites tailored for both performance and functionality.</p>
+                                <p class="card-text">I build fast, responsive, and modern websites tailored for both
+                                    performance and functionality.</p>
                             </div>
                         </div>
                     </div>
-                    
                     <div class="col-md-6 col-lg-4 col-sm-12">
                         <div data-aos="zoom-in" data-aos-duration="800">
                             <div class="card glass-card text-start p-4">
                                 <div class="mb-2">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/exymduqj.json"
-                                        trigger="hover"
-                                        target=".glass-card"
-                                        state="hover-line"
+                                    <lord-icon src="https://cdn.lordicon.com/exymduqj.json" trigger="hover"
+                                        target=".glass-card" state="hover-line"
                                         colors="primary:#4B88D7,secondary:#4B88D7"
-                                        style="width:80px;height:80px">
-                                    </lord-icon>
+                                        style="width:80px;height:80px"></lord-icon>
                                 </div>
                                 <h3 class="card-title">Graphic Design</h3>
-                                <p class="card-text">I craft visually compelling designs that convey ideas clearly and with lasting impact.</p>
+                                <p class="card-text">I craft visually compelling designs that convey ideas clearly and
+                                    with lasting impact.</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6 col-lg-4 col-sm-12">
                         <div data-aos="zoom-in" data-aos-duration="800">
                             <div class="card glass-card text-start p-4">
                                 <div class="mb-2">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/tamskqkf.json"
-                                        trigger="hover"
-                                        target=".glass-card"
-                                        colors="primary:#4B88D7,secondary:#4B88D7"
-                                        style="width:80px;height:80px">
-                                    </lord-icon>
+                                    <lord-icon src="https://cdn.lordicon.com/tamskqkf.json" trigger="hover"
+                                        target=".glass-card" colors="primary:#4B88D7,secondary:#4B88D7"
+                                        style="width:80px;height:80px"></lord-icon>
                                 </div>
                                 <h3 class="card-title">Video Editing</h3>
-                                <p class="card-text">I create engaging video content with smooth transitions, sound design, and visual storytelling.</p>
+                                <p class="card-text">I create engaging video content with smooth transitions, sound
+                                    design, and visual storytelling.</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6 col-lg-4 col-sm-12">
                         <div data-aos="zoom-in" data-aos-duration="800">
                             <div class="card glass-card text-start p-4">
                                 <div class="mb-2">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/wsaaegar.json"
-                                        trigger="hover"
-                                        target=".glass-card"
-                                        colors="primary:#4B88D7,secondary:#4B88D7"
-                                        style="width:80px;height:80px">
-                                    </lord-icon>
+                                    <lord-icon src="https://cdn.lordicon.com/wsaaegar.json" trigger="hover"
+                                        target=".glass-card" colors="primary:#4B88D7,secondary:#4B88D7"
+                                        style="width:80px;height:80px"></lord-icon>
                                 </div>
                                 <h3 class="card-title">Photography</h3>
-                                <p class="card-text">I capture, edit, and refine stunning pictures that tell stories and bring moments to life.</p>
+                                <p class="card-text">I capture, edit, and refine stunning pictures that tell stories and
+                                    bring moments to life.</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6 col-lg-4 col-sm-12">
                         <div data-aos="zoom-in" data-aos-duration="800">
                             <div class="card glass-card text-start p-4">
                                 <div class="mb-2">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/fwkrbvja.json"
-                                        trigger="hover"
-                                        target=".glass-card"
-                                        colors="primary:#4B88D7,secondary:#4B88D7"
-                                        style="width:80px;height:80px">
-                                    </lord-icon>
+                                    <lord-icon src="https://cdn.lordicon.com/fwkrbvja.json" trigger="hover"
+                                        target=".glass-card" colors="primary:#4B88D7,secondary:#4B88D7"
+                                        style="width:80px;height:80px"></lord-icon>
                                 </div>
                                 <h3 class="card-title">Creative Engineering</h3>
-                                <p class="card-text">I design and build cool projects in my free time, transforming ideas into working prototypes.</p>
+                                <p class="card-text">I design and build cool projects in my free time, transforming
+                                    ideas into working prototypes.</p>
                             </div>
                         </div>
                     </div>
-
                     <div class="col-md-6 col-lg-4 col-sm-12">
                         <div data-aos="zoom-in" data-aos-duration="800">
                             <div class="card glass-card text-start p-4">
                                 <div class="mb-2">
-                                    <lord-icon
-                                        src="https://cdn.lordicon.com/fikcyfpp.json"
-                                        trigger="hover"
-                                        target=".glass-card"
-                                        colors="primary:#4B88D7,secondary:#4B88D7"
-                                        style="width:80px;height:80px">
-                                    </lord-icon>
+                                    <lord-icon src="https://cdn.lordicon.com/fikcyfpp.json" trigger="hover"
+                                        target=".glass-card" colors="primary:#4B88D7,secondary:#4B88D7"
+                                        style="width:80px;height:80px"></lord-icon>
                                 </div>
                                 <h3 class="card-title">Creative Writing</h3>
-                                <p class="card-text">I deliver well-structured, and original content tailored to engage and inform any audience.</p>
+                                <p class="card-text">I deliver well-structured, original content tailored to engage and
+                                    inform any audience.</p>
                             </div>
                         </div>
                     </div>
-                </div><br>
+                </div>
 
+                <!-- Skills carousel -->
                 <section>
-                    <h1 class="blue text-center fw-bold border-top fs-1 pt-5" data-aos="fade-left" data-aos-duration="800">Skills & Software</h1>
+                    <h1 class="blue text-center fw-bold border-top fs-1 pt-5" data-aos="fade-left"
+                        data-aos-duration="800">Skills & Software</h1>
                     <div class="logo-carousel mb-4" data-aos="fade-left" data-aos-duration="800">
                         <div class="logo-track">
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5 logo" />
+                            <!-- First set -->
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                                    alt="HTML5">
                                 <div class="logo-caption">HTML5</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3 logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                                    alt="CSS3">
                                 <div class="logo-caption">CSS3</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript">
                                 <div class="logo-caption">JavaScript</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" />
-                                <div class="logo-caption">Bootstrap </div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"  alt="Tailwind logo" />
-                                <div class="logo-caption">Tailwind CSS</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React logo" />
-                                <div class="logo-caption">React</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg" alt="Next.js logo" />
-                                <div class="logo-caption">Next.js</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP logo" />
-                                <div class="logo-caption">PHP</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg" alt="Python logo" />
-                                <div class="logo-caption">Python</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub logo" />
-                                <div class="logo-caption">GitHub</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo" />
-                                <div class="logo-caption">Git</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel logo" />
-                                <div class="logo-caption">Vercel</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code logo" />
-                                <div class="logo-caption">VS Code</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma logo" />
-                                <div class="logo-caption">Figma</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop logo" />
-                                <div class="logo-caption">Photoshop</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects logo" />
-                                <div class="logo-caption">After Effects</div>
-                            </div>
-                            <!-- repeated for seamless scrolling -->
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" alt="HTML5 logo" />
-                                <div class="logo-caption">HTML5</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" alt="CSS3 logo" />
-                                <div class="logo-caption">CSS3</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" alt="JavaScript logo" />
-                                <div class="logo-caption">JavaScript</div>
-                            </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg" alt="Bootstrap logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                                    alt="Bootstrap">
                                 <div class="logo-caption">Bootstrap</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" alt="React logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg"
+                                    alt="Tailwind">
+                                <div class="logo-caption">Tailwind CSS</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                    alt="React">
                                 <div class="logo-caption">React</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg" alt="PHP logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original-wordmark.svg"
+                                    alt="Next.js">
+                                <div class="logo-caption">Next.js</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                                    alt="PHP">
                                 <div class="logo-caption">PHP</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg" alt="GitHub logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/python/python-original.svg"
+                                    alt="Python">
+                                <div class="logo-caption">Python</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                                    alt="GitHub">
                                 <div class="logo-caption">GitHub</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg" alt="Git logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                                    alt="Git">
                                 <div class="logo-caption">Git</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg" alt="Vercel logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+                                    alt="Vercel">
                                 <div class="logo-caption">Vercel</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg" alt="VS Code logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                                    alt="VS Code">
                                 <div class="logo-caption">VS Code</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" alt="Figma logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                                    alt="Figma">
                                 <div class="logo-caption">Figma</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg" alt="Photoshop logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+                                    alt="Photoshop">
                                 <div class="logo-caption">Photoshop</div>
                             </div>
-                            <div class="logo-box">
-                                <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg" alt="After Effects logo" />
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg"
+                                    alt="After Effects">
+                                <div class="logo-caption">After Effects</div>
+                            </div>
+                            <!-- Duplicate set for seamless loop -->
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg"
+                                    alt="HTML5">
+                                <div class="logo-caption">HTML5</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg"
+                                    alt="CSS3">
+                                <div class="logo-caption">CSS3</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg"
+                                    alt="JavaScript">
+                                <div class="logo-caption">JavaScript</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/bootstrap/bootstrap-original.svg"
+                                    alt="Bootstrap">
+                                <div class="logo-caption">Bootstrap</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg"
+                                    alt="React">
+                                <div class="logo-caption">React</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/php/php-original.svg"
+                                    alt="PHP">
+                                <div class="logo-caption">PHP</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/github/github-original.svg"
+                                    alt="GitHub">
+                                <div class="logo-caption">GitHub</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/git/git-original.svg"
+                                    alt="Git">
+                                <div class="logo-caption">Git</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vercel/vercel-original.svg"
+                                    alt="Vercel">
+                                <div class="logo-caption">Vercel</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vscode/vscode-original.svg"
+                                    alt="VS Code">
+                                <div class="logo-caption">VS Code</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg"
+                                    alt="Figma">
+                                <div class="logo-caption">Figma</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/photoshop/photoshop-original.svg"
+                                    alt="Photoshop">
+                                <div class="logo-caption">Photoshop</div>
+                            </div>
+                            <div class="logo-box"><img
+                                    src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/aftereffects/aftereffects-original.svg"
+                                    alt="After Effects">
                                 <div class="logo-caption">After Effects</div>
                             </div>
                         </div>
                     </div>
-                    <div class="text-center d-block d-lg-none grad">
-                        <p>Tap to reveal color!</p>
-                    </div>
-                    <div class="text-center d-none d-lg-block grad">
-                        <p>Hover to reveal color!</p>
-                    </div>
+                    <p class="text-center d-block d-lg-none grad">Tap to reveal color!</p>
+                    <p class="text-center d-none d-lg-block grad">Hover to reveal color!</p>
                 </section>
             </div>
         </section>
 
-        <!-- Portfolio Section -->
+        <!-- Projects -->
         <section class="portfolio-section py-5 bg-black text-white" id="projects">
             <div class="container text-center pt-2"><br>
                 <h2 class="fw-bold display-5 mb-4" data-aos="fade-up" data-aos-duration="800">My Work</h2>
-                <p class="lighter text-start" data-aos="fade-up" data-aos-duration="800">Below are some of the projects I’ve built over the years, both independently and in collaboration with other developers. Each one highlights my growth, creativity, and problem-solving skills, as well as my commitment to building practical, well-crafted solutions while exploring diverse technologies.</p><br><br>
-
-                <!-- Portfolio Grid -->
+                <p class="lighter text-start" data-aos="fade-up" data-aos-duration="800">
+                    Below are some of the projects I've built over the years, both independently and in collaboration
+                    with other developers. Each one highlights my growth, creativity, and problem-solving skills, as
+                    well as my commitment to building practical, well-crafted solutions while exploring diverse
+                    technologies.
+                </p><br><br>
                 <div class="row g-4 justify-content-center">
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://coresystech.ng" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://coresystech.ng" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/CORETECH site.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/CORETECH site.png" alt="CoreTech" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A professional website built for CORE-TECH with efficiency and precision.</p>
+                                    <p class="card-text">A professional website built for CORE-TECH with efficiency and
+                                        precision.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://rs-tee-beta.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://rs-tee-beta.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/real_estate.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/real_estate.png" alt="Real Estate" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A modern real estate landing page with clean UI.</p>
+                                    <p class="card-text">A modern real estate landing page template with clean UI.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://saya-ai-v1.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://saya-ai-v1.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/saya_ai.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/saya_ai.png" alt="Saya AI" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A modern and responsive landing page built with React.js and Tailwindcss</p>
+                                    <p class="card-text">A modern and responsive landing page built with React.js and
+                                        Tailwind CSS.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://s-martpos.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://s-martpos.com" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/S-Mart POS site.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/S-Mart POS site.png" alt="S-Mart POS"
+                                    class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A minimal POS-solution landing page built for efficiency, speed, and style.</p>
+                                    <p class="card-text">A minimal POS-solution landing page built for efficiency,
+                                        speed, and style.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://tee-weather-forecast.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://tee-weather-forecast.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/weather app.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/weather app.png" alt="Weather App" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A functional and responsive weather app built with React.js</p>
+                                    <p class="card-text">A functional and responsive weather app built with React.js.
+                                    </p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://queennbethel.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://queennbethel.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/q&b.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/q&b.png" alt="Queen & Bethel" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A modern wedding website template designed to celebrate timeless love.</p>
+                                    <p class="card-text">A modern wedding website template designed to celebrate
+                                        timeless love.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://gosirvee.com" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://gosirvee.com" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/gosirvee.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/gosirvee.png" alt="GoSirvee" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A flight services website created in collaboration with other developers.</p>
+                                    <p class="card-text">A flight services website created in collaboration with other
+                                        developers.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://www.onatechngc.com/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://www.onatechngc.com/" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/OnaTech website.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/OnaTech website.png" alt="OnaTech" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
-                                    <p class="card-text">A sleek, modern site for a tech firm created in collaboration with other developers</p>
+                                    <p class="card-text">A sleek, modern site for a tech firm created in collaboration
+                                        with other developers.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
-                    <!-- Project Card -->
                     <div class="col-lg-4 col-md-6 col-sm-6" data-aos="zoom-in" data-aos-duration="800">
-                        <a href="https://audi-landing-page-eight.vercel.app/" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">
+                        <a href="https://audi-landing-page-eight.vercel.app/" target="_blank" rel="noopener noreferrer"
+                            style="text-decoration:none;">
                             <div class="card portfolio-card position-relative overflow-hidden rounded-3">
-                                <img src="img/NOVA.png" alt="Project 1" class="card-img-top img-fluid w-100">
+                                <img src="img/NOVA.png" alt="NOVA Concept Car" class="card-img-top img-fluid w-100">
                                 <div class="card-body">
                                     <p class="card-text">A sleek and futuristic landing page for a concept vehicle.</p>
                                 </div>
-                                <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+                                <div
+                                    class="overlay d-flex flex-column justify-content-center align-items-center text-center">
                                     <h5 class="mb-2">view site</h5>
-                                    <div class="icons">
-                                        <i class="bi bi-link-45deg fs-3"></i>
-                                    </div>
+                                    <div class="icons"><i class="bi bi-link-45deg fs-3"></i></div>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div>
             </div>
-            <p id="contact"></p><br>
-            <p></p>
         </section>
-        
+
+        <!-- Contact -->
         <div class="section-w py-5">
             <section id="contact" class="container py-5">
                 <div id="c-tact" class="sent" data-aos="fade-up" data-aos-duration="800">
                     <h1 class="text-center heavy">Send me a message!</h1>
-                    <p class="text-center heirarchy">Got a question or a job offer, or just want to say hi? Go ahead!</p>
-                    
-                    
-                    <form id="contactForm" action="https://formsubmit.co/2563e7495c9fe09c84919bf99113aef3" method="POST" novalidate>
-                        <!-- honeypot -->
-                        <input type="text" name="_honey" style="display:none">
-                        <!-- disable captcha -->
-                        <input type="hidden" name="_captcha" value="false">
+                    <p class="text-center heirarchy">Got a question or a job offer, or just want to say hi? Go ahead!
+                    </p>
 
+                    <form id="contactForm" action="https://formsubmit.co/2563e7495c9fe09c84919bf99113aef3" method="POST"
+                        novalidate>
+                        <input type="text" name="_honey" style="display:none">
+                        <input type="hidden" name="_captcha" value="false">
 
                         <div class="form-group">
                             <label for="name"></label>
-                            <input
-                            id="name"
-                            name="name"
-                            class="form-control"
-                            type="text"
-                            placeholder="Your Name"
-                            required
-                            autocomplete="name"
-                            />
+                            <input id="name" name="name" class="form-control" type="text" placeholder="Your Name"
+                                required autocomplete="name" />
                             <div class="invalid-feedback">Please enter your name.</div>
                         </div>
-
                         <div class="form-group">
                             <label for="email"></label>
-                            <input
-                            id="email"
-                            name="email"
-                            class="form-control"
-                            type="email"
-                            placeholder="Email Address"
-                            required
-                            autocomplete="email"
-                            />
+                            <input id="email" name="email" class="form-control" type="email" placeholder="Email Address"
+                                required autocomplete="email" />
                             <div class="invalid-feedback">Please enter a valid email address.</div>
                         </div>
-
                         <div class="form-group">
                             <label for="message"></label>
-                            <textarea
-                            id="message"
-                            name="message"
-                            class="form-control"
-                            rows="4"
-                            placeholder="Write your message..."
-                            required
-                            ></textarea>
+                            <textarea id="message" name="message" class="form-control" rows="4"
+                                placeholder="Write your message..." required></textarea>
                             <div class="invalid-feedback">Don't be shy, say hello</div>
                         </div>
 
@@ -765,17 +673,13 @@
                             <button type="submit" class="py-2">
                                 <div class="svg-wrapper-1">
                                     <div class="svg-wrapper">
-                                    <svg
-                                        xmlns="http://www.w3.org/2000/svg"
-                                        viewBox="0 0 24 24"
-                                        width="28"
-                                        height="28">
-                                        <path fill="none" d="M0 0h24v24H0z"></path>
-                                        <path
-                                        fill="currentColor"
-                                        d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z"
-                                        ></path>
-                                    </svg>
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="28"
+                                            height="28">
+                                            <path fill="none" d="M0 0h24v24H0z"></path>
+                                            <path fill="currentColor"
+                                                d="M1.946 9.315c-.522-.174-.527-.455.01-.634l19.087-6.362c.529-.176.832.12.684.638l-5.454 19.086c-.15.529-.455.547-.679.045L12 14l6-8-8 6-8.054-2.685z">
+                                            </path>
+                                        </svg>
                                     </div>
                                 </div>
                                 <span>Send</span>
@@ -784,259 +688,99 @@
                     </form>
 
                     <div id="successMsg" role="status" style="display:none; margin-top:1rem;">
-                    Thanks — your message was sent!
+                        Thanks — your message was sent!
                     </div>
                 </div>
             </section>
         </div>
     </main>
-    
+
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
                 <div class="col-md-6" data-aos="fade-up" data-aos-duration="800"><br>
                     <h2 class="text-white">TRUST ONYEKWERE</h2>
-                    <p class="fs-6">I’m passionate about merging technology and creativity to design modern, efficient websites and web apps. I also love building innovative prototypes and creating digital experiences that are both engaging and inspiring.</p><br>
-                    <p class="fs-6">
-                        Feel free to reach out for collaborations or just to say hi 👋
-                    </p>
+                    <p class="fs-6">I'm passionate about merging technology and creativity to design modern, efficient
+                        websites and web apps. I also love building innovative prototypes and creating digital
+                        experiences that are both engaging and inspiring.</p><br>
+                    <p class="fs-6">Feel free to reach out for collaborations or just to say hi 👋</p>
                 </div>
                 <div class="col-md-6 text-md-end mt-4" data-aos="fade-up" data-aos-duration="800">
-
                     <h5>SOCIALS</h5>
-
                     <div class="mt-3">
-
-                        <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/in/onyekwere-trust" target="_blank" rel="noopener noreferrer">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/qgebwute.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-draw"
-                                colors="primary:#ffffff,secondary:#ffffff"
-                                style="width:30px;height:30px">
-                            </lord-icon>
+                            <lord-icon src="https://cdn.lordicon.com/qgebwute.json" trigger="hover" stroke="bold"
+                                state="hover-draw" colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px"></lord-icon>
                         </a>
-                        <!-- Github -->
                         <a href="https://github.com/trustonyekwere" target="_blank" rel="noopener noreferrer">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/jjxzcivr.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-roll"
-                                colors="primary:#ffffff,secondary:#ffffff"
-                                style="width:30px;height:30px">
-                            </lord-icon>
+                            <lord-icon src="https://cdn.lordicon.com/jjxzcivr.json" trigger="hover" stroke="bold"
+                                state="hover-roll" colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px"></lord-icon>
                         </a>
-                        <!-- X -->
                         <a href="https://x.com/trust_onyekwere" target="_blank" rel="noopener noreferrer">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/yizwahhw.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-draw"
-                                colors="primary:#ffffff,secondary:#ffffff"
-                                style="width:30px;height:30px">
-                            </lord-icon>
+                            <lord-icon src="https://cdn.lordicon.com/yizwahhw.json" trigger="hover" stroke="bold"
+                                state="hover-draw" colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px"></lord-icon>
                         </a>
-                        <!-- Insta -->
-                        <a style="margin-right: 0 !important;" href="https://www.instagram.com/trust0nyekwere/" target="_blank" rel="noopener noreferrer">
-                            <lord-icon
-                                src="https://cdn.lordicon.com/tgyvxauj.json"
-                                trigger="hover"
-                                stroke="bold"
-                                state="hover-rotate"
-                                colors="primary:#ffffff,secondary:#ffffff"
-                                style="width:30px;height:30px">
-                            </lord-icon>
+                        <a href="https://www.instagram.com/trust0nyekwere/" target="_blank" rel="noopener noreferrer"
+                            style="margin-right:0;">
+                            <lord-icon src="https://cdn.lordicon.com/tgyvxauj.json" trigger="hover" stroke="bold"
+                                state="hover-rotate" colors="primary:#ffffff,secondary:#ffffff"
+                                style="width:30px;height:30px"></lord-icon>
                         </a>
-
                     </div>
                 </div>
             </div>
-            <br><hr><br>
+            <br>
+            <hr><br>
         </div>
         <div class="copyright">
-        &copy; 2026 | <a href="https://trust-onyekwere.vercel.app/" class="text-white text-decoration-underline">Trust Onyekwere</a>
+            &copy; 2026 | <a href="https://trust-onyekwere.vercel.app/"
+                class="text-white text-decoration-underline">Trust Onyekwere</a>
         </div>
     </footer>
 
-    <!-- Back to top button -->
+    <!-- Back to top -->
     <a type="button" class="btn btn-danger btn-floating btn-lg back-to-top" id="back-to-top">
         <i class="bi bi-chevron-double-up"></i>
     </a>
-    
+
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-    
-    <!-- AOS JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+
+    <!-- AOS — single init call with merged options -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <script>
-        AOS.init({
-            once: true  // Animation happens only once as you scroll down
-        });
-        AOS.init({
-            duration: 400  // Animation duration in milliseconds
-        });
+        AOS.init({ once: true, duration: 400 });
     </script>
 
-    <!-- preloader JS -->
+    <!-- Preloader -->
     <script>
         window.addEventListener('load', () => {
-        const pre = document.getElementById('preloader');
-        
-        // Ensure eyes animate slower if you change this later
-        document.documentElement.style.setProperty('--loader-speed', '12s');
-
-        // Keep preloader for extra 1.5 seconds
-        setTimeout(() => {
-            pre.classList.add('hidden');
-            pre.addEventListener('transitionend', () => pre.remove());
-        }, 1000);
+            const pre = document.getElementById('preloader');
+            setTimeout(() => {
+                pre.classList.add('hidden');
+                pre.addEventListener('transitionend', () => pre.remove());
+            }, 1000);
         });
     </script>
 
-    <!-- Hero section js -->
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const container = document.querySelector('.x-grid');
-            if (!container) return;
-
-            // CONFIG: tweak these for density/performance
-            let COLUMNS = Math.min(9, Math.max(4, Math.round(window.innerWidth / 140)));
-            const ROWS_PER_COL = 6;
-
-            const blues = [
-            ['rgba(36,94,200,0.98)', 'rgba(72,150,255,0.98)'],
-            ['rgba(20,90,190,0.95)', 'rgba(60,140,245,0.95)'],
-            ['rgba(34,110,210,0.95)', 'rgba(85,160,255,0.95)']
-            ];
-
-            function rand(min, max){ return Math.random() * (max - min) + min; }
-            function pick(arr){ return arr[Math.floor(Math.random() * arr.length)]; }
-
-            // generation function (can be called on resize)
-            function buildGrid() {
-            container.innerHTML = '';
-            for (let col = 0; col < COLUMNS; col++) {
-                // even columns across width
-                const leftPct = ((col + 0.5) / COLUMNS) * 100;
-
-                for (let row = 0; row < ROWS_PER_COL; row++) {
-                const el = document.createElement('div');
-                el.className = 'x';
-
-                // small consistent size, subtle variety
-                const size = Math.round(rand(14, 22)); // px
-                const bar = Math.max(1.2, Math.round(size * 0.11)); // px
-
-                // duration with slight variance
-                const baseDur = rand(10.5, 16.5);
-                const dur = baseDur.toFixed(2) + 's';
-
-                // negative delay so column is visually continuous; stagger by row
-                const rowOffset = (row / ROWS_PER_COL) * baseDur;
-                const delay = (-rand(0, baseDur) - rowOffset).toFixed(2) + 's';
-
-                // spin moderate and consistent (fewer turns to reduce shoutiness)
-                const spinDeg = Math.round(rand(360, 720)) + 'deg';
-
-                // start and end vertical positions (smooth)
-                const start = (-rand(18, 36)).toFixed(2) + 'vh';
-                const end = (110 + rand(0, 20)).toFixed(2) + 'vh';
-
-                // subtle horizontal jitter (small px) but fixed for element (prevents jumps)
-                const xj = Math.round(rand(-8, 8)) + 'px';
-
-                // subtle blur and low opacity to be gentle
-                const blur = Math.round(rand(4, 9)) + 'px';
-                const op = rand(0.08, 0.20).toFixed(2);
-
-                // color
-                const colors = pick(blues);
-
-                // set CSS vars; left is fixed (never changed on iteration -> no horizontal jumps)
-                el.style.setProperty('--left', leftPct.toFixed(2) + '%');
-                el.style.setProperty('--size', size + 'px');
-                el.style.setProperty('--bar', bar + 'px');
-                el.style.setProperty('--dur', dur);
-                el.style.setProperty('--delay', delay);
-                el.style.setProperty('--spin', spinDeg);
-                el.style.setProperty('--start', start);
-                el.style.setProperty('--end', end);
-                el.style.setProperty('--xj', xj);
-                el.style.setProperty('--blur', blur + 'px');
-                el.style.setProperty('--op', op);
-                el.style.setProperty('--c1', colors[0]);
-                el.style.setProperty('--c2', colors[1]);
-
-                // set left as position (never changed on iteration)
-                el.style.left = leftPct.toFixed(2) + '%';
-
-                // recycling on animationiteration: only update timing/visuals (not left)
-                el.addEventListener('animationiteration', () => {
-                    const newDur = rand(10.5, 16.5).toFixed(2) + 's';
-                    const newDelay = (-rand(0, parseFloat(newDur))).toFixed(2) + 's';
-                    const newSpin = Math.round(rand(360, 720)) + 'deg';
-                    const newStart = (-rand(18, 36)).toFixed(2) + 'vh';
-                    const newEnd = (110 + rand(0, 20)).toFixed(2) + 'vh';
-                    const newXj = Math.round(rand(-8, 8)) + 'px';
-                    const newBlur = Math.round(rand(4, 9)) + 'px';
-                    const newOp = rand(0.08, 0.20).toFixed(2);
-
-                    el.style.setProperty('--dur', newDur);
-                    el.style.setProperty('--delay', newDelay);
-                    el.style.setProperty('--spin', newSpin);
-                    el.style.setProperty('--start', newStart);
-                    el.style.setProperty('--end', newEnd);
-                    el.style.setProperty('--xj', newXj);
-                    el.style.setProperty('--blur', newBlur + 'px');
-                    el.style.setProperty('--op', newOp);
-                    // keep left unchanged to avoid lateral jumps
-                });
-
-                container.appendChild(el);
-                }
-            }
-            }
-
-            // initial build
-            buildGrid();
-
-            // debounced resize: rebuild only when column count would change meaningfully
-            let resizeTimer;
-            window.addEventListener('resize', () => {
-            clearTimeout(resizeTimer);
-            resizeTimer = setTimeout(() => {
-                const want = Math.min(9, Math.max(4, Math.round(window.innerWidth / 140)));
-                if (want !== COLUMNS) {
-                COLUMNS = want;
-                buildGrid();
-                }
-            }, 180);
-            });
-        });
-    </script>
-    
     <!-- Back to top -->
     <script>
         const backBtn = document.querySelector('.back-to-top');
-
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 200) {
-            backBtn.classList.add('visible');
-            } else {
-            backBtn.classList.remove('visible');
-            }
+            backBtn.classList.toggle('visible', window.scrollY > 200);
         });
-
         backBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
         });
-    </script>  
+    </script>
 
-    <!-- nav anime -->
+    <!-- Active nav link on scroll -->
     <script>
         const sections = document.querySelectorAll('section');
         const navLinks = document.querySelectorAll('.nav-link');
@@ -1044,22 +788,15 @@
         window.addEventListener('scroll', () => {
             let current = '';
             sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - sectionHeight / 3) {
+                if (scrollY >= section.offsetTop - section.clientHeight / 3) {
                     current = section.getAttribute('id');
                 }
             });
-
             navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
+                link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
             });
         });
 
-        // Optional: Highlight immediately on click
         navLinks.forEach(link => {
             link.addEventListener('click', () => {
                 navLinks.forEach(l => l.classList.remove('active'));
@@ -1068,346 +805,230 @@
         });
     </script>
 
-    <!-- hero-dissappear -->
+    <!-- Show navbar after hero leaves viewport -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const nav  = document.querySelector('.navbar');
+            const nav = document.querySelector('.navbar');
             const hero = document.getElementById('home');
-
-            console.log('NAV:', nav, 'HERO:', hero);
-
             const io = new IntersectionObserver(
-            ([entry]) => {
-                console.log('hero intersection:', entry.isIntersecting);
-                nav.classList.toggle('visible', !entry.isIntersecting);
-            },
-            { root: null, threshold: 0 }
+                ([entry]) => nav.classList.toggle('visible', !entry.isIntersecting),
+                { root: null, threshold: 0 }
             );
             io.observe(hero);
         });
     </script>
 
-    <!-- Sidenav functionality: Only open/close when clicking the hamburger icon or checkbox itself, with working animation -->
-    <style>
-        /* Add smooth transition for the sidenav collapse */
-        #navbarSupportedContent {
-            transition: max-height 0.4s cubic-bezier(.4,0,.2,1), opacity 0.3s;
-            overflow: hidden;
-            max-height: 0;
-            opacity: 0;
-            display: block !important; /* keep block for transition */
-        }
-        #navbarSupportedContent.show {
-            max-height: 500px; /* adjust as needed for your nav height */
-            opacity: 1;
-        }
-        @media (min-width: 992px) {
-            #navbarSupportedContent {
-                transition: none;
-                max-height: none;
-                opacity: 1;
-                overflow: visible;
-                display: flex !important;
-            }
-        }
-    </style>
-
-    <!-- hamburger js -->
+    <!-- Hamburger toggle -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-        const nav = document.querySelector('.navbar');
-        if (nav) {
-            window.addEventListener('scroll', () => {
-                nav.classList.toggle('scrolled', window.scrollY > 50);
-            });
-        }
-
-        const sidenavToggleBtn = document.getElementById('sidenavToggleBtn');
-        const navbarCollapse = document.getElementById('navbarSupportedContent');
-        const checkbox = document.getElementById('checkbox');
-        const hamburgerIcon = sidenavToggleBtn?.querySelector('label.toggle');
-
-        function isValidToggleClick(target) {
-            return (
-                target === checkbox ||
-                target === hamburgerIcon ||
-                hamburgerIcon.contains(target)
-            );
-        }
-
-        function toggleMenu(e) {
-            if (isValidToggleClick(e.target)) {
-                checkbox.checked = !checkbox.checked;
-                navbarCollapse.classList.toggle('show', checkbox.checked);
-                e.preventDefault();
-                e.stopPropagation();
+            const nav = document.querySelector('.navbar');
+            if (nav) {
+                window.addEventListener('scroll', () => {
+                    nav.classList.toggle('scrolled', window.scrollY > 50);
+                });
             }
-        }
 
-        if (hamburgerIcon && navbarCollapse && checkbox) {
-            // Only attach listener to label and checkbox, not the button
-            hamburgerIcon.addEventListener('click', toggleMenu);
-            checkbox.addEventListener('click', toggleMenu);
-        }
+            const sidenavToggleBtn = document.getElementById('sidenavToggleBtn');
+            const navbarCollapse = document.getElementById('navbarSupportedContent');
+            const checkbox = document.getElementById('checkbox');
+            const hamburgerIcon = sidenavToggleBtn?.querySelector('label.toggle');
 
-        // Prevent button from toggling when not clicked on toggle
-        if (sidenavToggleBtn) {
-            sidenavToggleBtn.addEventListener('click', (e) => {
-                if (!isValidToggleClick(e.target)) {
-                    e.stopPropagation();
+            function isValidToggleClick(target) {
+                return target === checkbox || target === hamburgerIcon || hamburgerIcon.contains(target);
+            }
+
+            function toggleMenu(e) {
+                if (isValidToggleClick(e.target)) {
+                    checkbox.checked = !checkbox.checked;
+                    navbarCollapse.classList.toggle('show', checkbox.checked);
                     e.preventDefault();
+                    e.stopPropagation();
                 }
-            });
-        }
-    });
+            }
+
+            if (hamburgerIcon && navbarCollapse && checkbox) {
+                hamburgerIcon.addEventListener('click', toggleMenu);
+                checkbox.addEventListener('click', toggleMenu);
+            }
+
+            if (sidenavToggleBtn) {
+                sidenavToggleBtn.addEventListener('click', (e) => {
+                    if (!isValidToggleClick(e.target)) {
+                        e.stopPropagation();
+                        e.preventDefault();
+                    }
+                });
+            }
+        });
     </script>
 
-    <!-- Counter JS -->
+    <!-- Counter animation -->
     <script>
         const counters = document.querySelectorAll('.counter');
-        const DEFAULT_DURATION = 1600; // ms
-
+        const DEFAULT_DURATION = 1600;
         const fmt = n => n.toLocaleString();
 
         function animateCounter(el, target, duration = DEFAULT_DURATION) {
-            // cancel any previous animation on this element
             if (el._rafId) cancelAnimationFrame(el._rafId);
-
             const start = performance.now();
             const to = Number(target) || 0;
             const easeOutCubic = t => 1 - Math.pow(1 - t, 3);
-
             el.textContent = '0';
 
             const tick = (now) => {
-            const t = Math.min(1, (now - start) / duration);
-            const eased = easeOutCubic(t);
-            const value = Math.round(to * eased);
-            el.textContent = fmt(value);
-
-            if (t < 1) {
-                el._rafId = requestAnimationFrame(tick);
-            } else {
-                el._rafId = null;
-                el.textContent = fmt(to);
-            }
+                const t = Math.min(1, (now - start) / duration);
+                el.textContent = fmt(Math.round(to * easeOutCubic(t)));
+                if (t < 1) {
+                    el._rafId = requestAnimationFrame(tick);
+                } else {
+                    el._rafId = null;
+                    el.textContent = fmt(to);
+                }
             };
-
             el._rafId = requestAnimationFrame(tick);
         }
 
-        // Observe the whole section, not individual counters
-        const section = document.querySelector('#counter-section');
-        const io = new IntersectionObserver((entries) => {
+        const counterSection = document.querySelector('#counter-section');
+        new IntersectionObserver((entries) => {
             entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                // start/restart animations on enter
-                counters.forEach(c => {
-                const target = c.dataset.target;
-                const dur = c.dataset.duration ? Number(c.dataset.duration) : DEFAULT_DURATION;
-                animateCounter(c, target, dur);
-                });
-            } else {
-                // optional: reset on exit so it replays from 0 next time
-                counters.forEach(c => {
-                if (c._rafId) cancelAnimationFrame(c._rafId);
-                c.textContent = '0';
-                });
-            }
+                if (entry.isIntersecting) {
+                    counters.forEach(c => animateCounter(c, c.dataset.target, c.dataset.duration ? Number(c.dataset.duration) : DEFAULT_DURATION));
+                } else {
+                    counters.forEach(c => {
+                        if (c._rafId) cancelAnimationFrame(c._rafId);
+                        c.textContent = '0';
+                    });
+                }
             });
-        }, { threshold: 0.4 });
-
-        if (section) io.observe(section);
+        }, { threshold: 0.4 }).observe(counterSection);
     </script>
 
-    <!-- cursor dot -->
+    <!-- Custom cursor -->
     <script>
         const dot = document.querySelector('.cursor-dot');
+        let mouseX = 0, mouseY = 0, dotX = 0, dotY = 0;
 
-        let mouseX = 0;
-        let mouseY = 0;
-        let dotX = 0;
-        let dotY = 0;
-
-        // Update mouse position on move
         window.addEventListener('mousemove', (e) => {
             mouseX = e.clientX;
             mouseY = e.clientY;
         });
 
-        // Smooth animation loop using lerp
-        function animateDot() {
-            // Interpolation speed (0.1 = slow, 1 = instant)
+        (function animateDot() {
             dotX += (mouseX - dotX) * 0.15;
             dotY += (mouseY - dotY) * 0.15;
-
             dot.style.left = `${dotX}px`;
             dot.style.top = `${dotY}px`;
-
             requestAnimationFrame(animateDot);
-        }
+        })();
 
-        animateDot(); // Start animation
-
-        // Optional: Add hover effect on interactive elements
-        const hoverTargets = document.querySelectorAll('button, a, lord-icon, i, svg, .hover-target');
-        hoverTargets.forEach(el => {
+        document.querySelectorAll('button, a, lord-icon, i, svg').forEach(el => {
             el.addEventListener('mouseenter', () => dot.classList.add('hovering'));
             el.addEventListener('mouseleave', () => dot.classList.remove('hovering'));
         });
     </script>
 
-    <!-- form JS -->
+    <!-- Contact form -->
     <script>
         (function () {
             const form = document.getElementById('contactForm');
-            if (!form) return console.warn('No #contactForm found');
+            if (!form) return;
 
-            // create success / error nodes if not present
-            const ensureNode = (id, text, color) => {
-                let node = document.getElementById(id);
-                if (!node) {
-                node = document.createElement('div');
-                node.id = id;
-                node.style.display = 'none';
-                node.style.marginTop = '1rem';
-                node.style.padding = '.75rem 1rem';
-                node.style.borderRadius = '6px';
-                node.style.fontSize = '.95rem';
-                node.style.boxSizing = 'border-box';
-                node.setAttribute('role', id === 'errorMsg' ? 'alert' : 'status');
-                form.parentNode.insertBefore(node, form.nextSibling);
-                }
-                node.textContent = text || '';
-                node.style.background = color?.bg || '';
-                node.style.border = color?.border || '';
-                node.style.color = color?.color || '';
-                return node;
-            };
+            const successMsg = document.getElementById('successMsg');
 
-            const successMsg = ensureNode('successMsg', 'Thanks — your message was sent!', {
-                bg: '#e6ffed', border: '1px solid #a6f3b0', color: '#0b6623'
-            });
+            const errorMsg = document.createElement('div');
+            errorMsg.id = 'errorMsg';
+            errorMsg.role = 'alert';
+            errorMsg.style.cssText = 'display:none; margin-top:1rem; padding:.75rem 1rem; border-radius:6px; font-size:.95rem; background:#ffeef0; border:1px solid #f5c2c7; color:#842029;';
+            form.parentNode.insertBefore(errorMsg, form.nextSibling);
 
-            const errorMsg = ensureNode('errorMsg', '', {
-                bg: '#ffeef0', border: '1px solid #f5c2c7', color: '#842029'
-            });
-
-            // Helper to show/hide
-            const show = (node) => node.style.display = 'block';
-            const hide = (node) => node.style.display = 'none';
-            hide(successMsg); hide(errorMsg);
-
-            // Clear messages on input
             form.addEventListener('input', () => {
                 form.classList.remove('was-validated');
-                hide(errorMsg);
-                hide(successMsg);
+                errorMsg.style.display = 'none';
+                successMsg.style.display = 'none';
             });
 
             form.addEventListener('submit', async (e) => {
                 e.preventDefault();
-                hide(successMsg);
-                hide(errorMsg);
+                successMsg.style.display = 'none';
+                errorMsg.style.display = 'none';
 
                 if (!form.checkValidity()) {
-                form.classList.add('was-validated');
-                return;
-                }
-
-                // collect data BEFORE disabling elements
-                const formData = new FormData(form);
-
-                // Debug: optionally log entries while testing
-                // for (const [k,v] of formData.entries()) console.log(k, ':', v);
-
-                // disable submit to prevent double submit (do after FormData)
-                const submitBtn = form.querySelector('button[type="submit"]') || form.querySelector('button');
-                if (submitBtn) submitBtn.setAttribute('disabled', '');
-
-                const inputs = form.querySelectorAll('.form-control');
-                inputs.forEach(i => i.setAttribute('disabled', ''));
-
-                try {
-                const resp = await fetch(form.action, {
-                    method: 'POST',
-                    body: formData,
-                    headers: { 'Accept': 'application/json' } // Formsubmit /ajax returns JSON usually
-                });
-
-                // read text then try to parse JSON (so we can show server message if any)
-                const raw = await resp.text();
-                let parsed = null;
-                try { parsed = JSON.parse(raw); } catch (err) { /* not JSON */ }
-
-                if (!resp.ok) {
-                    // Build a helpful error message for the user
-                    let serverMsg = parsed?.message || parsed?.errors || raw || 'Server returned an error.';
-                    if (typeof serverMsg === 'object') serverMsg = JSON.stringify(serverMsg);
-                    errorMsg.textContent = `Send failed — server responded ${resp.status}. ${serverMsg}`;
-                    show(errorMsg);
-                    console.error('Formsubmit error response:', resp.status, raw);
+                    form.classList.add('was-validated');
                     return;
                 }
 
-                // success path
-                successMsg.textContent = parsed?.message || 'Thanks — your message was sent!';
-                show(successMsg);
-                form.reset();
+                const formData = new FormData(form);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const inputs = form.querySelectorAll('.form-control');
+
+                submitBtn?.setAttribute('disabled', '');
+                inputs.forEach(i => i.setAttribute('disabled', ''));
+
+                try {
+                    const resp = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+
+                    const raw = await resp.text();
+                    let parsed = null;
+                    try { parsed = JSON.parse(raw); } catch (_) { }
+
+                    if (!resp.ok) {
+                        let msg = parsed?.message || raw || 'Server returned an error.';
+                        if (typeof msg === 'object') msg = JSON.stringify(msg);
+                        errorMsg.textContent = `Send failed (${resp.status}): ${msg}`;
+                        errorMsg.style.display = 'block';
+                        return;
+                    }
+
+                    successMsg.textContent = parsed?.message || 'Thanks — your message was sent!';
+                    successMsg.style.display = 'block';
+                    form.reset();
                 } catch (err) {
-                // network / CORS / other fatal errors
-                console.error('Network/CORS error during submit:', err);
-                errorMsg.textContent = 'Send failed — network or CORS error. Try again, or check the console for details.';
-                show(errorMsg);
+                    errorMsg.textContent = 'Send failed — network error. Please try again.';
+                    errorMsg.style.display = 'block';
                 } finally {
-                if (submitBtn) submitBtn.removeAttribute('disabled');
-                inputs.forEach(i => i.removeAttribute('disabled'));
+                    submitBtn?.removeAttribute('disabled');
+                    inputs.forEach(i => i.removeAttribute('disabled'));
                 }
             });
         })();
     </script>
 
-    <!-- typing gradient effect -->
+    <!-- Typing effect -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-        const text = 'a Professional Software Engineer';
-        const el = document.getElementById('type-effect');
-        let i = 0;
-        let started = false;
+            const text = 'a Professional Software Engineer';
+            const el = document.getElementById('type-effect');
+            let i = 0, started = false;
 
-        function typeLoop() {
-            if (i <= text.length) {
-            el.textContent = text.slice(0, i);
-            i++;
-            setTimeout(typeLoop, 70);
+            function typeLoop() {
+                if (i <= text.length) {
+                    el.textContent = text.slice(0, i++);
+                    setTimeout(typeLoop, 70);
+                }
             }
-        }
 
-        function startTyping() {
-            if (!started) {
-            started = true;
-            // Start typing from "-a", not the first character
-            i = text.indexOf('a');
-            if (i < 0) i = 0;
-            el.textContent = '';
-            typeLoop();
+            function startTyping() {
+                if (!started) {
+                    started = true;
+                    el.textContent = '';
+                    typeLoop();
+                }
             }
-        }
 
-        // Start typing on scroll into view or on page refresh
-        function isInViewport(elem) {
-            const rect = elem.getBoundingClientRect();
-            return rect.top < window.innerHeight && rect.bottom > 0;
-        }
+            function isInViewport(elem) {
+                const r = elem.getBoundingClientRect();
+                return r.top < window.innerHeight && r.bottom > 0;
+            }
 
-        window.addEventListener('scroll', () => {
+            window.addEventListener('scroll', () => { if (isInViewport(el)) startTyping(); });
             if (isInViewport(el)) startTyping();
-        });
-
-        // Also start on page load if already in view
-        if (isInViewport(el)) startTyping();
         });
     </script>
 
 </body>
+
 </html>
