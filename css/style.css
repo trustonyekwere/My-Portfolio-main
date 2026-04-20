@@ -51,7 +51,7 @@ TYPOGRAPHY HELPERS
 }
 
 .blue {
-    color: #0149d8 !important;
+    color: #4B88D7 !important;
 }
 
 .heirarchy {
@@ -176,7 +176,7 @@ NAVBAR
     position: fixed;
     top: 20px;
     left: 50%;
-    transform: translate(-50%, -10px);
+    transform: translate(0%, -10px);
     width: 100%;
     z-index: 999;
     padding: 0 5% !important;
@@ -317,10 +317,10 @@ BUTTONS
     font-weight: 500;
     font-size: 18px;
     letter-spacing: 0.05em;
-    border: 2px solid #0149d8;
+    border: 2px solid #4B88D7;
     border-radius: 0.4em;
     cursor: pointer;
-    background: #0149d8;
+    background: #4B88D7;
     color: ghostwhite;
     overflow: hidden;
 }
@@ -404,7 +404,7 @@ BACK TO TOP
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #0149d8 !important;
+    background-color: #4B88D7 !important;
     color: white;
     border: none !important;
     width: 50px;
@@ -439,7 +439,7 @@ CUSTOM CURSOR
     background-color: #0092FF;
     border-radius: 50%;
     pointer-events: none;
-    z-index: 999;
+    z-index: 9999;
     transform: translate(-50%, -50%);
     transition: width 0.2s ease, height 0.2s ease, background-color 0.2s ease;
 }
