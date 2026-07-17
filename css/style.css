@@ -23,7 +23,7 @@ RESET & BASE
     margin: 0;
     padding: 0;
     font-family: 'nunito', sans-serif;
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
     font-weight: 700;
 }
 
@@ -31,6 +31,7 @@ RESET & BASE
 html, body {
     max-width: 100%;
     overflow-x: hidden;
+    scroll-behavior: smooth !important;
 }
 
 /* Scoped to nav/footer only — avoids breaking flex/grid children globally */
