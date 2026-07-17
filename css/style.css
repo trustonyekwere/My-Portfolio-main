@@ -186,7 +186,7 @@ NAVBAR
   transform: translate(0%, -10px);
   width: 100%;
   z-index: 999;
-  padding: 0 5% !important;
+  padding: 0 !important;
   background-color: rgba(255, 255, 255, 0.35);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
@@ -372,7 +372,7 @@ BUTTONS
   transition: color 0.4s;
   display: inline-flex;
   align-items: center;
-  padding: 0.8em 1.2em 0.8em 1.05em;
+  padding: 0.6em 1em;
 }
 
 .cssbuttons-io::before {
